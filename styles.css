@@ -462,10 +462,91 @@ tr:last-child td { border-bottom:none; }
 .pri-low    { color:var(--green); }
 
 @media(max-width:1100px) { .grid-4 { grid-template-columns:1fr 1fr; } }
-@media(max-width:800px) {
-  #sidebar { width:60px; }
-  .nav-item span:not(.nav-icon) { display:none; }
-  .nav-section, .logo-sub, .logo-text-wrap .logo-brand span { display:none; }
-  #main { padding:16px 14px 30px; }
-  .grid-2, .grid-3 { grid-template-columns:1fr; }
+
+/* ══════════════════════════════ BOTTOM NAV ══════════════════════════════════ */
+#bottom-nav { display:none; }
+
+/* ══════════════════════════════ MOBILE ══════════════════════════════════════ */
+@media(max-width:768px) {
+  /* Kill sidebar, show bottom nav */
+  #sidebar { display:none; }
+  body { overflow:auto; height:auto; min-height:100vh; }
+
+  #main {
+    padding: 16px 14px 90px;
+    overflow-y: visible;
+    height:auto;
+  }
+
+  /* Bottom nav */
+  #bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--nd-navy);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 200;
+  }
+  .bottom-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: rgba(255,255,255,0.38);
+    cursor: pointer;
+    transition: color 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .bottom-tab.active { color: var(--nd-gold-l); }
+  .bottom-tab svg { width:20px; height:20px; flex-shrink:0; }
+  .btab-label { font-size:10px; font-weight:500; letter-spacing:0.2px; line-height:1; }
+
+  /* Grids */
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+
+  /* Welcome card */
+  .welcome-card { padding:14px 16px; gap:12px; margin-bottom:14px; }
+  .welcome-logo-big { width:40px; height:40px; }
+  .welcome-greeting { font-size:17px; }
+  .welcome-date { font-size:12px; }
+  .welcome-theme { font-size:11px; }
+
+  /* Page header */
+  .page-header { margin-bottom:14px; }
+  .page-title { font-size:20px; }
+  .page-subtitle { font-size:12px; }
+
+  /* Cards */
+  .card { padding:14px 16px; }
+  .card-title { font-size:13px; }
+  .stat-value { font-size:26px; }
+
+  /* Search bars stack vertically */
+  .search-bar { flex-direction:column; gap:8px; }
+  .search-bar .inp { width:100%; }
+  .search-bar input[style*="flex:2"] { width:100%; }
+
+  /* Stat cards */
+  .stat-card { padding:14px; }
+
+  /* mb20 spacing */
+  .mb20 { margin-bottom:14px; }
+
+  /* Modals full screen */
+  .modal { width:100%; max-width:100%; margin:0; border-radius:16px 16px 0 0; position:fixed; bottom:0; left:0; right:0; max-height:90vh; overflow-y:auto; }
+  .modal-overlay { align-items:flex-end; }
+
+  /* Workout dots row wraps */
+  .wd-dots { flex-wrap:wrap; gap:6px; }
+  .wd-dot { min-width:60px; padding:6px 8px; font-size:11px; }
+
+  /* Table: allow horizontal scroll, already has .table-wrap */
+  .table-wrap { font-size:12px; }
+  table th, table td { padding:8px 10px; }
 }

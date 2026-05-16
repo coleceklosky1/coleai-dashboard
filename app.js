@@ -105,9 +105,9 @@ function catBriefBadge(cat) {
 const App = {
   navigate(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('[data-page]').forEach(n => n.classList.remove('active'));
     $('page-' + page).classList.add('active');
-    document.querySelector(`.nav-item[data-page="${page}"]`).classList.add('active');
+    document.querySelectorAll(`[data-page="${page}"]`).forEach(n => n.classList.add('active'));
     App.renderPage(page);
   },
 
@@ -737,7 +737,7 @@ document.addEventListener('click', e => { if (e.target.classList.contains('modal
 document.addEventListener('DOMContentLoaded', () => {
   initState();
   computeRollovers();
-  document.querySelectorAll('.nav-item[data-page]').forEach(el => el.addEventListener('click', () => App.navigate(el.dataset.page)));
+  document.querySelectorAll('[data-page]').forEach(el => el.addEventListener('click', () => App.navigate(el.dataset.page)));
   $('br-date') && ($('br-date').value = isoToday);
   App.navigate('today');
 });
