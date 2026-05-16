@@ -463,74 +463,121 @@ tr:last-child td { border-bottom:none; }
 
 @media(max-width:1100px) { .grid-4 { grid-template-columns:1fr 1fr; } }
 
-/* ══════════════════════════════ BOTTOM NAV / MOBILE HEADER ═════════════════ */
-#mobile-header { display:none; }
-#bottom-nav    { display:none; }
+/* ══════════════════════════════ DRAWER + MOBILE HEADER (hidden on desktop) ══ */
+#mobile-header  { display:none; }
+#drawer-overlay { display:none; }
+#drawer         { display:none; }
+#bottom-nav     { display:none; }
 
 /* ══════════════════════════════ MOBILE ══════════════════════════════════════ */
 @media(max-width:900px) {
-  /* Layout reset */
   body     { overflow:auto; height:auto; min-height:100vh; flex-direction:column; }
   #sidebar { display:none; }
-  #main    { padding: 60px 14px 88px; overflow-y:visible; height:auto; }
+  #main    { padding: 58px 14px 32px; overflow-y:visible; height:auto; }
 
   /* ── Top header ── */
   #mobile-header {
     display: flex;
     align-items: center;
-    gap: 10px;
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 52px;
-    padding: 0 18px;
+    padding: 0 16px;
     padding-top: env(safe-area-inset-top);
     background: var(--nd-navy);
-    z-index: 200;
+    z-index: 100;
     box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+  #hamburger {
+    background: none; border: none; cursor: pointer;
+    color: white; padding: 4px; margin-right: 10px;
+    -webkit-tap-highlight-color: transparent;
   }
   .mobile-header-title {
     flex: 1;
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.2px;
+    font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.2px;
   }
   .mobile-header-brand {
-    font-size: 13px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: -0.3px;
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 800;
+    color: rgba(255,255,255,0.5); letter-spacing: -0.3px;
   }
-  .mobile-header-brand span { color: var(--nd-gold-l); }
+  .mobile-header-brand em { color: var(--nd-gold-l); font-style: normal; }
 
-  /* ── Bottom tab bar ── */
-  #bottom-nav {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 56px;
-    padding-bottom: env(safe-area-inset-bottom);
-    background: var(--nd-navy);
-    border-top: 1px solid rgba(255,255,255,0.07);
-    z-index: 200;
+  /* ── Drawer overlay ── */
+  #drawer-overlay {
+    display: block;
+    position: fixed; inset: 0;
+    background: rgba(7,24,41,0.55);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 298;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease;
   }
-  .bottom-tab {
-    flex: 1;
+  #drawer-overlay.open { opacity: 1; pointer-events: all; }
+
+  /* ── Slide-in drawer ── */
+  #drawer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    color: rgba(255,255,255,0.32);
-    cursor: pointer;
-    transition: color 0.12s;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: min(280px, 82vw);
+    background: var(--nd-navy);
+    z-index: 299;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    padding-bottom: env(safe-area-inset-bottom);
   }
-  .bottom-tab.active       { color: var(--nd-gold-l); }
-  .bottom-tab.active svg   { stroke: var(--nd-gold-l); }
-  .bottom-tab svg          { width:20px; height:20px; flex-shrink:0; }
-  .btab-label              { font-size:9.5px; font-weight:600; letter-spacing:0.2px; line-height:1; }
+  #drawer.open { transform: translateX(0); }
+
+  .drawer-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 22px 20px 16px;
+    padding-top: calc(22px + env(safe-area-inset-top));
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .drawer-brand {
+    font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.4px; line-height: 1;
+  }
+  .drawer-brand span { color: var(--nd-gold-l); }
+  .drawer-sub { font-size: 10.5px; color: rgba(255,255,255,0.35); margin-top: 3px; }
+
+  .drawer-section {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+    text-transform: uppercase; color: rgba(255,255,255,0.28);
+    padding: 18px 20px 6px;
+  }
+  .drawer-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 20px;
+    font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6);
+    cursor: pointer; border-radius: 0;
+    transition: background 0.12s, color 0.12s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .drawer-item svg { flex-shrink: 0; opacity: 0.7; }
+  .drawer-item:active { background: rgba(255,255,255,0.05); }
+  .drawer-item.active {
+    color: #fff;
+    background: rgba(201,168,76,0.12);
+    border-right: 3px solid var(--nd-gold-l);
+  }
+  .drawer-item.active svg { opacity: 1; stroke: var(--nd-gold-l); }
+
+  .drawer-footer {
+    margin-top: auto;
+    padding: 16px 20px 20px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .drawer-stat {
+    display: flex; justify-content: space-between;
+    font-size: 11.5px; color: rgba(255,255,255,0.35);
+    margin-bottom: 4px;
+  }
+  .drawer-stat span:last-child { color: rgba(255,255,255,0.6); font-weight: 600; }
 
   /* ── Grids ── */
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -538,29 +585,29 @@ tr:last-child td { border-bottom:none; }
   .mb20            { margin-bottom: 14px; }
 
   /* ── Welcome card ── */
-  .welcome-card        { padding:14px 16px; gap:12px; margin-bottom:14px; }
-  .welcome-logo-big    { width:38px; height:38px; }
-  .welcome-greeting    { font-size:17px; }
-  .welcome-date        { font-size:12px; }
-  .welcome-theme       { font-size:11px; }
+  .welcome-card     { padding:14px 16px; gap:12px; margin-bottom:14px; }
+  .welcome-logo-big { width:38px; height:38px; }
+  .welcome-greeting { font-size:17px; }
+  .welcome-date     { font-size:12px; }
+  .welcome-theme    { font-size:11px; }
 
   /* ── Page header ── */
-  .page-header  { margin-bottom:12px; }
-  .page-title   { font-size:18px; }
-  .page-subtitle{ font-size:11.5px; }
+  .page-header   { margin-bottom:12px; }
+  .page-title    { font-size:18px; }
+  .page-subtitle { font-size:11.5px; }
 
-  /* ── Cards / stats ── */
-  .card        { padding:14px 15px; }
-  .card-title  { font-size:13px; }
-  .stat-card   { padding:13px 14px; }
-  .stat-value  { font-size:26px; }
-  .stat-label  { font-size:10.5px; }
+  /* ── Cards ── */
+  .card       { padding:14px 15px; }
+  .card-title { font-size:13px; }
+  .stat-card  { padding:13px 14px; }
+  .stat-value { font-size:26px; }
+  .stat-label { font-size:10.5px; }
 
-  /* ── Inputs / search ── */
-  .search-bar        { flex-direction:column; gap:8px; }
-  .search-bar .inp   { width:100%; }
+  /* ── Search bars ── */
+  .search-bar      { flex-direction:column; gap:8px; }
+  .search-bar .inp { width:100%; }
 
-  /* ── Modals slide up from bottom ── */
+  /* ── Modals slide up ── */
   .modal-overlay { align-items:flex-end; padding:0; }
   .modal         { width:100%; max-width:100%; margin:0; border-radius:18px 18px 0 0;
                    position:relative; max-height:90vh; overflow-y:auto; }
@@ -570,6 +617,6 @@ tr:last-child td { border-bottom:none; }
   .wd-dot  { min-width:58px; padding:6px 8px; font-size:11px; }
 
   /* ── Tables ── */
-  .table-wrap          { font-size:12px; }
-  table th, table td   { padding:8px 10px; }
+  .table-wrap        { font-size:12px; }
+  table th, table td { padding:8px 10px; }
 }

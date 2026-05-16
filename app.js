@@ -110,7 +110,20 @@ const App = {
     document.querySelectorAll(`[data-page="${page}"]`).forEach(n => n.classList.add('active'));
     const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings'};
     const mpt = $('mobile-page-title'); if (mpt) mpt.textContent = titles[page] || page;
+    App.closeDrawer();
     App.renderPage(page);
+  },
+
+  openDrawer() {
+    $('drawer')?.classList.add('open');
+    $('drawer-overlay')?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  },
+
+  closeDrawer() {
+    $('drawer')?.classList.remove('open');
+    $('drawer-overlay')?.classList.remove('open');
+    document.body.style.overflow = '';
   },
 
   renderPage(p) {
@@ -161,6 +174,7 @@ const App = {
     $('stat-workout-day').textContent = isFri ? 'Every Friday' : `Day ${((LS.get('workoutIdx')||0)%4)+1} of 4`;
     $('stat-weight').textContent = lastW;
     const sw = $('sidebar-weight'); if (sw) sw.textContent = `${lastW} lbs`;
+    const dw = $('drawer-weight'); if (dw) dw.textContent = `${lastW} lbs`;
 
     App.renderHabits();
 
@@ -353,6 +367,7 @@ const App = {
     const lastW = wLog.length ? wLog[wLog.length - 1].weight : 176;
     const fw = $('fitness-weight'); if (fw) fw.textContent = lastW;
     const sw = $('sidebar-weight'); if (sw) sw.textContent = `${lastW} lbs`;
+    const dw = $('drawer-weight'); if (dw) dw.textContent = `${lastW} lbs`;
     $('stat-weight').textContent = lastW;
 
     // Friday indicator
