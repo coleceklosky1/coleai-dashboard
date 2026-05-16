@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cole.ai</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cole.ai">
+  <meta name="theme-color" content="#0C2340">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════ SIDEBAR ═══════════════════════════════════ -->
+<aside id="sidebar">
+  <div class="sidebar-logo">
+    <svg class="logo-svg" width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="20" rx="16" ry="6.2" stroke="white" stroke-width="1.7" fill="none" stroke-opacity="0.95"/>
+      <ellipse cx="20" cy="20" rx="16" ry="6.2" stroke="#C9A84C" stroke-width="1.7" fill="none" transform="rotate(60 20 20)"/>
+      <ellipse cx="20" cy="20" rx="16" ry="6.2" stroke="white" stroke-width="1.4" fill="none" stroke-opacity="0.32" transform="rotate(120 20 20)"/>
+      <circle cx="20" cy="20" r="3.8" fill="#C9A84C" fill-opacity="0.22"/>
+      <circle cx="20" cy="20" r="2.4" fill="#C9A84C"/>
+      <circle cx="20" cy="20" r="1.1" fill="white"/>
+    </svg>
+    <div class="logo-text-wrap">
+      <div class="logo-brand">Cole<span>.</span>ai</div>
+      <div class="logo-sub">Cole · ChemE · Notre Dame '28</div>
+    </div>
+  </div>
+
+  <div class="nav-section">Overview</div>
+  <div class="nav-item active" data-page="today">
+    <span class="nav-icon">⊡</span> Today
+  </div>
+  <div class="nav-item" data-page="tasks">
+    <span class="nav-icon">✓</span> Tasks
+  </div>
+
+  <div class="nav-section">Health</div>
+  <div class="nav-item" data-page="fitness">
+    <span class="nav-icon">◈</span> Fitness
+  </div>
+
+  <div class="nav-section">Career</div>
+  <div class="nav-item" data-page="companies">
+    <span class="nav-icon">⊕</span> Companies
+  </div>
+  <div class="nav-item" data-page="network">
+    <span class="nav-icon">◎</span> Network
+  </div>
+
+  <div class="nav-section">Learning</div>
+  <div class="nav-item" data-page="briefings">
+    <span class="nav-icon">◉</span> Briefings
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-stat">
+      <span class="sidebar-stat-label">Weight</span>
+      <span class="sidebar-stat-value" id="sidebar-weight">176 lbs</span>
+    </div>
+    <div class="sidebar-stat" style="margin-top:6px">
+      <span class="sidebar-stat-label">Goal</span>
+      <span class="sidebar-stat-value">185 lbs</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════════ MAIN ══════════════════════════════════════ -->
+<main id="main">
+
+  <!-- ──────────────── TODAY ──────────────── -->
+  <section class="page active" id="page-today">
+
+    <!-- Welcome card -->
+    <div class="welcome-card">
+      <svg class="welcome-logo-big" width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="20" cy="20" rx="16" ry="6.2" stroke="white" stroke-width="1.7" fill="none" stroke-opacity="0.95"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6.2" stroke="#C9A84C" stroke-width="1.7" fill="none" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="16" ry="6.2" stroke="white" stroke-width="1.4" fill="none" stroke-opacity="0.32" transform="rotate(120 20 20)"/>
+        <circle cx="20" cy="20" r="3.8" fill="#C9A84C" fill-opacity="0.22"/>
+        <circle cx="20" cy="20" r="2.4" fill="#C9A84C"/>
+        <circle cx="20" cy="20" r="1.1" fill="white"/>
+      </svg>
+      <div class="welcome-right">
+        <div class="welcome-greeting" id="welcome-greeting">Good morning, Cole.</div>
+        <div class="welcome-date" id="welcome-date">Loading…</div>
+        <div class="welcome-theme" id="welcome-theme"></div>
+      </div>
+    </div>
+
+    <!-- Stat row -->
+    <div class="grid-4 mb20">
+      <div class="card stat-card">
+        <div class="stat-label">Habit Streak</div>
+        <div class="stat-value" id="stat-streak">0</div>
+        <div class="stat-sub">days</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Tasks Today</div>
+        <div class="stat-value" id="stat-tasks-today">—</div>
+        <div class="stat-sub">scheduled</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Next Workout</div>
+        <div class="stat-value" id="stat-workout" style="font-size:15px;margin-top:6px">—</div>
+        <div class="stat-sub" id="stat-workout-day">cycle day —</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Weight</div>
+        <div class="stat-value" id="stat-weight">176</div>
+        <div class="stat-sub">lbs · lean bulk</div>
+      </div>
+    </div>
+
+    <!-- Habits + Agenda -->
+    <div class="grid-2 mb20">
+      <div class="card">
+        <div class="row-sb mb16" style="align-items:center">
+          <div class="card-title" style="margin-bottom:0">Daily Habits</div>
+          <span class="badge badge-dim" id="habits-complete-badge">0/5</span>
+        </div>
+        <div id="habits-list"></div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-dim)">3.5 hrs/day through May 22 → 2.5 hrs/day after</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title" id="today-agenda-title">Today's Agenda</div>
+        <div id="today-agenda-tasks"></div>
+      </div>
+    </div>
+
+    <!-- Workout preview + Briefings -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title" id="today-workout-title">Today's Workout</div>
+        <div id="today-workout-preview"></div>
+        <div style="margin-top:14px">
+          <button class="btn btn-primary btn-sm" onclick="App.goToFitness()">Open Fitness Tracker →</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row-sb mb16" style="align-items:center">
+          <div class="card-title" style="margin-bottom:0">Latest Briefings</div>
+          <button class="btn btn-ghost btn-sm" onclick="App.navigate('briefings')">All →</button>
+        </div>
+        <div id="today-briefings"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────── TASKS ──────────────── -->
+  <section class="page" id="page-tasks">
+    <div class="page-header">
+      <div class="page-title">Tasks</div>
+      <div class="page-subtitle">Summer 2026 · Check-off + ongoing</div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" class="inp" id="task-search" placeholder="Search tasks…" oninput="App.renderTasks()">
+      <select class="inp" id="task-filter-category" onchange="App.renderTasks()">
+        <option value="">All Categories</option>
+        <option>Career</option>
+        <option>Academics</option>
+        <option>London Logistics</option>
+        <option>Senior Year Prep</option>
+        <option>Money & Admin</option>
+        <option>Extracurriculars</option>
+        <option>Learning</option>
+        <option>Fitness</option>
+        <option>Books</option>
+      </select>
+      <select class="inp" id="task-filter-status" onchange="App.renderTasks()">
+        <option value="">All Status</option>
+        <option>Not started</option>
+        <option>In progress</option>
+        <option>Completed</option>
+      </select>
+      <select class="inp" id="task-filter-priority" onchange="App.renderTasks()">
+        <option value="">All Priority</option>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+    </div>
+
+    <div class="card mb20">
+      <div class="card-title">Check-Off Tasks · Sorted by Deadline</div>
+      <div id="tasks-checklist"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Ongoing Tasks</div>
+      <div id="tasks-ongoing"></div>
+    </div>
+  </section>
+
+  <!-- ──────────────── FITNESS ──────────────── -->
+  <section class="page" id="page-fitness">
+    <div class="page-header">
+      <div class="page-title">Fitness</div>
+      <div class="page-subtitle">
+        Lean bulk · 176 lbs current → 185 lbs goal · 4-day rotation (Mon–Thu) + Friday run
+        <span id="friday-indicator" class="friday-badge" style="display:none">🏃 It's Friday — Run Day!</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid-4 mb20">
+      <div class="card stat-card">
+        <div class="stat-label">Current Weight</div>
+        <div class="stat-value" id="fitness-weight">176</div>
+        <div class="stat-sub">lbs</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Goal Weight</div>
+        <div class="stat-value">185</div>
+        <div class="stat-sub">+9 lbs lean</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Daily Calories</div>
+        <div class="stat-value">3,100</div>
+        <div class="stat-sub">target (surplus ~250)</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Daily Protein</div>
+        <div class="stat-value">176g</div>
+        <div class="stat-sub">1g / lb bodyweight</div>
+      </div>
+    </div>
+
+    <!-- Workout + Weight Log -->
+    <div class="grid-2 mb20">
+      <div class="card">
+        <div class="row-sb" style="margin-bottom:14px;align-items:center">
+          <div class="card-title" style="margin-bottom:0" id="current-workout-title">Loading…</div>
+          <div class="row gap4">
+            <button class="btn btn-ghost btn-sm" onclick="App.prevWorkout()">← Prev</button>
+            <button class="btn btn-ghost btn-sm" onclick="App.nextWorkout()">Next →</button>
+          </div>
+        </div>
+        <div class="wd-dots" id="workout-dots"></div>
+        <hr class="divider">
+        <div id="current-workout-exercises"></div>
+        <div style="margin-top:16px">
+          <button class="btn btn-primary" onclick="App.logWorkout()" id="log-workout-btn">Log Workout Complete ✓</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Weight Log</div>
+        <div class="row mb16">
+          <input type="number" class="inp" id="weight-input" placeholder="Enter weight (lbs)" step="0.5" style="flex:1">
+          <button class="btn btn-primary btn-sm" onclick="App.logWeight()">Log</button>
+        </div>
+        <canvas id="weight-chart" height="140"></canvas>
+        <hr class="divider">
+        <div class="card-title" style="margin-bottom:10px">Recent Entries</div>
+        <div id="weight-log-list"></div>
+      </div>
+    </div>
+
+    <!-- Nutrition -->
+    <div class="card mb20">
+      <div class="card-title">Lean Bulk Nutrition · 3,100 cal / 176g protein / day · ~+0.5 lb/week</div>
+      <div class="grid-2">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px">Daily Macro Targets</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+                <span style="color:var(--text-dim)">Protein</span>
+                <span style="color:var(--nd-navy);font-weight:600">176g · 704 cal</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:23%;background:var(--nd-navy)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+                <span style="color:var(--text-dim)">Carbohydrates</span>
+                <span style="color:var(--nd-gold);font-weight:600">365g · 1,460 cal</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:47%;background:var(--nd-gold)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+                <span style="color:var(--text-dim)">Fat</span>
+                <span style="color:var(--nd-gold-l);font-weight:600">104g · 936 cal</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--nd-gold-l)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+                <span style="color:var(--text-dim)">Water</span>
+                <span style="color:#2e8b57;font-weight:600">3.5+ liters / day</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:100%;background:#2e8b57"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:16px;padding:12px;background:var(--nd-gold-pale);border-radius:8px;border:1px solid var(--nd-gold);border-opacity:0.3">
+            <div style="font-size:11px;color:var(--text-dim);margin-bottom:4px">LEAN BULK RATE</div>
+            <div style="font-size:13px;color:var(--text-muted)">~250 cal surplus/day → <strong style="color:var(--text)">~0.5 lb/week gain</strong> at current activity. Adjust calories up/down based on weekly scale trends.</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px">Sample Meal Plan</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px">
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="min-width:100px;color:var(--text-dim);font-size:11px;padding-top:1px">🌅 Breakfast</span>
+              <div style="color:var(--text-muted)">4 eggs + 2 toast + Greek yogurt<br><span style="color:var(--text-dim);font-size:11px">~600 cal · 45g P</span></div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="min-width:100px;color:var(--text-dim);font-size:11px;padding-top:1px">⚡ Pre-workout</span>
+              <div style="color:var(--text-muted)">Banana + protein shake<br><span style="color:var(--text-dim);font-size:11px">~350 cal · 30g P</span></div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="min-width:100px;color:var(--text-dim);font-size:11px;padding-top:1px">☀️ Lunch</span>
+              <div style="color:var(--text-muted)">Chicken breast + rice + veggies<br><span style="color:var(--text-dim);font-size:11px">~700 cal · 50g P</span></div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="min-width:100px;color:var(--text-dim);font-size:11px;padding-top:1px">💪 Post-workout</span>
+              <div style="color:var(--text-muted)">Protein shake + fruit<br><span style="color:var(--text-dim);font-size:11px">~300 cal · 30g P</span></div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="min-width:100px;color:var(--text-dim);font-size:11px;padding-top:1px">🌙 Dinner</span>
+              <div style="color:var(--text-muted)">Salmon or beef + sweet potato + greens<br><span style="color:var(--text-dim);font-size:11px">~750 cal · 45g P</span></div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <span style="min-width:100px;color:var(--text-dim);font-size:11px;padding-top:1px">🥛 Evening snack</span>
+              <div style="color:var(--text-muted)">Cottage cheese or protein bar<br><span style="color:var(--text-dim);font-size:11px">~400 cal · 30g P</span></div>
+            </div>
+            <div style="margin-top:6px;padding:10px;border-top:1px solid var(--border);color:var(--text);font-weight:600;font-size:13px">Total ≈ 3,100 cal · ~230g protein</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Workout History -->
+    <div class="card">
+      <div class="card-title">Workout Log History</div>
+      <div id="workout-history"></div>
+    </div>
+  </section>
+
+  <!-- ──────────────── COMPANIES ──────────────── -->
+  <section class="page" id="page-companies">
+    <div class="page-header">
+      <div class="page-title">Internship Companies</div>
+      <div class="page-subtitle">100 ChemE-relevant companies · Start applying Aug–Nov for Summer 2027</div>
+    </div>
+
+    <div class="grid-4 mb20">
+      <div class="card stat-card">
+        <div class="stat-label">Total Companies</div>
+        <div class="stat-value">100</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Starred / Interested</div>
+        <div class="stat-value" id="co-interested">0</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Applied</div>
+        <div class="stat-value" id="co-applied">0</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Biotech Aligned</div>
+        <div class="stat-value">24</div>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" class="inp" id="co-search" placeholder="Search companies, roles, hubs…" oninput="App.renderCompanies()" style="flex:2">
+      <select class="inp" id="co-filter-industry" onchange="App.renderCompanies()">
+        <option value="">All Industries</option>
+        <option>Pharma / Biotech</option>
+        <option>Specialty Chemicals</option>
+        <option>Oil & Gas / Refining</option>
+        <option>CPG / Consumer</option>
+        <option>Food & Beverage</option>
+        <option>AgChem / Agriculture</option>
+        <option>Semiconductors / Materials</option>
+        <option>Energy / Battery</option>
+        <option>Nuclear</option>
+        <option>Climate Tech</option>
+        <option>Industrial / Aerospace</option>
+        <option>National Lab / Govt</option>
+      </select>
+      <select class="inp" id="co-filter-biotech" onchange="App.renderCompanies()">
+        <option value="">All Biotech</option>
+        <option value="Yes">Biotech: Yes</option>
+        <option value="Tangential">Biotech: Tangential</option>
+        <option value="No">Biotech: No</option>
+      </select>
+      <select class="inp" id="co-filter-status" onchange="App.renderCompanies()">
+        <option value="">All Status</option>
+        <option value="interested">⭐ Starred</option>
+        <option value="applied">✓ Applied</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:30px"></th>
+              <th>Company</th>
+              <th>Industry</th>
+              <th>Size</th>
+              <th>Typical Roles</th>
+              <th>Apply Window</th>
+              <th>US Hubs</th>
+              <th>Biotech</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="companies-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────── NETWORK ──────────────── -->
+  <section class="page" id="page-network">
+    <div class="page-header">
+      <div class="page-title">Networking Contacts</div>
+      <div class="page-subtitle">Track outreach, responses, and coffee chats</div>
+    </div>
+
+    <div class="grid-4 mb20">
+      <div class="card stat-card">
+        <div class="stat-label">Total Contacts</div>
+        <div class="stat-value" id="net-total">0</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Reached Out</div>
+        <div class="stat-value" id="net-reached">0</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Responded</div>
+        <div class="stat-value" id="net-responded">0</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Chatted</div>
+        <div class="stat-value" id="net-chatted">0</div>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" class="inp" id="net-search" placeholder="Search contacts…" oninput="App.renderContacts()">
+      <select class="inp" id="net-filter-industry" onchange="App.renderContacts()">
+        <option value="">All Industries</option>
+        <option>Pharma / Biotech</option>
+        <option>Specialty Chemicals</option>
+        <option>Oil & Gas / Refining</option>
+        <option>Tech</option>
+        <option>Finance</option>
+        <option>Consulting</option>
+        <option>National Lab / Govt</option>
+        <option>Other</option>
+      </select>
+      <button class="btn btn-primary" onclick="App.openAddContact()">+ Add Contact</button>
+    </div>
+
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Connection</th>
+              <th>University</th>
+              <th>Grad Year</th>
+              <th>Industry</th>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Reached Out</th>
+              <th>Responded</th>
+              <th>Chatted</th>
+              <th>Notes</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="contacts-tbody"></tbody>
+        </table>
+      </div>
+      <div id="contacts-empty" style="display:none">
+        <div class="empty-state">
+          <div class="empty-state-icon">◎</div>
+          <div class="empty-state-title">No contacts yet</div>
+          <div class="empty-state-sub">Add your first ND alum or industry contact to start tracking your network</div>
+          <button class="btn btn-primary" style="margin-top:16px" onclick="App.openAddContact()">+ Add First Contact</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────── BRIEFINGS ──────────────── -->
+  <section class="page" id="page-briefings">
+    <div class="page-header">
+      <div class="page-title">Daily Briefings</div>
+      <div class="page-subtitle">Politics · Tech · Chemical Engineering · Markets · Science · World</div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" class="inp" id="brief-search" placeholder="Search briefings…" oninput="App.renderBriefings()">
+      <select class="inp" id="brief-filter-cat" onchange="App.renderBriefings()">
+        <option value="">All Categories</option>
+        <option>Politics</option>
+        <option>Tech</option>
+        <option>Chemical Engineering</option>
+        <option>Markets</option>
+        <option>Science</option>
+        <option>World</option>
+      </select>
+      <button class="btn btn-primary" onclick="App.openAddBriefing()">+ Add Briefing</button>
+    </div>
+
+    <div class="card">
+      <div id="briefings-list"></div>
+    </div>
+  </section>
+
+</main><!-- end #main -->
+
+<!-- ══════════════════════════ MODALS ════════════════════════════════════════ -->
+
+<!-- Add / Edit Contact -->
+<div class="modal-overlay" id="modal-contact">
+  <div class="modal">
+    <div class="modal-title" id="modal-contact-title">Add Networking Contact</div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Name *</label>
+        <input type="text" class="inp" id="nc-name" placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Connection Type</label>
+        <input type="text" class="inp" id="nc-connection" placeholder="ND Alum, Stamps, LinkedIn…">
+      </div>
+      <div class="form-group">
+        <label class="form-label">University</label>
+        <input type="text" class="inp" id="nc-university" placeholder="e.g. Notre Dame">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Grad Year</label>
+        <input type="text" class="inp" id="nc-gradyear" placeholder="e.g. 2022">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Industry</label>
+        <input type="text" class="inp" id="nc-industry" placeholder="e.g. Pharma / Biotech">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Company</label>
+        <input type="text" class="inp" id="nc-company" placeholder="e.g. Eli Lilly">
+      </div>
+      <div class="form-group" style="grid-column:span 2">
+        <label class="form-label">Contact (email or LinkedIn)</label>
+        <input type="text" class="inp" id="nc-contact" placeholder="email@company.com or linkedin.com/in/…">
+      </div>
+    </div>
+    <div style="display:flex;gap:20px;margin-bottom:14px;flex-wrap:wrap">
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);cursor:pointer">
+        <input type="checkbox" id="nc-ro"> Reached out
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);cursor:pointer">
+        <input type="checkbox" id="nc-resp"> Responded
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);cursor:pointer">
+        <input type="checkbox" id="nc-chat"> Chatted / coffee chat done
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Notes</label>
+      <input type="text" class="inp" id="nc-notes" placeholder="e.g. Met at ND career fair, interested in process eng…">
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-contact')">Cancel</button>
+      <button class="btn btn-primary" onclick="App.saveContact()">Save Contact</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Briefing -->
+<div class="modal-overlay" id="modal-briefing">
+  <div class="modal">
+    <div class="modal-title">Add Daily Briefing</div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Date</label>
+        <input type="date" class="inp" id="br-date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Category</label>
+        <select class="inp" id="br-category">
+          <option>Politics</option>
+          <option>Tech</option>
+          <option>Chemical Engineering</option>
+          <option>Markets</option>
+          <option>Science</option>
+          <option>World</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Headline *</label>
+      <input type="text" class="inp" id="br-headline" placeholder="Article headline">
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Source</label>
+        <input type="text" class="inp" id="br-source" placeholder="Reuters, WSJ, Chemical Engineering…">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Link</label>
+        <input type="url" class="inp" id="br-link" placeholder="https://…">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Why It Matters</label>
+      <textarea class="inp" id="br-why" rows="3" placeholder="Why is this relevant to you?"></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-briefing')">Cancel</button>
+      <button class="btn btn-primary" onclick="App.saveBriefing()">Save Briefing</button>
+    </div>
+  </div>
+</div>
+
+<!-- Company Notes -->
+<div class="modal-overlay" id="modal-company">
+  <div class="modal">
+    <div class="modal-title" id="modal-company-title">Company Notes</div>
+    <div class="form-group">
+      <label class="form-label">From Research</label>
+      <textarea class="inp" id="company-notes-input" rows="5" placeholder="Notes about this company…"></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-company')">Cancel</button>
+      <button class="btn btn-primary" onclick="App.saveCompanyNotes()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="daily_briefings.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+  }
+</script>
+</body>
+</html>
