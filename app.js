@@ -40,23 +40,7 @@ function getYesterday() {
   return d.toISOString().slice(0,10);
 }
 
-// Called once at startup: carry any unchecked items from yesterday into today's rollover list.
-function computeRollovers() {
-  const yesterday = getYesterday();
-  const rollovers  = LS.get('agendaRollovers') || {};
-  if (rollovers[isoToday] !== undefined) return; // already computed today
-
-  const scheduled  = WEEKLY_AGENDA[yesterday]?.tasks || [];
-  const rolled     = rollovers[yesterday] || [];
-  const allYest    = [...rolled, ...scheduled];
-  const doneSet    = new Set((LS.get('agendaChecks') || {})[yesterday] || []);
-
-  rollovers[isoToday] = allYest
-    .filter(t => !doneSet.has(t.task))
-    .map(t => ({ ...t, rolledFrom: t.rolledFrom || yesterday }));
-
-  LS.set('agendaRollovers', rollovers);
-}
+function computeRollovers() { /* no-op — agenda now driven by task list */ }
 
 // Called once per day: archive completed check-offs and reset completed ongoing tasks.
 function computeTaskResets() {
@@ -87,11 +71,23 @@ function computeTaskResets() {
   LS.set('taskResetDate', isoToday);
 }
 
+// Parse any deadline string to a sortable YYYY-MM-DD
+function parseDateStr(d) {
+  if (!d || d === 'Ongoing') return '9999-12-31';
+  if (/^\d{4}-\d{2}/.test(String(d))) return String(d);
+  const mp = {Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
+  const pts = String(d).trim().split(/\s+/);
+  if (pts.length >= 2 && mp[pts[0]]) return `2026-${mp[pts[0]]}-${String(pts[1]).padStart(2,'0')}`;
+  return '9999-12-31';
+}
+
+// Today's agenda: all check-off tasks sorted by deadline.
+// Completed tasks only appear if completed today.
 function getTodaysAgendaItems() {
-  const rollovers = LS.get('agendaRollovers') || {};
-  const rolled    = (rollovers[isoToday] || []).map(t => ({ ...t, isRollover: true }));
-  const scheduled = (WEEKLY_AGENDA[isoToday]?.tasks || []).map(t => ({ ...t, isRollover: false }));
-  return [...rolled, ...scheduled];
+  const tasks = LS.get('tasks') || [];
+  return tasks
+    .filter(t => t.when !== 'Ongoing' && (t.status !== 'Completed' || t.completedOn === isoToday))
+    .sort((a, b) => parseDateStr(a.deadline).localeCompare(parseDateStr(b.deadline)));
 }
 
 function fmtDate(d) {
@@ -241,11 +237,10 @@ const App = {
     if (wg) wg.textContent = `${greet}, Cole.`;
     if (wd) wd.textContent = fd.full;
 
-    const agenda = WEEKLY_AGENDA[isoToday];
-    if (wt) wt.textContent = agenda ? `📌 Today: ${agenda.theme}` : isFri ? '🏃 Friday — run day' : '📋 No scheduled theme today';
+    if (wt) wt.textContent = isFri ? '🏃 Friday — run day' : '📋 Tasks sorted by deadline';
 
     // Stats
-    const todayTasks = (WEEKLY_AGENDA[isoToday]?.tasks || []).length;
+    const todayTasks = (LS.get('tasks') || []).filter(t => t.when !== 'Ongoing' && t.status !== 'Completed').length;
     const habits = LS.get('habits')[isoToday] || {};
     const habitsForToday = getHabitsForDate(isoToday);
     const doneCt = habitsForToday.filter(h => habits[h.id] === 'done').length;
@@ -268,30 +263,29 @@ const App = {
     // Agenda tasks
     const agEl    = $('today-agenda-tasks');
     const agTitle = $('today-agenda-title');
-    if (agTitle) agTitle.textContent = agenda ? `Today's Agenda · ${agenda.theme}` : "Today's Agenda";
+    if (agTitle) agTitle.textContent = "Today's Agenda";
 
-    const agItems  = getTodaysAgendaItems();
-    const doneSet  = new Set((LS.get('agendaChecks') || {})[isoToday] || []);
+    const agItems = getTodaysAgendaItems();
 
     if (agItems.length) {
       agEl.innerHTML = agItems.map(t => {
-        const done    = doneSet.has(t.task);
-        const escaped = t.task.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
-        const rollBadge = t.isRollover
-          ? `<span class="badge-rollover">↩ ${fmtDate(t.rolledFrom).short}</span>`
-          : '';
+        const done   = t.status === 'Completed';
+        const isOver = !done && parseDateStr(t.deadline) < isoToday;
         return `
-        <div class="agenda-item ${done ? 'completed-row' : ''}" data-task="${escaped}" onclick="App.toggleAgendaCheck(this.dataset.task)">
+        <div class="agenda-item ${done ? 'completed-row' : ''}" onclick="App.toggleTask(${t.id})">
           <div class="agenda-check ${done ? 'checked' : ''}">${done ? '✓' : ''}</div>
           <div style="flex:1">
-            <div class="agenda-task">${t.task}${rollBadge}</div>
-            <div class="agenda-meta"><span class="${catColor(t.category)}">${t.category}</span> · ${t.deadline}</div>
+            <div class="agenda-task">${t.task}</div>
+            <div class="agenda-meta">
+              <span class="${catColor(t.category)}">${t.category}</span>
+              <span style="${isOver ? 'color:var(--red);font-weight:600' : ''}">· ${t.deadline}</span>
+              ${t.priority ? `<span class="pri-${t.priority.toLowerCase()}">· ${t.priority}</span>` : ''}
+            </div>
           </div>
-          <div class="agenda-hrs">${t.hours}h</div>
         </div>`;
       }).join('');
     } else {
-      agEl.innerHTML = `<div style="color:var(--text-dim);font-size:13px;padding:20px 0;text-align:center">No agenda for today</div>`;
+      agEl.innerHTML = `<div style="color:var(--text-dim);font-size:13px;padding:20px 0;text-align:center">No tasks with deadlines — add some in Tasks</div>`;
     }
 
     // Workout preview
@@ -949,7 +943,7 @@ const App = {
     const doneHabits     = habitsForToday.filter(h => todayHabits[h.id] === 'done');
     const skippedHabits  = habitsForToday.filter(h => todayHabits[h.id] === 'skip');
 
-    const checkedAgenda  = (LS.get('agendaChecks') || {})[isoToday] || [];
+    const checkedAgenda  = []; // agenda now unified with task list
     const completedTasks = (LS.get('tasks') || []).filter(t => t.status === 'Completed' && t.completedOn === isoToday);
 
     const workoutToday   = (LS.get('workoutLog') || []).filter(w => w.date === isoToday);
