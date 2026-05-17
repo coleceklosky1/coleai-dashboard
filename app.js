@@ -950,13 +950,15 @@ const App = {
     const skippedHabits  = habitsForToday.filter(h => todayHabits[h.id] === 'skip');
 
     const checkedAgenda  = (LS.get('agendaChecks') || {})[isoToday] || [];
+    const completedTasks = (LS.get('tasks') || []).filter(t => t.status === 'Completed' && t.completedOn === isoToday);
 
     const workoutToday   = (LS.get('workoutLog') || []).filter(w => w.date === isoToday);
 
     const weightToday    = (LS.get('weightLog') || []).filter(w => w.date === isoToday);
     const lastWeight     = weightToday.length ? weightToday[weightToday.length - 1].weight : null;
 
-    const total = doneHabits.length + checkedAgenda.length + workoutToday.length + (lastWeight ? 1 : 0);
+    const totalChecked = checkedAgenda.length + completedTasks.length;
+    const total = doneHabits.length + totalChecked + workoutToday.length + (lastWeight ? 1 : 0);
 
     // ── Banner message ──
     const messages = [
@@ -979,7 +981,7 @@ const App = {
           <div class="accomp-score-label">Habits</div>
         </div>
         <div class="accomp-score-item">
-          <div class="accomp-score-num">${checkedAgenda.length}</div>
+          <div class="accomp-score-num">${totalChecked}</div>
           <div class="accomp-score-label">Tasks done</div>
         </div>
         <div class="accomp-score-item">
@@ -1008,12 +1010,15 @@ const App = {
     // ── Agenda ──
     const aEl = $('accomp-agenda');
     if (aEl) {
-      if (!checkedAgenda.length) {
+      if (!checkedAgenda.length && !completedTasks.length) {
         aEl.innerHTML = `<div class="accomp-empty">No tasks checked off yet</div>`;
       } else {
-        aEl.innerHTML = checkedAgenda.map(t =>
-          `<div class="accomp-item"><span class="accomp-check">✓</span><span>${t}</span></div>`
-        ).join('');
+        aEl.innerHTML = [
+          ...checkedAgenda.map(t =>
+            `<div class="accomp-item"><span class="accomp-check">✓</span><span>${t}</span></div>`),
+          ...completedTasks.map(t =>
+            `<div class="accomp-item"><span class="accomp-check">✓</span><span>${t.task}<span style="color:var(--text-dim);font-size:11px;margin-left:6px">${t.category}</span></span></div>`),
+        ].join('');
       }
     }
 
