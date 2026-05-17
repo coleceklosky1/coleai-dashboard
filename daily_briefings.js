@@ -6,42 +6,40 @@
     "id": "auto-2026-05-17-1",
     "date": "2026-05-17",
     "category": "Politics",
-    "headline": "U.S. and Nigerian mission kills Islamic State group leader, Trump says",
-    "source": "PBS NewsHour / Associated Press",
-    "link": "https://www.pbs.org/newshour/politics",
-    "whyItMatters": "Major US foreign-policy and counterterrorism developments in West Africa can shape sanctions, energy supply chains, and global oil markets — all factors that influence hiring and project decisions at the energy and chemical firms a ChemE student might target."
+    "headline": "5 Big News Stories Overnight - Sunday, May 17, 2026",
+    "source": "GoLocalProv",
+    "link": "https://www.golocalprov.com/news/5-big-news-stories-overnight-sunday-may-17-2026",
+    "whyItMatters": "Sen. Bill Cassidy's primary defeat in Louisiana — where Trump-endorsed Julia Letlow and John Fleming advance to a June runoff — signals Trump's tightening grip on the GOP, with implications for energy and chemical industry policy in a key Gulf Coast petrochemical state where Cole may seek industry work."
   },
   {
     "id": "auto-2026-05-17-2",
     "date": "2026-05-17",
     "category": "Chemical Engineering",
-    "headline": "Business Watch: Massive complex planned for Abu Dhabi; Angelini to buy Catalyst for $4.1 billion",
-    "source": "Chemical & Engineering News (C&EN)",
-    "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "Mega-complex investments in the Gulf and major specialty-chemical M&A signal where capital — and ChemE jobs in process design, scale-up, and operations — are flowing in 2026. Tracking these moves helps Cole identify which companies are hiring and growing."
+    "headline": "Chemical Engineering Business News: May 2026",
+    "source": "Chemical Engineering",
+    "link": "https://www.chemengonline.com/chemical-engineering-business-news-may-2026/",
+    "whyItMatters": "This roundup highlights major industry moves — Nouryon expanding colloidal silica capacity in China, Linde building a new air separation unit in North Carolina, and a $2.2-billion TotalEnergies–Masdar renewables JV — all of which point to where ChemE hiring and capital projects are heading in process engineering and energy."
   },
   {
     "id": "auto-2026-05-17-3",
     "date": "2026-05-17",
     "category": "Tech",
-    "headline": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
+    "headline": "This low-profile stock in the semiconductor supply chain has doubled this year. Wall Street still loves it",
     "source": "CNBC",
-    "link": "https://www.cnbc.com/2026/05/08/wall-street-ai-chip-love-moves-from-nvidia-to-intel-amd-and-micron.html",
-    "whyItMatters": "The AI buildout is reshaping semiconductor manufacturing — including new US fabs and Corning's three optical-tech factories tied to Nvidia — creating high demand for ChemEs in materials, thin films, gases, and process engineering for chip production."
+    "link": "https://www.cnbc.com/2026/05/13/this-semiconductor-supply-chain-stock-has-doubled-wall-street-still-loves-it.html",
+    "whyItMatters": "Qnity Electronics supplies materials to semiconductor manufacturers and is being called the 'hidden engine of AI' as advanced packaging and thermal management demand surges — a reminder that ChemEs in materials and process roles are central to the AI hardware boom, opening industry career paths beyond traditional petrochem."
   }
 ];
 
   document.addEventListener('DOMContentLoaded', function () {
     var raw = localStorage.getItem('briefings');
     var existing = raw ? JSON.parse(raw) : [];
-    var existingIds = new Set(existing.map(function (b) { return b.id; }));
-    var toAdd = todayBriefings.filter(function (b) { return !existingIds.has(b.id); });
-    if (toAdd.length > 0) {
-      localStorage.setItem('briefings', JSON.stringify(existing.concat(toAdd)));
-      if (typeof App !== 'undefined') {
-        App.renderBriefings();
-        App.renderToday();
-      }
+    // Always replace today's briefings so re-runs pick up corrections
+    var filtered = existing.filter(function (b) { return b.date !== '2026-05-17'; });
+    localStorage.setItem('briefings', JSON.stringify(filtered.concat(todayBriefings)));
+    if (typeof App !== 'undefined') {
+      App.renderBriefings();
+      App.renderToday();
     }
   });
 })();
