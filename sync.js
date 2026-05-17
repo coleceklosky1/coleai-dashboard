@@ -10,23 +10,55 @@ const Sync = {
   init() {
     this._token  = localStorage.getItem('_sync_token')  || null;
     this._gistId = localStorage.getItem('_sync_gist_id') || null;
-    if (this._token) {
-      const dirty = localStorage.getItem('_sync_dirty');
-      const start = () => {
-        if (typeof App !== 'undefined') {
-          const active = document.querySelector('.page.active');
-          if (active) App.renderPage(active.id.replace('page-',''));
-        }
-        this._startPolling();
-      };
-      if (dirty) {
-        // Local data is newer than Gist — push first, then pull
-        this._push().then(() => this.pull().then(start));
-      } else {
-        this.pull().then(start);
+    if (!this._token) { this._updateIndicator(); return; }
+
+    const start = () => {
+      if (typeof App !== 'undefined') {
+        const active = document.querySelector('.page.active');
+        if (active) App.renderPage(active.id.replace('page-',''));
       }
+      this._startPolling();
+    };
+
+    const dirty = localStorage.getItem('_sync_dirty');
+
+    if (!this._gistId) {
+      // No gist ID stored — find the existing one first
+      this._findGist().then(id => {
+        if (id) {
+          this._gistId = id;
+          localStorage.setItem('_sync_gist_id', id);
+          if (dirty) {
+            this._push().then(() => this.pull().then(start));
+          } else {
+            this.pull().then(start);
+          }
+        } else {
+          // No gist exists yet — push to create one
+          this._push().then(start);
+        }
+      });
+    } else if (dirty) {
+      // Local data is newer — push first, then pull
+      this._push().then(() => this.pull().then(start));
+    } else {
+      this.pull().then(start);
     }
+
     this._updateIndicator();
+  },
+
+  // Search GitHub for an existing coleai-state.json gist
+  async _findGist() {
+    try {
+      const res = await fetch('https://api.github.com/gists?per_page=100', {
+        headers: { Authorization: `token ${this._token}`, Accept: 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      const gists = await res.json();
+      const found = gists.find(g => g.files && g.files['coleai-state.json']);
+      return found ? found.id : null;
+    } catch(e) { return null; }
   },
 
   async pull() {
@@ -48,9 +80,9 @@ const Sync = {
 
   schedulePush() {
     if (!this._token) return;
-    localStorage.setItem('_sync_dirty', '1'); // Mark dirty immediately so reopen pushes first
+    localStorage.setItem('_sync_dirty', '1');
     clearTimeout(this._pushTimer);
-    this._pushTimer = setTimeout(() => this._push(), 500); // Reduced from 1800ms
+    this._pushTimer = setTimeout(() => this._push(), 500);
   },
 
   async _push() {
@@ -80,7 +112,7 @@ const Sync = {
           body: JSON.stringify({ files })
         });
       }
-      localStorage.removeItem('_sync_dirty'); // Clear dirty flag — push succeeded
+      localStorage.removeItem('_sync_dirty');
       this._updateIndicator('synced');
     } catch(e) {
       console.warn('[Sync] push failed', e);
@@ -99,13 +131,20 @@ const Sync = {
     }, 60000);
   },
 
-  // Called from settings modal to connect
   async connect(token) {
-    this._token  = token;
-    this._gistId = null;
+    this._token = token;
     localStorage.setItem('_sync_token', token);
-    localStorage.removeItem('_sync_gist_id');
-    await this._push();
+    // Find existing coleai gist so all devices share the same one
+    const existingId = await this._findGist();
+    if (existingId) {
+      this._gistId = existingId;
+      localStorage.setItem('_sync_gist_id', existingId);
+      await this.pull();
+    } else {
+      this._gistId = null;
+      localStorage.removeItem('_sync_gist_id');
+      await this._push();
+    }
     this._startPolling();
     this._updateIndicator('synced');
   },
