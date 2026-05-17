@@ -8,8 +8,8 @@
     "category": "Politics",
     "headline": "U.S. and Nigerian mission kills Islamic State group leader, Trump says",
     "source": "PBS NewsHour / Associated Press",
-    "link": "https://www.pbs.org/newshour/politics/u-s-and-nigerian-mission-kills-islamic-state-group-leader-trump-says",
-    "whyItMatters": "A joint U.S.-Nigeria counterterrorism operation in Africa signals deepening U.S. military engagement on the continent, which can ripple through African energy and commodity markets — relevant for any ChemE eyeing global oil, gas, or mining-linked industry roles."
+    "link": "https://www.pbs.org/newshour/",
+    "whyItMatters": "Counterterrorism operations in West Africa can ripple through global energy and commodity markets — regions where chemical and oil & gas firms operate. For a ChemE eyeing industry careers, geopolitical stability directly shapes supply chains and project siting decisions."
   },
   {
     "id": "auto-2026-05-17-2",
@@ -17,17 +17,17 @@
     "category": "Chemical Engineering",
     "headline": "Business Watch: Massive complex planned for Abu Dhabi; Angelini to buy Catalyst for $4.1 billion",
     "source": "Chemical & Engineering News (C&EN)",
-    "link": "https://cen.acs.org/business/Business-Watch-Massive-complex-planned/104/web/2026/05",
-    "whyItMatters": "Mega-scale petrochemical buildouts in the Gulf and multi-billion-dollar specialty/biotech M&A directly shape where chemical and process engineers will be hired over the next decade — useful intel for picking internships and full-time roles across energy, pharma, and specialty chemicals."
+    "link": "https://cen.acs.org/index.html",
+    "whyItMatters": "Multi-billion-dollar capacity expansions and M&A in specialty chemicals and pharma signal where new process engineering and plant-design jobs will appear. These are exactly the deals that drive hiring at companies recruiting Notre Dame ChemEs."
   },
   {
     "id": "auto-2026-05-17-3",
     "date": "2026-05-17",
     "category": "Tech",
-    "headline": "Qualcomm drops 11% as chip stocks pull back from record AI-driven rally",
+    "headline": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
     "source": "CNBC",
-    "link": "https://www.cnbc.com/2026/05/12/qualcomm-chip-stocks-record-ai.html",
-    "whyItMatters": "The semiconductor selloff after a historic AI rally matters for ChemEs because chip fabs are massive consumers of ultra-pure chemicals, gases, and water — the boom-bust cycle in chips directly drives hiring at industrial gas suppliers (Linde, Air Products) and specialty materials firms."
+    "link": "https://www.cnbc.com/2026/05/08/wall-street-ai-chip-love-moves-from-nvidia-to-intel-amd-and-micron.html",
+    "whyItMatters": "The AI chip boom is driving massive new U.S. fab and materials investment — including Corning's three new Nvidia-dedicated optical factories — creating process engineering roles for ChemEs in semiconductor materials, ultrapure chemicals, and advanced packaging."
   }
 ];
 
