@@ -81,13 +81,35 @@ function parseDateStr(d) {
   return '9999-12-31';
 }
 
-// Today's agenda: all check-off tasks sorted by deadline.
-// Completed tasks only appear if completed today.
+// Today's agenda: pick ~5h of tasks based on deadline urgency, priority, and effort.
+// Tasks completed today are always shown. Defaults to 1h if effort is missing.
 function getTodaysAgendaItems() {
-  const tasks = LS.get('tasks') || [];
-  return tasks
-    .filter(t => t.when !== 'Ongoing' && (t.status !== 'Completed' || t.completedOn === isoToday))
-    .sort((a, b) => parseDateStr(a.deadline).localeCompare(parseDateStr(b.deadline)));
+  const tasks    = LS.get('tasks') || [];
+  const TARGET   = 5;
+  const effortOf = t => (t.effort != null && t.effort > 0) ? t.effort : 1;
+
+  const completedToday = tasks.filter(t => t.when !== 'Ongoing' && t.status === 'Completed' && t.completedOn === isoToday);
+  const candidates     = tasks.filter(t => t.when !== 'Ongoing' && t.status !== 'Completed');
+
+  const priRank = {'High':0,'Medium':1,'Low':2};
+  candidates.sort((a, b) => {
+    const aDl = parseDateStr(a.deadline), bDl = parseDateStr(b.deadline);
+    const aOver = aDl < isoToday,         bOver = bDl < isoToday;
+    if (aOver !== bOver) return aOver ? -1 : 1;
+    const pDiff = (priRank[a.priority]??1) - (priRank[b.priority]??1);
+    if (pDiff !== 0) return pDiff;
+    return aDl.localeCompare(bDl);
+  });
+
+  const selected = [];
+  let hours = completedToday.reduce((s, t) => s + effortOf(t), 0);
+  for (const t of candidates) {
+    if (hours >= TARGET) break;
+    selected.push(t);
+    hours += effortOf(t);
+  }
+
+  return [...completedToday, ...selected];
 }
 
 function fmtDate(d) {
@@ -268,6 +290,9 @@ const App = {
     const agItems = getTodaysAgendaItems();
 
     if (agItems.length) {
+      const effortOf = t => (t.effort != null && t.effort > 0) ? t.effort : 1;
+      const totalH = agItems.reduce((s, t) => s + effortOf(t), 0);
+      if (agTitle) agTitle.textContent = `Today's Agenda · ${totalH % 1 === 0 ? totalH : totalH.toFixed(1)}h`;
       agEl.innerHTML = agItems.map(t => {
         const done   = t.status === 'Completed';
         const isOver = !done && parseDateStr(t.deadline) < isoToday;
@@ -282,6 +307,7 @@ const App = {
               ${t.priority ? `<span class="pri-${t.priority.toLowerCase()}">· ${t.priority}</span>` : ''}
             </div>
           </div>
+          <div class="agenda-hrs">${effortOf(t)}h</div>
         </div>`;
       }).join('');
     } else {
