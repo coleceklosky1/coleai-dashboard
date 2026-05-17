@@ -6,19 +6,19 @@
     "id": "auto-2026-05-17-1",
     "date": "2026-05-17",
     "category": "Politics",
-    "headline": "5 Big News Stories Overnight - Sunday, May 17, 2026",
-    "source": "GoLocalProv",
-    "link": "https://www.golocalprov.com/news/5-big-news-stories-overnight-sunday-may-17-2026",
-    "whyItMatters": "Sen. Bill Cassidy's primary defeat in Louisiana — where Trump-endorsed Julia Letlow and John Fleming advance to a June runoff — signals Trump's tightening grip on the GOP, with implications for energy and chemical industry policy in a key Gulf Coast petrochemical state where Cole may seek industry work."
+    "headline": "U.S. and Nigerian mission kills Islamic State group leader, Trump says",
+    "source": "PBS NewsHour / Associated Press",
+    "link": "https://www.pbs.org/newshour/",
+    "whyItMatters": "Major US counterterrorism operations abroad influence defense spending, energy security in West Africa (a key oil-producing region), and overall geopolitical risk — all factors that ripple into the energy and chemicals industries where many ChemE grads build careers."
   },
   {
     "id": "auto-2026-05-17-2",
     "date": "2026-05-17",
     "category": "Chemical Engineering",
-    "headline": "Chemical Engineering Business News: May 2026",
-    "source": "Chemical Engineering",
-    "link": "https://www.chemengonline.com/chemical-engineering-business-news-may-2026/",
-    "whyItMatters": "This roundup highlights major industry moves — Nouryon expanding colloidal silica capacity in China, Linde building a new air separation unit in North Carolina, and a $2.2-billion TotalEnergies–Masdar renewables JV — all of which point to where ChemE hiring and capital projects are heading in process engineering and energy."
+    "headline": "Business Watch: Massive complex planned for Abu Dhabi; Angelini to buy Catalyst for $4.1 billion",
+    "source": "Chemical & Engineering News",
+    "link": "https://cen.acs.org/index.html",
+    "whyItMatters": "Large new petrochemical complexes in the Gulf and major pharma/specialty chemical M&A signal where capital — and entry-level process engineering jobs — are flowing. As a ChemE junior targeting industry, tracking capacity expansions and acquisitions helps Cole map internship and full-time recruiting pipelines."
   },
   {
     "id": "auto-2026-05-17-3",
@@ -27,7 +27,7 @@
     "headline": "This low-profile stock in the semiconductor supply chain has doubled this year. Wall Street still loves it",
     "source": "CNBC",
     "link": "https://www.cnbc.com/2026/05/13/this-semiconductor-supply-chain-stock-has-doubled-wall-street-still-loves-it.html",
-    "whyItMatters": "Qnity Electronics supplies materials to semiconductor manufacturers and is being called the 'hidden engine of AI' as advanced packaging and thermal management demand surges — a reminder that ChemEs in materials and process roles are central to the AI hardware boom, opening industry career paths beyond traditional petrochem."
+    "whyItMatters": "Qnity Electronics makes the specialty materials and chemistries that enable advanced chip packaging and AI hardware — a reminder that the semiconductor boom runs on chemical engineering. This is exactly the kind of materials/process role where ChemEs are increasingly in demand alongside traditional energy employers."
   }
 ];
 
