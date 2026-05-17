@@ -108,9 +108,14 @@ function fmtDate(d) {
 function isFriday() { return new Date().getDay() === 5; }
 
 // Returns {wo, woIdx, isFri} for today
+// Rotation is date-anchored: May 16 2026 = index 0 (Shoulders/Back), counts forward each day.
+// Friday always = Run regardless of rotation.
 function getTodaysWorkout() {
   if (isFriday()) return { wo: WORKOUT_ROTATION[4], woIdx: 4, isFri: true };
-  const idx = (LS.get('workoutIdx') || 0) % 4;
+  const ANCHOR = new Date('2026-05-16T12:00:00');
+  const today  = new Date(isoToday + 'T12:00:00');
+  const days   = Math.round((today - ANCHOR) / 86400000);
+  const idx    = ((days % 4) + 4) % 4;
   return { wo: WORKOUT_ROTATION[idx], woIdx: idx, isFri: false };
 }
 
@@ -564,10 +569,6 @@ const App = {
     log.push({ date: isoToday, workout: wo.name, icon: wo.icon, isFriday: isFri });
     LS.set('workoutLog', log);
 
-    // Only advance the rotation index on non-Friday days
-    if (!isFri) {
-      LS.set('workoutIdx', (LS.get('workoutIdx') || 0) + 1);
-    }
     // Clear done state for logged workout
     const done = LS.get('exerciseDone') || {};
     delete done[String(displayIdx)];
