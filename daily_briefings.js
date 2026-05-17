@@ -7,39 +7,37 @@
     "date": "2026-05-17",
     "category": "Politics",
     "headline": "U.S. and Nigerian mission kills Islamic State group leader, Trump says",
-    "source": "PBS NewsHour / Associated Press",
+    "source": "PBS NewsHour (Associated Press)",
     "link": "https://www.pbs.org/newshour/",
-    "whyItMatters": "Major US counterterrorism operations abroad influence defense spending, energy security in West Africa (a key oil-producing region), and overall geopolitical risk — all factors that ripple into the energy and chemicals industries where many ChemE grads build careers."
+    "whyItMatters": "Major joint counterterrorism operations affect global stability, oil and energy markets in West Africa, and U.S. foreign policy posture — all factors that ripple through the energy and chemicals industries where Cole is targeting his career."
   },
   {
     "id": "auto-2026-05-17-2",
     "date": "2026-05-17",
     "category": "Chemical Engineering",
     "headline": "Business Watch: Massive complex planned for Abu Dhabi; Angelini to buy Catalyst for $4.1 billion",
-    "source": "Chemical & Engineering News",
+    "source": "Chemical & Engineering News (C&EN)",
     "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "Large new petrochemical complexes in the Gulf and major pharma/specialty chemical M&A signal where capital — and entry-level process engineering jobs — are flowing. As a ChemE junior targeting industry, tracking capacity expansions and acquisitions helps Cole map internship and full-time recruiting pipelines."
+    "whyItMatters": "Multi-billion-dollar petrochemical complex announcements and specialty chemical M&A reshape where ChemE jobs are created globally. Tracking capital flows like the Abu Dhabi build-out and Angelini-Catalyst deal helps Cole identify which companies and regions are actively hiring process engineers."
   },
   {
     "id": "auto-2026-05-17-3",
     "date": "2026-05-17",
     "category": "Tech",
-    "headline": "This low-profile stock in the semiconductor supply chain has doubled this year. Wall Street still loves it",
+    "headline": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
     "source": "CNBC",
-    "link": "https://www.cnbc.com/2026/05/13/this-semiconductor-supply-chain-stock-has-doubled-wall-street-still-loves-it.html",
-    "whyItMatters": "Qnity Electronics makes the specialty materials and chemistries that enable advanced chip packaging and AI hardware — a reminder that the semiconductor boom runs on chemical engineering. This is exactly the kind of materials/process role where ChemEs are increasingly in demand alongside traditional energy employers."
+    "link": "https://www.cnbc.com/2026/05/08/wall-street-ai-chip-love-moves-from-nvidia-to-intel-amd-and-micron.html",
+    "whyItMatters": "Intel's deal to manufacture Apple processors and Corning's three new U.S. optical-tech factories for Nvidia signal a domestic semiconductor manufacturing boom — creating high-value process engineering, materials, and fab roles directly relevant to a ChemE looking at industry careers in tech-adjacent manufacturing."
   }
 ];
-
-  document.addEventListener('DOMContentLoaded', function () {
+  try {
     var raw = localStorage.getItem('briefings');
     var existing = raw ? JSON.parse(raw) : [];
-    // Always replace today's briefings so re-runs pick up corrections
     var filtered = existing.filter(function (b) { return b.date !== '2026-05-17'; });
     localStorage.setItem('briefings', JSON.stringify(filtered.concat(todayBriefings)));
-    if (typeof App !== 'undefined') {
+    if (typeof App !== 'undefined' && App.renderBriefings) {
       App.renderBriefings();
       App.renderToday();
     }
-  });
+  } catch(e) {}
 })();
