@@ -32,6 +32,7 @@
     </svg>
     <span>Cole<em>.ai</em></span>
   </div>
+  <div id="sync-dot" onclick="openModal('modal-sync');App._updateSyncModal()" title="Sync off"></div>
 </header>
 
 <!-- ══════════════════════════ SLIDE-IN DRAWER (mobile) ══════════════════════ -->
@@ -141,6 +142,12 @@
     <div class="sidebar-stat" style="margin-top:6px">
       <span class="sidebar-stat-label">Goal</span>
       <span class="sidebar-stat-value">185 lbs</span>
+    </div>
+    <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div onclick="openModal('modal-sync');App._updateSyncModal()" style="font-size:11px;color:rgba(255,255,255,0.3);cursor:pointer;display:flex;align-items:center;gap:6px">
+        <span id="sidebar-sync-dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2)"></span>
+        Sync
+      </div>
     </div>
   </div>
 </aside>
@@ -752,6 +759,33 @@
   </div>
 </nav>
 
+<!-- Sync settings modal -->
+<div class="modal-overlay" id="modal-sync">
+  <div class="modal">
+    <div class="modal-title">Cross-Device Sync</div>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
+      Syncs your habits, workouts, contacts, and tasks across devices via a private GitHub Gist.
+      Your data never touches any server except GitHub.
+    </p>
+    <div id="sync-status-row" style="margin-bottom:16px;font-size:13px"></div>
+    <div class="form-group" id="sync-token-group">
+      <label class="form-label">GitHub Personal Access Token</label>
+      <input type="password" class="inp" id="sync-token-input" placeholder="github_pat_...">
+      <div style="font-size:11px;color:var(--text-dim);margin-top:6px">
+        GitHub → Settings → Developer settings → Personal access tokens → Fine-grained →
+        New token → set <strong>Gists: Read &amp; Write</strong>. No other permissions needed.
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-sync')">Close</button>
+      <button class="btn btn-ghost" id="sync-disconnect-btn" style="display:none;color:var(--red)" onclick="App.syncDisconnect()">Disconnect</button>
+      <button class="btn btn-primary" id="sync-connect-btn" onclick="App.syncConnect()">Connect &amp; Sync</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="sync.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 <script src="daily_briefings.js"></script>

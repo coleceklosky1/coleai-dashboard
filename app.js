@@ -1,7 +1,10 @@
 // ─── STATE ────────────────────────────────────────────────────────────────────
 const LS = {
   get: k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
-  set: (k, v) => localStorage.setItem(k, JSON.stringify(v)),
+  set: (k, v) => {
+    localStorage.setItem(k, JSON.stringify(v));
+    if (typeof Sync !== 'undefined') Sync.schedulePush();
+  },
 };
 
 function initState() {
@@ -124,6 +127,36 @@ const App = {
     $('drawer')?.classList.remove('open');
     $('drawer-overlay')?.classList.remove('open');
     document.body.style.overflow = '';
+  },
+
+  syncConnect() {
+    const token = ($('sync-token-input')?.value || '').trim();
+    if (!token) { alert('Paste your GitHub token first.'); return; }
+    const btn = $('sync-connect-btn'); if (btn) { btn.textContent = 'Connecting…'; btn.disabled = true; }
+    Sync.connect(token).then(() => {
+      closeModal('modal-sync');
+      if (btn) { btn.textContent = 'Connect & Sync'; btn.disabled = false; }
+      App._updateSyncModal();
+    });
+  },
+
+  syncDisconnect() {
+    Sync.disconnect();
+    App._updateSyncModal();
+  },
+
+  _updateSyncModal() {
+    const on = Sync.isEnabled();
+    const row = $('sync-status-row');
+    const group = $('sync-token-group');
+    const connBtn = $('sync-connect-btn');
+    const discBtn = $('sync-disconnect-btn');
+    if (row) row.innerHTML = on
+      ? '<span style="color:#22c55e;font-weight:600">● Sync enabled</span> — changes on any device appear within 60 seconds.'
+      : '<span style="color:var(--text-dim)">● Sync disabled</span>';
+    if (group) group.style.display = on ? 'none' : '';
+    if (connBtn) connBtn.style.display = on ? 'none' : '';
+    if (discBtn) discBtn.style.display = on ? '' : 'none';
   },
 
   renderPage(p) {
@@ -754,6 +787,7 @@ document.addEventListener('click', e => { if (e.target.classList.contains('modal
 document.addEventListener('DOMContentLoaded', () => {
   initState();
   computeRollovers();
+  Sync.init();
   document.querySelectorAll('[data-page]').forEach(el => el.addEventListener('click', () => App.navigate(el.dataset.page)));
   $('br-date') && ($('br-date').value = isoToday);
   App.navigate('today');
