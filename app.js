@@ -506,13 +506,17 @@ const App = {
     const key = String(displayIdx);
     const exDone = done[key] || {};
 
+    // Determine if today's workout has already been logged
+    const todayIdx = isFriday() ? 4 : getTodaysWorkout().woIdx;
+    const todayLogged = (LS.get('workoutLog') || []).some(e => e.date === isoToday);
+    const locked = (displayIdx === todayIdx) && todayLogged;
+
     const titleEl = $('current-workout-title');
     if (titleEl) titleEl.innerHTML = `<span style="margin-right:8px">${wo.icon}</span>${wo.name}`;
 
-    // Dots — show all 5 (index 4 = Friday run)
+    // Dots
     const dotsEl = $('workout-dots');
     if (dotsEl) {
-      const activeIdx = isFriday() ? 4 : (LS.get('workoutIdx') || 0) % 4;
       dotsEl.innerHTML = WORKOUT_ROTATION.map((w, i) => `
         <div class="wd-dot ${i===displayIdx%WORKOUT_ROTATION.length?'active':''}" onclick="App.previewWorkout(${i})" title="${w.name}">
           <span>${w.icon}</span>
@@ -520,18 +524,42 @@ const App = {
         </div>`).join('');
     }
 
-    // Exercises
+    // Exercises — if locked, show all as done and non-clickable
     const exEl = $('current-workout-exercises');
     if (exEl) {
-      exEl.innerHTML = wo.exercises.map((e, i) => `
-        <div class="ex-row ${exDone[i] ? 'done-row' : ''}">
-          <div class="ex-left">
-            <div class="ex-name">${e.name}</div>
-            ${e.note ? `<div class="ex-note">${e.note}</div>` : ''}
-          </div>
-          <span class="ex-sets">${e.sets} sets · failure</span>
-          <div class="ex-check ${exDone[i] ? 'done' : ''}" onclick="App.toggleExercise(${i}, ${displayIdx})">${exDone[i] ? '✓' : ''}</div>
-        </div>`).join('');
+      exEl.innerHTML = wo.exercises.map((e, i) => {
+        const isDone = locked || !!exDone[i];
+        const onclick = locked ? '' : `onclick="App.toggleExercise(${i}, ${displayIdx})"`;
+        return `
+          <div class="ex-row ${isDone ? 'done-row' : ''}">
+            <div class="ex-left">
+              <div class="ex-name">${e.name}</div>
+              ${e.note ? `<div class="ex-note">${e.note}</div>` : ''}
+            </div>
+            <span class="ex-sets">${e.sets} sets · failure</span>
+            <div class="ex-check ${isDone ? 'done' : ''}" ${onclick} style="${locked ? 'cursor:default' : ''}">${isDone ? '✓' : ''}</div>
+          </div>`;
+      }).join('');
+    }
+
+    // Log button — disable if already logged today
+    const btn = $('log-workout-btn');
+    if (btn) {
+      if (locked) {
+        btn.textContent = '✓ Logged today';
+        btn.disabled = true;
+        btn.style.background = 'var(--green)';
+        btn.style.color = '#fff';
+        btn.style.opacity = '0.7';
+        btn.style.cursor = 'default';
+      } else {
+        btn.textContent = 'Log Workout Complete ✓';
+        btn.disabled = false;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.opacity = '';
+        btn.style.cursor = '';
+      }
     }
   },
 
@@ -564,8 +592,9 @@ const App = {
     const isFri = isFriday();
     const { woIdx } = getTodaysWorkout();
     const displayIdx = isFri ? 4 : woIdx;
-    const wo = WORKOUT_ROTATION[displayIdx];
     const log = LS.get('workoutLog') || [];
+    if (log.some(e => e.date === isoToday)) return; // already logged today
+    const wo = WORKOUT_ROTATION[displayIdx];
     log.push({ date: isoToday, workout: wo.name, icon: wo.icon, isFriday: isFri });
     LS.set('workoutLog', log);
 
