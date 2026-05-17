@@ -24,16 +24,18 @@ TODAY = date.today().isoformat()
 DASHBOARD_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_PATH = os.path.join(DASHBOARD_DIR, "daily_briefings.js")
 
-PROMPT = f"""Today is {TODAY}. Generate a daily news briefing for Cole, a Chemical Engineering junior at Notre Dame interested in industry careers, energy, biotech, and global markets.
+PROMPT = f"""Today is {TODAY}. Generate a daily news briefing for Cole, a Chemical Engineering junior at Notre Dame interested in industry careers, energy, and tech.
 
-Find exactly 3 real news articles:
+Find exactly 3 real news articles — one for each category below. Do NOT substitute or swap categories.
 
 1. Politics — a major US or global political development published within the LAST 24 HOURS only (today or yesterday — no older).
 2. Chemical Engineering — process engineering, chemicals, materials, energy tech, or relevant manufacturing news published within the last 7 days.
-3. Tech — AI, semiconductors, software, or tech industry news published within the last 7 days.
+3. Tech — AI, semiconductors, software, or tech industry news published within the last 7 days. This must be categorized as "Tech". Do NOT use "Markets" or any other category label.
+
+IMPORTANT: The category field for item 3 must be exactly the string "Tech". "Markets" is not acceptable.
 
 For each article, return a JSON object with exactly these fields:
-  category     — one of: "Politics", "Chemical Engineering", "Tech"
+  category     — must be exactly one of: "Politics", "Chemical Engineering", "Tech"
   headline     — the actual article headline, verbatim
   source       — publication name (e.g. Reuters, WSJ, Chemical Engineering News)
   link         — full URL to the article
