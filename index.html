@@ -96,8 +96,10 @@
   </div>
 
   <div class="drawer-footer">
-    <div class="drawer-stat"><span>Weight</span><span id="drawer-weight">176 lbs</span></div>
-    <div class="drawer-stat"><span>Goal</span><span>185 lbs</span></div>
+    <div onclick="openModal('modal-sync');App._updateSyncModal()" style="font-size:12px;color:rgba(255,255,255,0.3);cursor:pointer;display:flex;align-items:center;gap:6px;padding:12px 16px">
+      <span id="sidebar-sync-dot-drawer" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2)"></span>
+      Sync
+    </div>
   </div>
 </nav>
 
@@ -153,19 +155,9 @@
   </div>
 
   <div class="sidebar-footer">
-    <div class="sidebar-stat">
-      <span class="sidebar-stat-label">Weight</span>
-      <span class="sidebar-stat-value" id="sidebar-weight">176 lbs</span>
-    </div>
-    <div class="sidebar-stat" style="margin-top:6px">
-      <span class="sidebar-stat-label">Goal</span>
-      <span class="sidebar-stat-value">185 lbs</span>
-    </div>
-    <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06)">
-      <div onclick="openModal('modal-sync');App._updateSyncModal()" style="font-size:11px;color:rgba(255,255,255,0.3);cursor:pointer;display:flex;align-items:center;gap:6px">
-        <span id="sidebar-sync-dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2)"></span>
-        Sync
-      </div>
+    <div onclick="openModal('modal-sync');App._updateSyncModal()" style="font-size:11px;color:rgba(255,255,255,0.3);cursor:pointer;display:flex;align-items:center;gap:6px">
+      <span id="sidebar-sync-dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2)"></span>
+      Sync
     </div>
   </div>
 </aside>
@@ -222,12 +214,12 @@
       <div class="card">
         <div class="row-sb mb16" style="align-items:center">
           <div class="card-title" style="margin-bottom:0">Daily Habits</div>
-          <span class="badge badge-dim" id="habits-complete-badge">0/5</span>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="badge badge-dim" id="habits-complete-badge">0/5</span>
+            <button class="btn btn-ghost btn-sm" onclick="App.openAddHabitModal()">+ Add</button>
+          </div>
         </div>
         <div id="habits-list"></div>
-        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
-          <span style="font-size:11px;color:var(--text-dim)">3.5 hrs/day through May 22 → 2.5 hrs/day after</span>
-        </div>
       </div>
 
       <div class="card">
@@ -309,10 +301,7 @@
   <section class="page" id="page-fitness">
     <div class="page-header">
       <div class="page-title">Fitness</div>
-      <div class="page-subtitle">
-        Lean bulk · 176 lbs current → 185 lbs goal · 4-day rotation (Mon–Thu) + Friday run
-        <span id="friday-indicator" class="friday-badge" style="display:none">🏃 It's Friday — Run Day!</span>
-      </div>
+      <div class="page-subtitle">Lean bulk · 176 lbs current → 185 lbs goal · 4-day rotation + weekly run</div>
     </div>
 
     <!-- Stats -->
@@ -472,8 +461,8 @@
         <div class="stat-value" id="co-applied">0</div>
       </div>
       <div class="card stat-card">
-        <div class="stat-label">Biotech Aligned</div>
-        <div class="stat-value">24</div>
+        <div class="stat-label">Large+ Cap</div>
+        <div class="stat-value" id="co-large-cap">—</div>
       </div>
     </div>
 
@@ -494,11 +483,14 @@
         <option>Industrial / Aerospace</option>
         <option>National Lab / Govt</option>
       </select>
-      <select class="inp" id="co-filter-biotech" onchange="App.renderCompanies()">
-        <option value="">All Biotech</option>
-        <option value="Yes">Biotech: Yes</option>
-        <option value="Tangential">Biotech: Tangential</option>
-        <option value="No">Biotech: No</option>
+      <select class="inp" id="co-filter-size" onchange="App.renderCompanies()">
+        <option value="">All Sizes</option>
+        <option value="Mega-cap">Mega-cap</option>
+        <option value="Large-cap">Large-cap</option>
+        <option value="Mid-cap">Mid-cap</option>
+        <option value="Small-cap">Small-cap</option>
+        <option value="Micro-cap">Micro-cap</option>
+        <option value="Private">Private</option>
       </select>
       <select class="inp" id="co-filter-status" onchange="App.renderCompanies()">
         <option value="">All Status</option>
@@ -519,7 +511,6 @@
               <th>Typical Roles</th>
               <th>Apply Window</th>
               <th>US Hubs</th>
-              <th>Biotech</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -879,6 +870,41 @@
     <span class="btab-label">Briefs</span>
   </div>
 </nav>
+
+<!-- Add Habit -->
+<div class="modal-overlay" id="modal-add-habit">
+  <div class="modal">
+    <div class="modal-title">Add Habit</div>
+    <div class="form-group">
+      <label class="form-label">Habit Name *</label>
+      <input type="text" class="inp" id="ah-label" placeholder="e.g. Meditate, Study Spanish…" autocomplete="off">
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Duration</label>
+        <input type="text" class="inp" id="ah-duration" placeholder="e.g. 0.5 hr">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Icon (emoji)</label>
+        <input type="text" class="inp" id="ah-icon" placeholder="e.g. 🧘">
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Start Date</label>
+        <input type="date" class="inp" id="ah-start">
+      </div>
+      <div class="form-group">
+        <label class="form-label">End Date (optional)</label>
+        <input type="date" class="inp" id="ah-end">
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:4px">
+      <button class="btn-primary" onclick="App.saveNewHabit()">Add Habit</button>
+      <button class="btn-secondary" onclick="closeModal('modal-add-habit')">Cancel</button>
+    </div>
+  </div>
+</div>
 
 <!-- Sync settings modal -->
 <div class="modal-overlay" id="modal-sync">

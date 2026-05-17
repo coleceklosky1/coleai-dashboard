@@ -137,6 +137,13 @@ function getWorkoutForDate(dateStr) {
 }
 function getTodaysWorkout() { return getWorkoutForDate(isoToday); }
 
+// Rotation position based on logged lifting sessions, so skipped days don't advance the rotation.
+function getEffectiveWorkoutIdx() {
+  const log = LS.get('workoutLog') || [];
+  const liftSessions = log.filter(e => e.workout !== 'Weekly Run' && e.workout !== 'Friday Run');
+  return liftSessions.length % 4;
+}
+
 function getTomorrowDateStr() {
   const d = new Date(isoToday + 'T12:00:00');
   d.setDate(d.getDate() + 1);
@@ -250,7 +257,6 @@ const App = {
     const fd = fmtDate(isoToday);
     const h = new Date().getHours();
     const greet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
-    const isFri = isFriday();
 
     // Welcome card
     const wg = $('welcome-greeting');
@@ -259,7 +265,7 @@ const App = {
     if (wg) wg.textContent = `${greet}, Cole.`;
     if (wd) wd.textContent = fd.full;
 
-    if (wt) wt.textContent = isFri ? '🏃 Friday — run day' : '📋 Tasks sorted by deadline';
+    if (wt) wt.textContent = '📋 Tasks sorted by deadline';
 
     // Stats
     const todayTasks = getTodaysAgendaItems().length;
@@ -269,16 +275,15 @@ const App = {
     const wLog = LS.get('weightLog') || [];
     const lastW = wLog.length ? wLog[wLog.length - 1].weight : 176;
     const todayLogged = (LS.get('workoutLog') || []).some(e => e.date === isoToday);
-    const { wo } = todayLogged ? getWorkoutForDate(getTomorrowDateStr()) : getTodaysWorkout();
-    const woLabel  = todayLogged ? 'Tomorrow' : 'Today';
+    const woIdx = getEffectiveWorkoutIdx(); // accounts for today if already logged
+    const wo = WORKOUT_ROTATION[woIdx % 4];
+    const woLabel = todayLogged ? 'Tomorrow' : 'Today';
 
     $('stat-streak').textContent = App.calcStreak();
     $('stat-tasks-today').textContent = todayTasks;
     $('stat-workout').textContent = wo.name;
     $('stat-workout-day').textContent = woLabel;
     $('stat-weight').textContent = lastW;
-    const sw = $('sidebar-weight'); if (sw) sw.textContent = `${lastW} lbs`;
-    const dw = $('drawer-weight'); if (dw) dw.textContent = `${lastW} lbs`;
 
     App.renderHabits();
 
@@ -509,23 +514,46 @@ const App = {
     App.navigate('tasks');
   },
 
+  // ─── ADD HABIT ─────────────────────────────────────────────────────────────
+  openAddHabitModal() {
+    if ($('ah-label'))    $('ah-label').value = '';
+    if ($('ah-duration')) $('ah-duration').value = '0.5 hr';
+    if ($('ah-icon'))     $('ah-icon').value = '📝';
+    if ($('ah-start'))    $('ah-start').value = isoToday;
+    if ($('ah-end'))      $('ah-end').value = '';
+    openModal('modal-add-habit');
+    setTimeout(() => $('ah-label')?.focus(), 50);
+  },
+
+  saveNewHabit() {
+    const label = ($('ah-label')?.value || '').trim();
+    if (!label) { $('ah-label')?.focus(); return; }
+    const customs = LS.get('customHabits') || [];
+    customs.push({
+      id: 'ch_' + Date.now(),
+      label,
+      duration: ($('ah-duration')?.value || '0.5 hr').trim(),
+      icon: ($('ah-icon')?.value || '📝').trim(),
+      startDate: $('ah-start')?.value || isoToday,
+      endDate: $('ah-end')?.value || null,
+    });
+    LS.set('customHabits', customs);
+    closeModal('modal-add-habit');
+    App.renderHabits();
+    App.renderToday();
+  },
+
   // ─── FITNESS ───────────────────────────────────────────────────────────────
   renderFitness() {
-    const { woIdx } = getTodaysWorkout();
-    App.renderWorkout(isFriday() ? 4 : woIdx);
+    const displayIdx = App._previewIdx !== null ? App._previewIdx : getEffectiveWorkoutIdx();
+    App.renderWorkout(displayIdx);
     App.renderWeightChart();
     App.renderWeightLog();
     App.renderWorkoutHistory();
     const wLog = LS.get('weightLog') || [];
     const lastW = wLog.length ? wLog[wLog.length - 1].weight : 176;
     const fw = $('fitness-weight'); if (fw) fw.textContent = lastW;
-    const sw = $('sidebar-weight'); if (sw) sw.textContent = `${lastW} lbs`;
-    const dw = $('drawer-weight'); if (dw) dw.textContent = `${lastW} lbs`;
     $('stat-weight').textContent = lastW;
-
-    // Friday indicator
-    const fridayEl = $('friday-indicator');
-    if (fridayEl) fridayEl.style.display = isFriday() ? 'inline-flex' : 'none';
   },
 
   renderWorkout(displayIdx) {
@@ -535,9 +563,8 @@ const App = {
     const exDone = done[key] || {};
 
     // Determine if today's workout has already been logged
-    const todayIdx = isFriday() ? 4 : getTodaysWorkout().woIdx;
-    const todayLogged = (LS.get('workoutLog') || []).some(e => e.date === isoToday);
-    const locked = (displayIdx === todayIdx) && todayLogged;
+    const todayLogEntry = (LS.get('workoutLog') || []).find(e => e.date === isoToday);
+    const locked = !!(todayLogEntry && todayLogEntry.workout === wo.name);
 
     const titleEl = $('current-workout-title');
     if (titleEl) titleEl.innerHTML = `<span style="margin-right:8px">${wo.icon}</span>${wo.name}`;
@@ -597,12 +624,12 @@ const App = {
     App.renderWorkout(i);
   },
   prevWorkout() {
-    const cur = App._previewIdx !== null ? App._previewIdx : (isFriday() ? 4 : (LS.get('workoutIdx')||0)%4);
+    const cur = App._previewIdx !== null ? App._previewIdx : getEffectiveWorkoutIdx();
     App._previewIdx = (cur - 1 + WORKOUT_ROTATION.length) % WORKOUT_ROTATION.length;
     App.renderWorkout(App._previewIdx);
   },
   nextWorkout() {
-    const cur = App._previewIdx !== null ? App._previewIdx : (isFriday() ? 4 : (LS.get('workoutIdx')||0)%4);
+    const cur = App._previewIdx !== null ? App._previewIdx : getEffectiveWorkoutIdx();
     App._previewIdx = (cur + 1) % WORKOUT_ROTATION.length;
     App.renderWorkout(App._previewIdx);
   },
@@ -617,13 +644,11 @@ const App = {
   },
 
   logWorkout() {
-    const isFri = isFriday();
-    const { woIdx } = getTodaysWorkout();
-    const displayIdx = isFri ? 4 : woIdx;
+    const displayIdx = App._previewIdx !== null ? App._previewIdx : getEffectiveWorkoutIdx();
     const log = LS.get('workoutLog') || [];
     if (log.some(e => e.date === isoToday)) return; // already logged today
     const wo = WORKOUT_ROTATION[displayIdx];
-    log.push({ date: isoToday, workout: wo.name, icon: wo.icon, isFriday: isFri });
+    log.push({ date: isoToday, workout: wo.name, icon: wo.icon });
     LS.set('workoutLog', log);
 
     // Clear done state for logged workout
@@ -711,13 +736,15 @@ const App = {
   renderCompanies() {
     const q = ($('co-search')?.value || '').toLowerCase();
     const ind = $('co-filter-industry')?.value || '';
-    const bt = $('co-filter-biotech')?.value || '';
+    const sz = $('co-filter-size')?.value || '';
     const st = $('co-filter-status')?.value || '';
     const coStatus = LS.get('coStatus') || {};
 
+    const sizeCategory = s => s.split(/[\s(]/)[0]; // "Mega-cap" from "Mega-cap (~$160B, PFE)"
+
     const filtered = COMPANIES.filter(c => {
       if (ind && c.industry !== ind) return false;
-      if (bt && c.biotech !== bt) return false;
+      if (sz && sizeCategory(c.size) !== sz) return false;
       const cs = coStatus[c.id] || {};
       if (st === 'interested' && !cs.interested) return false;
       if (st === 'applied' && !cs.applied) return false;
@@ -727,8 +754,10 @@ const App = {
 
     const interested = Object.values(coStatus).filter(s => s.interested).length;
     const applied = Object.values(coStatus).filter(s => s.applied).length;
+    const largePlus = COMPANIES.filter(c => ['Mega-cap','Large-cap'].includes(sizeCategory(c.size))).length;
     const ciEl = $('co-interested'); if (ciEl) ciEl.textContent = interested;
     const caEl = $('co-applied'); if (caEl) caEl.textContent = applied;
+    const lcEl = $('co-large-cap'); if (lcEl) lcEl.textContent = largePlus;
 
     const tbody = $('companies-tbody'); if (!tbody) return;
     tbody.innerHTML = filtered.map(c => {
@@ -745,7 +774,6 @@ const App = {
           <td style="max-width:200px;font-size:11.5px">${c.roles}</td>
           <td style="white-space:nowrap;font-size:12px;color:var(--amber);font-weight:600">${c.window}</td>
           <td style="max-width:160px;font-size:11px;color:var(--text-dim)">${c.hubs}</td>
-          <td><span class="badge ${biotechBadge(c.biotech)}">${c.biotech}</span></td>
           <td>
             <div class="action-btns">
               <button class="btn btn-xs btn-ghost" onclick="App.toggleCo(${c.id},'applied')">${cs.applied?'✓ Applied':'Apply'}</button>
@@ -755,7 +783,7 @@ const App = {
         </tr>`;
     }).join('');
 
-    if (!filtered.length) tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;color:var(--text-dim);padding:40px">No companies match filters</td></tr>';
+    if (!filtered.length) tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--text-dim);padding:40px">No companies match filters</td></tr>';
   },
 
   toggleCo(id, field) {

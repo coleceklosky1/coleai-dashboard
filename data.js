@@ -196,7 +196,8 @@ const WEEKLY_AGENDA = {
 };
 
 // ─── HABITS (date-aware) ──────────────────────────────────────────────────────
-// Through May 22: 5 habits (3.5 hrs/day). After May 22: 3 habits (2.5 hrs/day).
+// Through May 22: base habits. After May 22: reduced set.
+// Custom habits stored in localStorage under 'customHabits'.
 function getHabitsForDate(dateStr) {
   const afterCutoff = dateStr > '2026-05-22';
   const full = [
@@ -211,9 +212,26 @@ function getHabitsForDate(dateStr) {
     {id:"read",  label:"Read",          duration:"1.0 hr", icon:"📚"},
     {id:"brief", label:"Daily Briefing",duration:"0.5 hr", icon:"📰"},
   ];
-  return afterCutoff ? reduced : full;
+  let base = afterCutoff ? reduced : full;
+
+  // Cole.ai app habit — May 17 through May 24
+  if (dateStr >= '2026-05-17' && dateStr <= '2026-05-24') {
+    base = [...base, {id:"coleai", label:"Work on Cole.ai app", duration:"0.5 hr", icon:"💻"}];
+  }
+
+  // Custom habits added by user
+  try {
+    const customs = JSON.parse(localStorage.getItem('customHabits') || '[]');
+    const active = customs.filter(h =>
+      (!h.startDate || dateStr >= h.startDate) &&
+      (!h.endDate || dateStr <= h.endDate)
+    );
+    base = [...base, ...active];
+  } catch {}
+
+  return base;
 }
-const HABITS_CONFIG = getHabitsForDate(new Date().toISOString().slice(0,10));
+const HABITS_CONFIG = getHabitsForDate((function(){ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; })());
 
 // ─── WORKOUTS ─────────────────────────────────────────────────────────────────
 // 7 exercises · 4 sets each · all to failure
@@ -234,13 +252,13 @@ const WORKOUT_ROTATION = [
   {
     name:"Biceps / Triceps", short:"Biceps\n& Triceps", icon:"💪",
     exercises:[
-      {name:"Barbell Curl",              sets:4, note:"Full range, elbows pinned to sides"},
-      {name:"Hammer Curl",               sets:4, note:"Neutral grip — hits brachialis hard"},
-      {name:"Incline Dumbbell Curl",     sets:4, note:"Long-head stretch at full extension"},
-      {name:"Concentration Curl",        sets:4, note:"Elbow braced on thigh, peak squeeze"},
-      {name:"Tricep Pushdown",           sets:4, note:"Rope or bar — elbows glued, full extension"},
+      {name:"Twist Curls",               sets:4, note:"Supinate at top for peak contraction"},
+      {name:"Preacher Curls",            sets:4, note:"Full stretch at bottom, slow negative"},
+      {name:"Incline Dumbbell Curls",    sets:4, note:"Long-head stretch at full extension"},
+      {name:"Cable Pushdowns",           sets:4, note:"Rope or bar — elbows glued, full extension"},
+      {name:"One Arm Kickbacks",         sets:4, note:"Upper arm parallel to floor, full extension"},
+      {name:"Overhead Extensions",       sets:4, note:"Long head — full stretch overhead"},
       {name:"Skull Crushers",            sets:4, note:"EZ bar to forehead, press back up"},
-      {name:"Overhead Tricep Extension", sets:4, note:"Long head — full stretch overhead"},
     ]
   },
   {
@@ -268,7 +286,7 @@ const WORKOUT_ROTATION = [
     ]
   },
   {
-    name:"Friday Run", short:"Friday\nRun", icon:"🏃",
+    name:"Weekly Run", short:"Weekly\nRun", icon:"🏃",
     exercises:[
       {name:"Warm-up walk",  sets:1, note:"5 min easy pace"},
       {name:"Run",           sets:1, note:"3–5 miles · target 8:00–9:00 min/mile"},
