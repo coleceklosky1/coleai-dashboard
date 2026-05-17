@@ -17,11 +17,22 @@ function initState() {
   if (!LS.get('workoutLog'))  LS.set('workoutLog', []);
   if (!LS.get('weightLog'))   LS.set('weightLog', [{date:'2026-05-16', weight:176}]);
   if (!LS.get('coStatus'))    LS.set('coStatus', {});
+  if (!LS.get('taskHistory')) LS.set('taskHistory', []);
 }
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
-const isoToday = new Date().toISOString().slice(0,10);
+function getLocalIsoDate() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+const isoToday = getLocalIsoDate();
+
+function scheduleMidnightRefresh() {
+  const now = new Date();
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 5);
+  setTimeout(() => location.reload(), midnight - now);
+}
 
 function getYesterday() {
   const d = new Date(isoToday + 'T12:00:00');
@@ -45,6 +56,35 @@ function computeRollovers() {
     .map(t => ({ ...t, rolledFrom: t.rolledFrom || yesterday }));
 
   LS.set('agendaRollovers', rollovers);
+}
+
+// Called once per day: archive completed check-offs and reset completed ongoing tasks.
+function computeTaskResets() {
+  if (LS.get('taskResetDate') === isoToday) return;
+  const tasks   = LS.get('tasks') || TASKS_DATA;
+  const history = LS.get('taskHistory') || [];
+  let changed   = false;
+  const remaining = [];
+  for (const t of tasks) {
+    const isCheckoff = t.when !== 'Ongoing';
+    const wasCompletedPreviously = t.status === 'Completed' && t.completedOn && t.completedOn < isoToday;
+    if (isCheckoff && wasCompletedPreviously) {
+      history.push({ ...t, archivedOn: t.completedOn });
+      changed = true;
+    } else {
+      if (!isCheckoff && wasCompletedPreviously) {
+        t.status = 'Not started';
+        delete t.completedOn;
+        changed = true;
+      }
+      remaining.push(t);
+    }
+  }
+  if (changed) {
+    LS.set('tasks', remaining);
+    LS.set('taskHistory', history);
+  }
+  LS.set('taskResetDate', isoToday);
 }
 
 function getTodaysAgendaItems() {
@@ -111,7 +151,7 @@ const App = {
     document.querySelectorAll('[data-page]').forEach(n => n.classList.remove('active'));
     $('page-' + page).classList.add('active');
     document.querySelectorAll(`[data-page="${page}"]`).forEach(n => n.classList.add('active'));
-    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments'};
+    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments',history:'Task History'};
     const mpt = $('mobile-page-title'); if (mpt) mpt.textContent = titles[page] || page;
     App.closeDrawer();
     App.renderPage(page);
@@ -162,7 +202,7 @@ const App = {
   renderPage(p) {
     ({today:App.renderToday, tasks:App.renderTasks, fitness:App.renderFitness,
       companies:App.renderCompanies, network:App.renderContacts, briefings:App.renderBriefings,
-      accomplishments:App.renderAccomplishments}[p] || (()=>{}))();
+      accomplishments:App.renderAccomplishments, history:App.renderHistory}[p] || (()=>{}))();
   },
 
   goToFitness() { App.navigate('fitness'); },
@@ -384,7 +424,13 @@ const App = {
     const tasks = LS.get('tasks');
     const t = tasks.find(x => x.id === id);
     if (!t) return;
-    t.status = t.status === 'Completed' ? 'Not started' : 'Completed';
+    if (t.status === 'Completed') {
+      t.status = 'Not started';
+      delete t.completedOn;
+    } else {
+      t.status = 'Completed';
+      t.completedOn = isoToday;
+    }
     LS.set('tasks', tasks);
     App.renderTasks();
     App.renderToday();
@@ -772,6 +818,51 @@ const App = {
     App.renderBriefings();
     App.renderToday();
   },
+  renderHistory() {
+    const history = (LS.get('taskHistory') || []).slice().reverse();
+    const el = $('history-list'); if (!el) return;
+
+    // Update count badge
+    const badge = $('history-count'); if (badge) badge.textContent = history.length;
+
+    if (!history.length) {
+      el.innerHTML = `<div class="empty-state">
+        <div class="empty-state-icon">★</div>
+        <div class="empty-state-title">No completed tasks yet</div>
+        <div class="empty-state-sub">Check-off tasks you complete will appear here the next day</div>
+      </div>`;
+      return;
+    }
+
+    // Group by archivedOn date
+    const groups = {};
+    history.forEach(t => {
+      const d = t.archivedOn || 'Unknown';
+      if (!groups[d]) groups[d] = [];
+      groups[d].push(t);
+    });
+
+    el.innerHTML = Object.entries(groups).map(([date, tasks]) => {
+      const label = date === 'Unknown' ? 'Earlier' : fmtDate(date).full;
+      const items = tasks.map(t => `
+        <div class="history-item">
+          <span class="history-check">✓</span>
+          <div class="history-body">
+            <div class="history-task">${t.task}</div>
+            <div class="history-meta">
+              <span class="${catColor(t.category)}">${t.category}</span>
+              ${t.deadline && t.deadline !== 'Ongoing' ? `<span>· ${t.deadline}</span>` : ''}
+              ${t.priority ? `<span class="pri-${t.priority.toLowerCase()}">· ${t.priority}</span>` : ''}
+            </div>
+          </div>
+        </div>`).join('');
+      return `<div class="history-group">
+        <div class="history-date-header">${label}</div>
+        ${items}
+      </div>`;
+    }).join('');
+  },
+
   renderAccomplishments() {
     const fd = fmtDate(isoToday);
     const el = $('accomp-date'); if (el) el.textContent = fd.full;
@@ -892,7 +983,9 @@ document.addEventListener('click', e => { if (e.target.classList.contains('modal
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initState();
+  computeTaskResets();
   computeRollovers();
+  scheduleMidnightRefresh();
   Sync.init();
   document.querySelectorAll('[data-page]').forEach(el => el.addEventListener('click', () => App.navigate(el.dataset.page)));
   $('br-date') && ($('br-date').value = isoToday);

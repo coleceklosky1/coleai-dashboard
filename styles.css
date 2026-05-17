@@ -484,6 +484,18 @@ tr:last-child td { border-bottom:none; }
 .accomp-check  { color:#22c55e; font-size:15px; flex-shrink:0; }
 .accomp-empty  { font-size:13px; color:var(--text-dim); padding:16px 0; text-align:center; }
 
+/* ══════════════════════════════ TASK HISTORY ════════════════════════════════ */
+.history-count-badge { display:inline-block; font-size:12px; font-weight:600; background:var(--gold); color:#fff; border-radius:10px; padding:1px 8px; margin-left:8px; vertical-align:middle; }
+.history-group { }
+.history-date-header { font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--text-dim); padding:14px 20px 6px; background:var(--bg-alt); border-bottom:1px solid var(--border-soft); border-top:1px solid var(--border-soft); }
+.history-group:first-child .history-date-header { border-top:none; }
+.history-item  { display:flex; align-items:flex-start; gap:14px; padding:13px 20px; border-bottom:1px solid var(--border-soft); }
+.history-item:last-child { border-bottom:none; }
+.history-check { flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#22c55e; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:700; margin-top:1px; }
+.history-body  { flex:1; min-width:0; }
+.history-task  { font-size:13.5px; color:var(--text); font-weight:500; line-height:1.4; }
+.history-meta  { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; font-size:11.5px; color:var(--text-dim); }
+
 /* ══════════════════════════════ DRAWER + MOBILE HEADER (hidden on desktop) ══ */
 #mobile-header  { display:none; }
 #drawer-overlay { display:none; }
