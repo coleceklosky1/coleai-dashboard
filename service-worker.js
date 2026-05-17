@@ -1,5 +1,5 @@
 // Cole.ai Service Worker — network-first so every open with internet = latest version
-const CACHE = 'coleai-v19';
+const CACHE = 'coleai-v20';
 const ASSETS = [
   './',
   './index.html',
@@ -7,10 +7,10 @@ const ASSETS = [
   './sync.js',
   './data.js',
   './app.js',
-  './daily_briefings.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
+  // daily_briefings.js intentionally excluded — always fetched fresh
 ];
 
 self.addEventListener('install', e => {
@@ -30,6 +30,11 @@ self.addEventListener('activate', e => {
 // Network first: always try fresh, fall back to cache when offline
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+  // daily_briefings.js is regenerated daily — always bypass cache entirely
+  if (e.request.url.includes('daily_briefings.js')) {
+    e.respondWith(fetch(e.request, { cache: 'no-store' }));
+    return;
+  }
   e.respondWith(
     fetch(e.request)
       .then(res => {
