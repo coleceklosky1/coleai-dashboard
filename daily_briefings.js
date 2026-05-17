@@ -8,8 +8,8 @@
     "category": "Politics",
     "headline": "U.S. and Nigerian mission kills Islamic State group leader, Trump says",
     "source": "PBS NewsHour / Associated Press",
-    "link": "https://www.pbs.org/newshour/",
-    "whyItMatters": "Counterterrorism operations in West Africa can ripple through global energy and commodity markets — regions where chemical and oil & gas firms operate. For a ChemE eyeing industry careers, geopolitical stability directly shapes supply chains and project siting decisions."
+    "link": "https://www.pbs.org/newshour/politics",
+    "whyItMatters": "Major US foreign-policy and counterterrorism developments in West Africa can shape sanctions, energy supply chains, and global oil markets — all factors that influence hiring and project decisions at the energy and chemical firms a ChemE student might target."
   },
   {
     "id": "auto-2026-05-17-2",
@@ -18,7 +18,7 @@
     "headline": "Business Watch: Massive complex planned for Abu Dhabi; Angelini to buy Catalyst for $4.1 billion",
     "source": "Chemical & Engineering News (C&EN)",
     "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "Multi-billion-dollar capacity expansions and M&A in specialty chemicals and pharma signal where new process engineering and plant-design jobs will appear. These are exactly the deals that drive hiring at companies recruiting Notre Dame ChemEs."
+    "whyItMatters": "Mega-complex investments in the Gulf and major specialty-chemical M&A signal where capital — and ChemE jobs in process design, scale-up, and operations — are flowing in 2026. Tracking these moves helps Cole identify which companies are hiring and growing."
   },
   {
     "id": "auto-2026-05-17-3",
@@ -27,7 +27,7 @@
     "headline": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
     "source": "CNBC",
     "link": "https://www.cnbc.com/2026/05/08/wall-street-ai-chip-love-moves-from-nvidia-to-intel-amd-and-micron.html",
-    "whyItMatters": "The AI chip boom is driving massive new U.S. fab and materials investment — including Corning's three new Nvidia-dedicated optical factories — creating process engineering roles for ChemEs in semiconductor materials, ultrapure chemicals, and advanced packaging."
+    "whyItMatters": "The AI buildout is reshaping semiconductor manufacturing — including new US fabs and Corning's three optical-tech factories tied to Nvidia — creating high demand for ChemEs in materials, thin films, gases, and process engineering for chip production."
   }
 ];
 
