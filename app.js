@@ -107,16 +107,22 @@ function fmtDate(d) {
 
 function isFriday() { return new Date().getDay() === 5; }
 
-// Returns {wo, woIdx, isFri} for today
-// Rotation is date-anchored: May 16 2026 = index 0 (Shoulders/Back), counts forward each day.
-// Friday always = Run regardless of rotation.
-function getTodaysWorkout() {
-  if (isFriday()) return { wo: WORKOUT_ROTATION[4], woIdx: 4, isFri: true };
+// Returns {wo, woIdx, isFri} for any date string (YYYY-MM-DD).
+// Rotation anchored: May 16 2026 = index 0 (Shoulders/Back). Friday always = Run.
+function getWorkoutForDate(dateStr) {
+  const date = new Date(dateStr + 'T12:00:00');
+  if (date.getDay() === 5) return { wo: WORKOUT_ROTATION[4], woIdx: 4, isFri: true };
   const ANCHOR = new Date('2026-05-16T12:00:00');
-  const today  = new Date(isoToday + 'T12:00:00');
-  const days   = Math.round((today - ANCHOR) / 86400000);
+  const days   = Math.round((date - ANCHOR) / 86400000);
   const idx    = ((days % 4) + 4) % 4;
   return { wo: WORKOUT_ROTATION[idx], woIdx: idx, isFri: false };
+}
+function getTodaysWorkout() { return getWorkoutForDate(isoToday); }
+
+function getTomorrowDateStr() {
+  const d = new Date(isoToday + 'T12:00:00');
+  d.setDate(d.getDate() + 1);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
 
 function catColor(cat) {
@@ -245,12 +251,14 @@ const App = {
     const doneCt = habitsForToday.filter(h => habits[h.id] === 'done').length;
     const wLog = LS.get('weightLog') || [];
     const lastW = wLog.length ? wLog[wLog.length - 1].weight : 176;
-    const { wo } = getTodaysWorkout();
+    const todayLogged = (LS.get('workoutLog') || []).some(e => e.date === isoToday);
+    const { wo } = todayLogged ? getWorkoutForDate(getTomorrowDateStr()) : getTodaysWorkout();
+    const woLabel  = todayLogged ? 'Tomorrow' : 'Today';
 
     $('stat-streak').textContent = App.calcStreak();
     $('stat-tasks-today').textContent = todayTasks;
     $('stat-workout').textContent = wo.name;
-    $('stat-workout-day').textContent = isFri ? 'Every Friday' : `Day ${((LS.get('workoutIdx')||0)%4)+1} of 4`;
+    $('stat-workout-day').textContent = woLabel;
     $('stat-weight').textContent = lastW;
     const sw = $('sidebar-weight'); if (sw) sw.textContent = `${lastW} lbs`;
     const dw = $('drawer-weight'); if (dw) dw.textContent = `${lastW} lbs`;
@@ -289,7 +297,7 @@ const App = {
     // Workout preview
     const wTitle = $('today-workout-title');
     const wPrev = $('today-workout-preview');
-    if (wTitle) wTitle.textContent = `${wo.icon} ${wo.name}`;
+    if (wTitle) wTitle.textContent = `${wo.icon} ${wo.name}${todayLogged ? ' · Tomorrow' : ''}`;
     if (wPrev) {
       const exList = wo.exercises.slice(0, 4).map(e => `
         <div class="agenda-item">
