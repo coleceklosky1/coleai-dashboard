@@ -606,8 +606,6 @@ const App = {
 
     App.renderFitness();
     App.renderToday();
-    const btn = $('log-workout-btn');
-    if (btn) { btn.textContent = '✓ Logged!'; btn.style.background='var(--green)'; btn.style.color='#fff'; setTimeout(() => { btn.textContent='Log Workout Complete ✓'; btn.style.background=''; btn.style.color=''; }, 1800); }
   },
 
   logWeight() {
