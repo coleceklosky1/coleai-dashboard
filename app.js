@@ -436,6 +436,46 @@ const App = {
     App.renderToday();
   },
 
+  // ─── ADD TASK ──────────────────────────────────────────────────────────────
+  openAddTaskModal() {
+    const el = $('at-task'); if (el) { el.value = ''; el.focus(); }
+    if ($('at-category')) $('at-category').selectedIndex = 0;
+    if ($('at-priority')) $('at-priority').value = '';
+    if ($('at-type'))     $('at-type').value = 'ongoing';
+    if ($('at-notes'))    $('at-notes').value = '';
+    if ($('at-deadline')) $('at-deadline').value = '';
+    App.toggleAddTaskDeadline();
+    openModal('modal-add-task');
+    setTimeout(() => $('at-task')?.focus(), 50);
+  },
+
+  toggleAddTaskDeadline() {
+    const wrap = $('at-deadline-wrap');
+    if (wrap) wrap.style.display = $('at-type')?.value === 'checkoff' ? '' : 'none';
+  },
+
+  saveNewTask() {
+    const taskText = ($('at-task')?.value || '').trim();
+    if (!taskText) { $('at-task')?.focus(); return; }
+    const isOngoing = $('at-type')?.value !== 'checkoff';
+    const deadline  = isOngoing ? 'Ongoing' : ($('at-deadline')?.value || isoToday);
+    const tasks = LS.get('tasks') || [];
+    const newId = Date.now();
+    tasks.push({
+      id:       newId,
+      task:     taskText,
+      category: $('at-category')?.value || 'Career',
+      priority: $('at-priority')?.value || '',
+      when:     isOngoing ? 'Ongoing' : deadline,
+      deadline: isOngoing ? 'Ongoing' : deadline,
+      status:   'Not started',
+      notes:    ($('at-notes')?.value || '').trim(),
+    });
+    LS.set('tasks', tasks);
+    closeModal('modal-add-task');
+    App.navigate('tasks');
+  },
+
   // ─── FITNESS ───────────────────────────────────────────────────────────────
   renderFitness() {
     const { woIdx } = getTodaysWorkout();
