@@ -262,7 +262,7 @@ const App = {
     if (wt) wt.textContent = isFri ? '🏃 Friday — run day' : '📋 Tasks sorted by deadline';
 
     // Stats
-    const todayTasks = (LS.get('tasks') || []).filter(t => t.when !== 'Ongoing' && t.status !== 'Completed').length;
+    const todayTasks = getTodaysAgendaItems().length;
     const habits = LS.get('habits')[isoToday] || {};
     const habitsForToday = getHabitsForDate(isoToday);
     const doneCt = habitsForToday.filter(h => habits[h.id] === 'done').length;
