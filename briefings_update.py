@@ -98,18 +98,16 @@ def write_js(briefings):
 // Do not edit manually.
 (function () {{
   var todayBriefings = {js_entries};
-
-  document.addEventListener('DOMContentLoaded', function () {{
+  try {{
     var raw = localStorage.getItem('briefings');
     var existing = raw ? JSON.parse(raw) : [];
-    // Always replace today's briefings so re-runs pick up corrections
     var filtered = existing.filter(function (b) {{ return b.date !== '{TODAY}'; }});
     localStorage.setItem('briefings', JSON.stringify(filtered.concat(todayBriefings)));
-    if (typeof App !== 'undefined') {{
+    if (typeof App !== 'undefined' && App.renderBriefings) {{
       App.renderBriefings();
       App.renderToday();
     }}
-  }});
+  }} catch(e) {{}}
 }})();
 """
 

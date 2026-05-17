@@ -1119,4 +1119,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-page]').forEach(el => el.addEventListener('click', () => App.navigate(el.dataset.page)));
   $('br-date') && ($('br-date').value = isoToday);
   App.navigate('today');
+  // Load briefings with timestamp — bypasses every cache layer (browser, CDN, SW)
+  const bs = document.createElement('script');
+  bs.src = './daily_briefings.js?_t=' + Date.now();
+  bs.onerror = () => {};
+  document.head.appendChild(bs);
 });
