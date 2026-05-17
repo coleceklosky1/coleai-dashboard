@@ -323,7 +323,7 @@ const App = {
     let streak = 0;
     const d = new Date();
     while (streak < 365) {
-      const key = d.toISOString().slice(0, 10);
+      const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
       const h = habits[key] || {};
       const hConfig = getHabitsForDate(key);
       const done = hConfig.filter(hc => h[hc.id] === 'done').length;
