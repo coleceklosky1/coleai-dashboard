@@ -111,7 +111,7 @@ const App = {
     document.querySelectorAll('[data-page]').forEach(n => n.classList.remove('active'));
     $('page-' + page).classList.add('active');
     document.querySelectorAll(`[data-page="${page}"]`).forEach(n => n.classList.add('active'));
-    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings'};
+    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments'};
     const mpt = $('mobile-page-title'); if (mpt) mpt.textContent = titles[page] || page;
     App.closeDrawer();
     App.renderPage(page);
@@ -161,7 +161,8 @@ const App = {
 
   renderPage(p) {
     ({today:App.renderToday, tasks:App.renderTasks, fitness:App.renderFitness,
-      companies:App.renderCompanies, network:App.renderContacts, briefings:App.renderBriefings}[p] || (()=>{}))();
+      companies:App.renderCompanies, network:App.renderContacts, briefings:App.renderBriefings,
+      accomplishments:App.renderAccomplishments}[p] || (()=>{}))();
   },
 
   goToFitness() { App.navigate('fitness'); },
@@ -771,6 +772,111 @@ const App = {
     App.renderBriefings();
     App.renderToday();
   },
+  renderAccomplishments() {
+    const fd = fmtDate(isoToday);
+    const el = $('accomp-date'); if (el) el.textContent = fd.full;
+
+    // ── Gather data ──
+    const habitsForToday = getHabitsForDate(isoToday);
+    const todayHabits    = LS.get('habits')?.[isoToday] || {};
+    const doneHabits     = habitsForToday.filter(h => todayHabits[h.id] === 'done');
+    const skippedHabits  = habitsForToday.filter(h => todayHabits[h.id] === 'skip');
+
+    const checkedAgenda  = (LS.get('agendaChecks') || {})[isoToday] || [];
+
+    const workoutToday   = (LS.get('workoutLog') || []).filter(w => w.date === isoToday);
+
+    const weightToday    = (LS.get('weightLog') || []).filter(w => w.date === isoToday);
+    const lastWeight     = weightToday.length ? weightToday[weightToday.length - 1].weight : null;
+
+    const total = doneHabits.length + checkedAgenda.length + workoutToday.length + (lastWeight ? 1 : 0);
+
+    // ── Banner message ──
+    const messages = [
+      { min:0,  title:"Day's still young, Cole.",         sub:"Nothing checked off yet — go get it." },
+      { min:1,  title:"You're moving.",                   sub:"Every check is momentum. Keep stacking." },
+      { min:3,  title:"Good progress today.",             sub:"You're building the habit of showing up — that's the whole game." },
+      { min:5,  title:"Solid day, Cole.",                 sub:"This is exactly what consistent looks like. Notre Dame '28 energy." },
+      { min:7,  title:"You locked in today.",             sub:"Days like this compound. Future Cole thanks you." },
+      { min:9,  title:"Exceptional day.",                 sub:"This is what separates people. You showed up and delivered." },
+    ];
+    const msg = messages.slice().reverse().find(m => total >= m.min) || messages[0];
+
+    const banner = $('accomp-banner');
+    if (banner) banner.innerHTML = `
+      <div class="accomp-title">${msg.title}</div>
+      <div class="accomp-sub">${msg.sub}</div>
+      <div class="accomp-score">
+        <div class="accomp-score-item">
+          <div class="accomp-score-num">${doneHabits.length}<span style="font-size:14px;color:rgba(255,255,255,0.35)">/${habitsForToday.length}</span></div>
+          <div class="accomp-score-label">Habits</div>
+        </div>
+        <div class="accomp-score-item">
+          <div class="accomp-score-num">${checkedAgenda.length}</div>
+          <div class="accomp-score-label">Tasks done</div>
+        </div>
+        <div class="accomp-score-item">
+          <div class="accomp-score-num">${workoutToday.length > 0 ? '✓' : '—'}</div>
+          <div class="accomp-score-label">Workout</div>
+        </div>
+        ${lastWeight ? `<div class="accomp-score-item">
+          <div class="accomp-score-num">${lastWeight}<span style="font-size:14px;color:rgba(255,255,255,0.35)"> lbs</span></div>
+          <div class="accomp-score-label">Logged</div>
+        </div>` : ''}
+      </div>`;
+
+    // ── Habits ──
+    const hEl = $('accomp-habits');
+    if (hEl) {
+      if (!doneHabits.length && !skippedHabits.length) {
+        hEl.innerHTML = `<div class="accomp-empty">No habits logged yet today</div>`;
+      } else {
+        hEl.innerHTML = [
+          ...doneHabits.map(h => `<div class="accomp-item"><span class="accomp-check">✓</span><span>${h.icon} ${h.label} <span style="color:var(--text-dim);font-size:11px">${h.duration}</span></span></div>`),
+          ...skippedHabits.map(h => `<div class="accomp-item" style="opacity:0.4"><span style="font-size:15px;flex-shrink:0">—</span><span>${h.icon} ${h.label} <span style="color:var(--text-dim);font-size:11px">skipped</span></span></div>`),
+        ].join('');
+      }
+    }
+
+    // ── Agenda ──
+    const aEl = $('accomp-agenda');
+    if (aEl) {
+      if (!checkedAgenda.length) {
+        aEl.innerHTML = `<div class="accomp-empty">No tasks checked off yet</div>`;
+      } else {
+        aEl.innerHTML = checkedAgenda.map(t =>
+          `<div class="accomp-item"><span class="accomp-check">✓</span><span>${t}</span></div>`
+        ).join('');
+      }
+    }
+
+    // ── Workout ──
+    const wEl = $('accomp-workout');
+    if (wEl) {
+      if (!workoutToday.length) {
+        wEl.innerHTML = `<div class="accomp-empty">No workout logged today</div>`;
+      } else {
+        wEl.innerHTML = workoutToday.map(w =>
+          `<div class="accomp-item"><span class="accomp-check">✓</span><span>${w.icon} ${w.workout}</span></div>`
+        ).join('');
+      }
+    }
+
+    // ── Weight ──
+    const wtEl = $('accomp-weight');
+    if (wtEl) {
+      if (!lastWeight) {
+        wtEl.innerHTML = `<div class="accomp-empty">No weight logged today</div>`;
+      } else {
+        const prev = (LS.get('weightLog') || []).filter(w => w.date < isoToday);
+        const prevW = prev.length ? prev[prev.length - 1].weight : null;
+        const diff  = prevW ? (lastWeight - prevW).toFixed(1) : null;
+        const diffStr = diff ? `<span style="color:${diff > 0 ? '#22c55e' : '#ef4444'};font-size:11px;margin-left:4px">${diff > 0 ? '+' : ''}${diff} lbs</span>` : '';
+        wtEl.innerHTML = `<div class="accomp-item"><span class="accomp-check">✓</span><span>${lastWeight} lbs${diffStr}</span></div>`;
+      }
+    }
+  },
+
   deleteBriefing(id) {
     LS.set('briefings', (LS.get('briefings')||[]).filter(b=>b.id!==id));
     App.renderBriefings();

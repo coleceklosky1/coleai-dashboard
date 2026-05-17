@@ -465,6 +465,25 @@ tr:last-child td { border-bottom:none; }
 
 @media(max-width:1100px) { .grid-4 { grid-template-columns:1fr 1fr; } }
 
+/* ══════════════════════════════ ACCOMPLISHMENTS ═════════════════════════════ */
+.accomp-banner {
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin-bottom: 20px;
+  background: var(--nd-navy);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.accomp-title  { font-size:22px; font-weight:800; letter-spacing:-0.4px; margin-bottom:6px; }
+.accomp-sub    { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.5; }
+.accomp-score  { display:flex; gap:20px; margin-top:16px; flex-wrap:wrap; }
+.accomp-score-num   { font-size:28px; font-weight:800; color:var(--nd-gold-l); line-height:1; }
+.accomp-score-label { font-size:10.5px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
+.accomp-item   { display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid var(--border-soft); font-size:13px; color:var(--text); }
+.accomp-item:last-child { border-bottom:none; }
+.accomp-check  { color:#22c55e; font-size:15px; flex-shrink:0; }
+.accomp-empty  { font-size:13px; color:var(--text-dim); padding:16px 0; text-align:center; }
+
 /* ══════════════════════════════ DRAWER + MOBILE HEADER (hidden on desktop) ══ */
 #mobile-header  { display:none; }
 #drawer-overlay { display:none; }

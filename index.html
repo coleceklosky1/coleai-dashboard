@@ -85,6 +85,12 @@
     Briefings
   </div>
 
+  <div class="drawer-section">Daily</div>
+  <div class="drawer-item" data-page="accomplishments">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    Accomplishments
+  </div>
+
   <div class="drawer-footer">
     <div class="drawer-stat"><span>Weight</span><span id="drawer-weight">176 lbs</span></div>
     <div class="drawer-stat"><span>Goal</span><span>185 lbs</span></div>
@@ -132,6 +138,11 @@
   <div class="nav-section">Learning</div>
   <div class="nav-item" data-page="briefings">
     <span class="nav-icon">◉</span> Briefings
+  </div>
+
+  <div class="nav-section">Daily</div>
+  <div class="nav-item" data-page="accomplishments">
+    <span class="nav-icon">★</span> Today
   </div>
 
   <div class="sidebar-footer">
@@ -606,6 +617,35 @@
 
     <div class="card">
       <div id="briefings-list"></div>
+    </div>
+  </section>
+
+  <!-- ──────────────── ACCOMPLISHMENTS ──────────────── -->
+  <section class="page" id="page-accomplishments">
+    <div class="page-header">
+      <div class="page-title">Accomplishments</div>
+      <div class="page-subtitle" id="accomp-date"></div>
+    </div>
+    <div id="accomp-banner" class="accomp-banner"></div>
+    <div class="grid-2 mb20">
+      <div class="card">
+        <div class="card-title">Habits</div>
+        <div id="accomp-habits"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Agenda</div>
+        <div id="accomp-agenda"></div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Workout</div>
+        <div id="accomp-workout"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Weight</div>
+        <div id="accomp-weight"></div>
+      </div>
     </div>
   </section>
 
