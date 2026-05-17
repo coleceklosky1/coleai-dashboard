@@ -26,23 +26,20 @@ OUTPUT_PATH = os.path.join(DASHBOARD_DIR, "daily_briefings.js")
 
 PROMPT = f"""Today is {TODAY}. Generate a daily news briefing for Cole, a Chemical Engineering junior at Notre Dame interested in industry careers, energy, biotech, and global markets.
 
-Search for 6 real news articles published within the past 24 hours (today or yesterday only — no older). Find one article per category:
+Find exactly 3 real news articles:
 
-1. Politics — major US or global political development
-2. Tech — AI, semiconductors, software, or tech industry news
-3. Chemical Engineering — process engineering, chemicals, materials, energy tech, or relevant manufacturing
-4. Markets — stock market, economy, commodities, or macro finance
-5. Science — biology, physics, chemistry, climate, or significant research findings
-6. World — significant international news outside the US
+1. Politics — a major US or global political development published within the LAST 24 HOURS only (today or yesterday — no older).
+2. Chemical Engineering — process engineering, chemicals, materials, energy tech, or relevant manufacturing news published within the last 7 days.
+3. Markets — stock market, economy, commodities, or macro finance news published within the last 7 days.
 
 For each article, return a JSON object with exactly these fields:
-  category    — one of the 6 categories above (exact spelling)
-  headline    — the actual article headline, verbatim
-  source      — publication name (e.g. Reuters, WSJ, Nature, Chemical Engineering)
-  link        — full URL to the article
-  whyItMatters — 1-2 sentences on why this matters to a ChemE student
+  category     — one of: "Politics", "Chemical Engineering", "Markets"
+  headline     — the actual article headline, verbatim
+  source       — publication name (e.g. Reuters, WSJ, Chemical Engineering News)
+  link         — full URL to the article
+  whyItMatters — 1-2 sentences on why this matters to a ChemE student interested in industry careers
 
-Return ONLY a valid JSON array of exactly 6 objects. No markdown, no explanation, just the array."""
+Return ONLY a valid JSON array of exactly 3 objects. No markdown, no explanation, just the array."""
 
 
 def generate_briefings():
