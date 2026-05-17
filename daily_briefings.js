@@ -6,10 +6,10 @@
     "id": "auto-2026-05-17-1",
     "date": "2026-05-17",
     "category": "Politics",
-    "headline": "Trump-Xi summit in China ends with no major breakthroughs, little progress on Taiwan and war in Iran",
-    "source": "MS NOW (MaddowBlog)",
-    "link": "https://www.ms.now/rachel-maddow-show/maddowblog/trump-xi-china-trip-iran-taiwan-declining-nation",
-    "whyItMatters": "US-China relations directly shape tariffs, rare-earth and chemical supply chains, and energy markets that drive ChemE hiring at majors like Dow, ExxonMobil, and Air Products. A summit ending without major breakthroughs signals continued trade uncertainty for industries Cole may enter."
+    "headline": "U.S. and Nigerian mission kills Islamic State group leader, Trump says",
+    "source": "PBS NewsHour / Associated Press",
+    "link": "https://www.pbs.org/newshour/politics/u-s-and-nigerian-mission-kills-islamic-state-group-leader-trump-says",
+    "whyItMatters": "A joint U.S.-Nigeria counterterrorism operation in Africa signals deepening U.S. military engagement on the continent, which can ripple through African energy and commodity markets — relevant for any ChemE eyeing global oil, gas, or mining-linked industry roles."
   },
   {
     "id": "auto-2026-05-17-2",
@@ -17,17 +17,17 @@
     "category": "Chemical Engineering",
     "headline": "Business Watch: Massive complex planned for Abu Dhabi; Angelini to buy Catalyst for $4.1 billion",
     "source": "Chemical & Engineering News (C&EN)",
-    "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "Large new petrochemical complexes and multi-billion-dollar pharma/specialty chemical M&A reveal where capital — and ChemE jobs — are flowing globally. Tracking these deals helps Cole target growth segments (Middle East energy buildout, biotech-adjacent specialty chemicals) as he plans internships and full-time roles."
+    "link": "https://cen.acs.org/business/Business-Watch-Massive-complex-planned/104/web/2026/05",
+    "whyItMatters": "Mega-scale petrochemical buildouts in the Gulf and multi-billion-dollar specialty/biotech M&A directly shape where chemical and process engineers will be hired over the next decade — useful intel for picking internships and full-time roles across energy, pharma, and specialty chemicals."
   },
   {
     "id": "auto-2026-05-17-3",
     "date": "2026-05-17",
-    "category": "Markets",
-    "headline": "Traders Dump Chipmakers as Rising Yields Drive US Stock Selloff",
-    "source": "Bloomberg",
-    "link": "https://www.bloomberg.com/news/articles/2026-05-15/stock-futures-slide-as-inflation-jitters-bring-rally-to-a-halt",
-    "whyItMatters": "A 1.2% S&P 500 drop driven by rising yields and inflation fears — compounded by the Iran conflict pushing oil higher — directly affects energy commodity pricing, capex decisions at chemical producers, and the broader hiring climate for industry-bound ChemE grads."
+    "category": "Tech",
+    "headline": "Qualcomm drops 11% as chip stocks pull back from record AI-driven rally",
+    "source": "CNBC",
+    "link": "https://www.cnbc.com/2026/05/12/qualcomm-chip-stocks-record-ai.html",
+    "whyItMatters": "The semiconductor selloff after a historic AI rally matters for ChemEs because chip fabs are massive consumers of ultra-pure chemicals, gases, and water — the boom-bust cycle in chips directly drives hiring at industrial gas suppliers (Linde, Air Products) and specialty materials firms."
   }
 ];
 
