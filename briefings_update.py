@@ -102,14 +102,12 @@ def write_js(briefings):
   document.addEventListener('DOMContentLoaded', function () {{
     var raw = localStorage.getItem('briefings');
     var existing = raw ? JSON.parse(raw) : [];
-    var existingIds = new Set(existing.map(function (b) {{ return b.id; }}));
-    var toAdd = todayBriefings.filter(function (b) {{ return !existingIds.has(b.id); }});
-    if (toAdd.length > 0) {{
-      localStorage.setItem('briefings', JSON.stringify(existing.concat(toAdd)));
-      if (typeof App !== 'undefined') {{
-        App.renderBriefings();
-        App.renderToday();
-      }}
+    // Always replace today's briefings so re-runs pick up corrections
+    var filtered = existing.filter(function (b) {{ return b.date !== '{TODAY}'; }});
+    localStorage.setItem('briefings', JSON.stringify(filtered.concat(todayBriefings)));
+    if (typeof App !== 'undefined') {{
+      App.renderBriefings();
+      App.renderToday();
     }}
   }});
 }})();
