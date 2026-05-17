@@ -1,5 +1,5 @@
 // Cole.ai Service Worker — network-first so every open with internet = latest version
-const CACHE = 'coleai-v11';
+const CACHE = 'coleai-v12';
 const ASSETS = [
   './',
   './index.html',
