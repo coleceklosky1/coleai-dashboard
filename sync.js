@@ -5,19 +5,26 @@ const Sync = {
   _gistId: null,
   _timer:  null,
   _pushTimer: null,
-  _skip: new Set(['_sync_token','_sync_gist_id']),
+  _skip: new Set(['_sync_token','_sync_gist_id','_sync_dirty']),
 
   init() {
     this._token  = localStorage.getItem('_sync_token')  || null;
     this._gistId = localStorage.getItem('_sync_gist_id') || null;
     if (this._token) {
-      this.pull().then(() => {
+      const dirty = localStorage.getItem('_sync_dirty');
+      const start = () => {
         if (typeof App !== 'undefined') {
           const active = document.querySelector('.page.active');
           if (active) App.renderPage(active.id.replace('page-',''));
         }
         this._startPolling();
-      });
+      };
+      if (dirty) {
+        // Local data is newer than Gist — push first, then pull
+        this._push().then(() => this.pull().then(start));
+      } else {
+        this.pull().then(start);
+      }
     }
     this._updateIndicator();
   },
@@ -41,8 +48,9 @@ const Sync = {
 
   schedulePush() {
     if (!this._token) return;
+    localStorage.setItem('_sync_dirty', '1'); // Mark dirty immediately so reopen pushes first
     clearTimeout(this._pushTimer);
-    this._pushTimer = setTimeout(() => this._push(), 1800);
+    this._pushTimer = setTimeout(() => this._push(), 500); // Reduced from 1800ms
   },
 
   async _push() {
@@ -72,6 +80,7 @@ const Sync = {
           body: JSON.stringify({ files })
         });
       }
+      localStorage.removeItem('_sync_dirty'); // Clear dirty flag — push succeeded
       this._updateIndicator('synced');
     } catch(e) {
       console.warn('[Sync] push failed', e);
@@ -107,6 +116,7 @@ const Sync = {
     this._gistId = null;
     localStorage.removeItem('_sync_token');
     localStorage.removeItem('_sync_gist_id');
+    localStorage.removeItem('_sync_dirty');
     this._updateIndicator();
   },
 
