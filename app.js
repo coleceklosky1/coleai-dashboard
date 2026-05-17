@@ -151,7 +151,7 @@ const App = {
     document.querySelectorAll('[data-page]').forEach(n => n.classList.remove('active'));
     $('page-' + page).classList.add('active');
     document.querySelectorAll(`[data-page="${page}"]`).forEach(n => n.classList.add('active'));
-    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments',history:'Task History'};
+    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments',history:'History'};
     const mpt = $('mobile-page-title'); if (mpt) mpt.textContent = titles[page] || page;
     App.closeDrawer();
     App.renderPage(page);
