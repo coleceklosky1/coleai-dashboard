@@ -1255,14 +1255,17 @@ const App = {
     }).join('');
 
     // Timed event columns
+    GCal._eventMap = {};
     const eventCols = days.map(({timed}) => {
       const blocks = timed.map(ev => {
+        GCal._eventMap[ev.id] = ev;
         const sd  = new Date(ev.start.dateTime);
         const ed  = new Date(ev.end.dateTime);
         const top = ((sd.getHours() - startHour) * 60 + sd.getMinutes()) / 60 * HOUR_H;
         const h   = Math.max((ed - sd) / 3600000 * HOUR_H, 20);
         const showTime = h >= 28;
-        return `<div style="position:absolute;top:${top}px;left:2px;right:2px;height:${h}px;background:#163556;border-radius:4px;padding:3px 6px;overflow:hidden;cursor:default;box-shadow:0 1px 3px rgba(0,0,0,0.15)"
+        return `<div style="position:absolute;top:${top}px;left:2px;right:2px;height:${h}px;background:#163556;border-radius:4px;padding:3px 6px;overflow:hidden;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.15)"
+          onclick="GCal.openEventDetail('${ev.id.replace(/'/g,"\\'")}')"
           title="${(ev.summary||'').replace(/"/g,'&quot;')} · ${fmtTime(ev.start.dateTime)} – ${fmtTime(ev.end.dateTime)}">
           <div style="font-size:0.7rem;font-weight:600;color:#fff;line-height:1.25;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">${ev.summary||'(no title)'}</div>
           ${showTime ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.75);margin-top:1px">${fmtTime(ev.start.dateTime)}</div>` : ''}
@@ -1277,7 +1280,7 @@ const App = {
           <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:2px;margin-left:${TIME_W}px">
             ${headers}
           </div>
-          <div style="display:flex;overflow-y:auto;max-height:540px">
+          <div style="display:flex;overflow-y:auto;max-height:calc(100vh - 180px)">
             <div style="width:${TIME_W}px;flex-shrink:0;position:relative;height:${totalH}px">${timeLabels}</div>
             <div style="flex:1;position:relative;display:flex;height:${totalH}px">
               <div style="position:absolute;inset:0;pointer-events:none">${gridLines}${nowLine}</div>
@@ -1296,6 +1299,25 @@ const GCal = {
   _tokenExpiry: 0,
   _weekOffset: 0,
   _todayCache: null,
+  _eventMap: {},
+
+  openEventDetail(id) {
+    const ev = this._eventMap?.[id];
+    if (!ev) return;
+    const fmtT = s => new Date(s).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+    const allDay = !ev.start?.dateTime;
+    const timeStr = allDay ? 'All day'
+      : `${fmtT(ev.start.dateTime)} – ${fmtT(ev.end.dateTime)}`;
+    const dateStr = new Date(ev.start?.dateTime || ev.start?.date + 'T12:00:00')
+      .toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
+    const el = $('event-detail-body');
+    if (el) el.innerHTML = `
+      <div style="font-size:1rem;font-weight:700;color:#0C2340;margin-bottom:6px">${ev.summary||'(no title)'}</div>
+      <div style="font-size:0.85rem;color:#4A5870;margin-bottom:4px">${dateStr}</div>
+      <div style="font-size:0.85rem;color:#4A5870;margin-bottom:${ev.description?'12px':'0'}">${timeStr}</div>
+      ${ev.description ? `<div style="font-size:0.82rem;color:#4A5870;border-top:1px solid #D8E0EF;padding-top:10px;margin-top:4px">${ev.description}</div>` : ''}`;
+    openModal('modal-event-detail');
+  },
 
   _load() {
     this._clientId    = localStorage.getItem('_gcal_client_id') || null;
