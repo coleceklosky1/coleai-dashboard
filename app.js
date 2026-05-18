@@ -175,7 +175,6 @@ function biotechBadge(b) {
 function catBriefBadge(cat) {
   const m = {
     'Politics':'badge-red','Tech':'badge-navy','Chemical Engineering':'badge-cyan',
-    'Markets':'badge-green','Science':'badge-purple','World':'badge-amber',
   };
   return m[cat] || 'badge-dim';
 }
@@ -1263,7 +1262,7 @@ const App = {
         const top = ((sd.getHours() - startHour) * 60 + sd.getMinutes()) / 60 * HOUR_H;
         const h   = Math.max((ed - sd) / 3600000 * HOUR_H, 20);
         const showTime = h >= 28;
-        return `<div style="position:absolute;top:${top}px;left:1px;right:1px;height:${h}px;background:var(--accent);border-radius:4px;padding:2px 5px;overflow:hidden;cursor:default"
+        return `<div style="position:absolute;top:${top}px;left:1px;right:1px;height:${h}px;background:var(--nd-navy-l);border-radius:4px;padding:2px 5px;overflow:hidden;cursor:default"
           title="${(ev.summary||'').replace(/"/g,'&quot;')} · ${fmtTime(ev.start.dateTime)} – ${fmtTime(ev.end.dateTime)}">
           <div style="font-size:0.68rem;font-weight:600;color:#fff;line-height:1.25;overflow:hidden">${ev.summary||'(no title)'}</div>
           ${showTime ? `<div style="font-size:0.6rem;color:rgba(255,255,255,0.8)">${fmtTime(ev.start.dateTime)}</div>` : ''}
