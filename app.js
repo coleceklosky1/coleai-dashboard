@@ -1219,7 +1219,7 @@ const App = {
 
     // Grid lines
     const gridLines = Array.from({length: endHour - startHour}, (_, i) =>
-      `<div style="position:absolute;top:${(i+1)*HOUR_H}px;left:0;right:0;border-top:1px solid rgba(255,255,255,0.07)"></div>`
+      `<div style="position:absolute;top:${(i+1)*HOUR_H}px;left:0;right:0;border-top:1px solid #D8E0EF"></div>`
     ).join('');
 
     // Current time indicator
@@ -1243,12 +1243,12 @@ const App = {
       const isToday = ds === isoToday;
       const dayNum  = date.toLocaleDateString('en-US', {month:'short', day:'numeric'});
       const adHtml  = allDay.map(ev =>
-        `<div style="font-size:0.65rem;background:var(--accent);color:#fff;border-radius:3px;padding:1px 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ev.summary||'(no title)'}</div>`
+        `<div style="font-size:0.65rem;background:#0C2340;color:#fff;border-radius:3px;padding:1px 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ev.summary||'(no title)'}</div>`
       ).join('');
       return `<div style="flex:1;min-width:0;text-align:center;padding:2px 2px 4px">
-        <div style="display:inline-flex;flex-direction:column;align-items:center;padding:4px 8px;border-radius:8px;${isToday ? 'background:var(--accent)' : ''}">
-          <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:${isToday?'#fff':'var(--text-dim)'}">${dayNames[i]}</div>
-          <div style="font-size:0.88rem;font-weight:600;color:${isToday?'#fff':'var(--text)'}">${dayNum}</div>
+        <div style="display:inline-flex;flex-direction:column;align-items:center;padding:4px 8px;border-radius:8px;${isToday ? 'background:#0C2340' : ''}">
+          <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:${isToday?'#fff':'#8A96AC'}">${dayNames[i]}</div>
+          <div style="font-size:0.88rem;font-weight:600;color:${isToday?'#fff':'#0C2340'}">${dayNum}</div>
         </div>
         ${adHtml}
       </div>`;
@@ -1262,13 +1262,13 @@ const App = {
         const top = ((sd.getHours() - startHour) * 60 + sd.getMinutes()) / 60 * HOUR_H;
         const h   = Math.max((ed - sd) / 3600000 * HOUR_H, 20);
         const showTime = h >= 28;
-        return `<div style="position:absolute;top:${top}px;left:1px;right:1px;height:${h}px;background:var(--nd-navy-l);border-radius:4px;padding:2px 5px;overflow:hidden;cursor:default"
+        return `<div style="position:absolute;top:${top}px;left:2px;right:2px;height:${h}px;background:#163556;border-radius:4px;padding:3px 6px;overflow:hidden;cursor:default;box-shadow:0 1px 3px rgba(0,0,0,0.15)"
           title="${(ev.summary||'').replace(/"/g,'&quot;')} · ${fmtTime(ev.start.dateTime)} – ${fmtTime(ev.end.dateTime)}">
-          <div style="font-size:0.68rem;font-weight:600;color:#fff;line-height:1.25;overflow:hidden">${ev.summary||'(no title)'}</div>
-          ${showTime ? `<div style="font-size:0.6rem;color:rgba(255,255,255,0.8)">${fmtTime(ev.start.dateTime)}</div>` : ''}
+          <div style="font-size:0.7rem;font-weight:600;color:#fff;line-height:1.25;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">${ev.summary||'(no title)'}</div>
+          ${showTime ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.75);margin-top:1px">${fmtTime(ev.start.dateTime)}</div>` : ''}
         </div>`;
       }).join('');
-      return `<div style="flex:1;min-width:0;position:relative;height:${totalH}px;border-left:1px solid rgba(255,255,255,0.07)">${blocks}</div>`;
+      return `<div style="flex:1;min-width:0;position:relative;height:${totalH}px;border-left:1px solid #D8E0EF">${blocks}</div>`;
     }).join('');
 
     content.innerHTML = `
