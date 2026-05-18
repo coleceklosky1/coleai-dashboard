@@ -1301,20 +1301,51 @@ const App = {
 
 // ─── GOOGLE CALENDAR ──────────────────────────────────────────────────────────
 const GCal = {
-  _clientId: null,
+  _workerUrl: null,
   _token: null,
   _tokenExpiry: 0,
   _weekOffset: 0,
   _todayCache: null,
   _eventMap: {},
 
+  _load() {
+    this._workerUrl   = localStorage.getItem('_gcal_worker_url') || null;
+    this._token       = localStorage.getItem('_gcal_token') || null;
+    this._tokenExpiry = parseInt(localStorage.getItem('_gcal_token_expiry') || '0');
+  },
+
+  // Connected = we have a refresh token AND a worker URL (access token may be expired)
+  isConnected() {
+    return !!(localStorage.getItem('_gcal_refresh_token') && this._workerUrl);
+  },
+
+  // Ensure we have a valid access token, refreshing silently if needed
+  async _ensureToken() {
+    if (this._token && Date.now() < this._tokenExpiry) return true;
+    const refreshToken = localStorage.getItem('_gcal_refresh_token');
+    if (!refreshToken || !this._workerUrl) return false;
+    try {
+      const res = await fetch(`${this._workerUrl}/refresh`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ refresh_token: refreshToken }),
+      });
+      const data = await res.json();
+      if (!data.access_token) return false;
+      this._token = data.access_token;
+      this._tokenExpiry = Date.now() + (parseInt(data.expires_in) - 60) * 1000;
+      localStorage.setItem('_gcal_token', this._token);
+      localStorage.setItem('_gcal_token_expiry', String(this._tokenExpiry));
+      return true;
+    } catch(e) { return false; }
+  },
+
   openEventDetail(id) {
     const ev = this._eventMap?.[id];
     if (!ev) return;
     const fmtT = s => new Date(s).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
     const allDay = !ev.start?.dateTime;
-    const timeStr = allDay ? 'All day'
-      : `${fmtT(ev.start.dateTime)} – ${fmtT(ev.end.dateTime)}`;
+    const timeStr = allDay ? 'All day' : `${fmtT(ev.start.dateTime)} – ${fmtT(ev.end.dateTime)}`;
     const dateStr = new Date(ev.start?.dateTime || ev.start?.date + 'T12:00:00')
       .toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
     const el = $('event-detail-body');
@@ -1326,48 +1357,43 @@ const GCal = {
     openModal('modal-event-detail');
   },
 
-  _load() {
-    this._clientId    = localStorage.getItem('_gcal_client_id') || null;
-    this._token       = localStorage.getItem('_gcal_token') || null;
-    this._tokenExpiry = parseInt(localStorage.getItem('_gcal_token_expiry') || '0');
-  },
-
-  isConnected() { return !!this._token && Date.now() < this._tokenExpiry; },
-
-  _requestToken(callback) {
-    if (!window.google?.accounts?.oauth2) { alert('Google API not loaded yet. Try again in a moment.'); return; }
-    google.accounts.oauth2.initTokenClient({
-      client_id: this._clientId,
-      scope: 'https://www.googleapis.com/auth/calendar.events',
-      callback: resp => {
-        if (resp.error) { console.error('[GCal]', resp); return; }
-        this._token = resp.access_token;
-        this._tokenExpiry = Date.now() + (parseInt(resp.expires_in) - 60) * 1000;
-        localStorage.setItem('_gcal_token', this._token);
-        localStorage.setItem('_gcal_token_expiry', String(this._tokenExpiry));
-        if (callback) callback();
-      }
-    }).requestAccessToken();
-  },
-
   connectFromModal() {
-    const input = $('gcal-client-id-input');
-    const id = (input?.value || '').trim();
-    if (!id) { input?.focus(); return; }
-    this._clientId = id;
-    localStorage.setItem('_gcal_client_id', id);
-    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); GCal.fetchTodayEvents().then(() => App.renderToday()); });
+    const workerInput = $('gcal-worker-url-input');
+    const url = (workerInput?.value || '').trim().replace(/\/$/, '');
+    if (!url) { workerInput?.focus(); return; }
+    this._workerUrl = url;
+    localStorage.setItem('_gcal_worker_url', url);
+    this._openPopup();
   },
 
-  reconnect() {
-    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); GCal.fetchTodayEvents().then(() => App.renderToday()); });
+  reconnect() { this._openPopup(); },
+
+  _openPopup() {
+    if (!this._workerUrl) return;
+    const popup = window.open(`${this._workerUrl}/start`, 'gcal_auth',
+      'width=500,height=650,left=200,top=100');
+    const handler = e => {
+      if (e.origin !== new URL(this._workerUrl).origin && !e.data?.type) return;
+      if (e.data?.type !== 'gcal_tokens') return;
+      window.removeEventListener('message', handler);
+      if (popup && !popup.closed) popup.close();
+      if (!e.data.access_token) { alert('Auth failed. Check your worker setup.'); return; }
+      this._token = e.data.access_token;
+      this._tokenExpiry = Date.now() + (parseInt(e.data.expires_in) - 60) * 1000;
+      localStorage.setItem('_gcal_token', this._token);
+      localStorage.setItem('_gcal_token_expiry', String(this._tokenExpiry));
+      if (e.data.refresh_token) localStorage.setItem('_gcal_refresh_token', e.data.refresh_token);
+      closeModal('modal-gcal-connect');
+      this._todayCache = null;
+      App.renderSchedule();
+      GCal.fetchTodayEvents().then(() => App.renderToday());
+    };
+    window.addEventListener('message', handler);
   },
 
   disconnect() {
-    if (this._token && window.google?.accounts?.oauth2) google.accounts.oauth2.revoke(this._token, () => {});
     this._token = null; this._tokenExpiry = 0; this._todayCache = null;
-    localStorage.removeItem('_gcal_token');
-    localStorage.removeItem('_gcal_token_expiry');
+    ['_gcal_token','_gcal_token_expiry','_gcal_refresh_token'].forEach(k => localStorage.removeItem(k));
     closeModal('modal-gcal-connect');
     App.renderSchedule();
     App.renderToday();
@@ -1383,14 +1409,15 @@ const GCal = {
     const cv = $('gcal-connected-view'), nv = $('gcal-connect-view');
     if (cv) cv.style.display = connected ? '' : 'none';
     if (nv) nv.style.display = connected ? 'none' : '';
-    if (!connected && this._clientId) {
-      const inp = $('gcal-client-id-input');
-      if (inp) inp.value = this._clientId;
+    if (!connected && this._workerUrl) {
+      const inp = $('gcal-worker-url-input');
+      if (inp) inp.value = this._workerUrl;
     }
   },
 
   async _fetchEvents(timeMin, timeMax) {
-    if (!this.isConnected()) return null;
+    const ok = await this._ensureToken();
+    if (!ok) return null;
     try {
       const url = new URL('https://www.googleapis.com/calendar/v3/calendars/primary/events');
       url.searchParams.set('timeMin', timeMin);
@@ -1415,10 +1442,10 @@ const GCal = {
 
   openAddEventModal() {
     const d = $('ae-date'); if (d) d.value = isoToday;
-    const st = $('ae-start'); if (st) st.value = '';
-    const et = $('ae-end');   if (et) et.value = '';
-    const ti = $('ae-title'); if (ti) ti.value = '';
-    const no = $('ae-notes'); if (no) no.value = '';
+    if ($('ae-start')) $('ae-start').value = '';
+    if ($('ae-end'))   $('ae-end').value   = '';
+    if ($('ae-title')) $('ae-title').value = '';
+    if ($('ae-notes')) $('ae-notes').value = '';
     openModal('modal-add-event');
     setTimeout(() => $('ae-title')?.focus(), 50);
   },
@@ -1430,40 +1457,31 @@ const GCal = {
     const end   = $('ae-end')?.value;
     if (!title || !date || !start || !end) { alert('Title, date, start and end time are required.'); return; }
     if (start >= end) { alert('End time must be after start time.'); return; }
-
     const btn = $('ae-save-btn');
     if (btn) { btn.textContent = 'Saving…'; btn.disabled = true; }
-
+    const ok = await this._ensureToken();
+    if (!ok) { alert('Not connected. Please reconnect your calendar.'); if (btn) { btn.textContent = 'Save'; btn.disabled = false; } return; }
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const body = {
-      summary: title,
-      description: ($('ae-notes')?.value || '').trim(),
-      start: { dateTime: new Date(`${date}T${start}`).toISOString(), timeZone: tz },
-      end:   { dateTime: new Date(`${date}T${end}`).toISOString(),   timeZone: tz },
-    };
-
     try {
       const res = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
         method: 'POST',
         headers: { Authorization: `Bearer ${this._token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify({
+          summary: title,
+          description: ($('ae-notes')?.value || '').trim(),
+          start: { dateTime: new Date(`${date}T${start}`).toISOString(), timeZone: tz },
+          end:   { dateTime: new Date(`${date}T${end}`).toISOString(),   timeZone: tz },
+        }),
       });
-      if (res.status === 401) {
-        this._token = null; localStorage.removeItem('_gcal_token');
-        alert('Session expired. Please reconnect your calendar.');
-      } else if (res.status === 403) {
-        alert('Permission denied. Please disconnect and reconnect your calendar to grant write access.');
-      } else if (res.ok) {
+      if (res.ok) {
         closeModal('modal-add-event');
         this._todayCache = null;
         App.renderSchedule();
         GCal.fetchTodayEvents().then(() => App.renderToday());
       } else {
-        alert('Failed to create event. Please try again.');
+        alert('Failed to save event. Please try again.');
       }
-    } catch(e) {
-      alert('Network error. Please try again.');
-    }
+    } catch(e) { alert('Network error. Please try again.'); }
     if (btn) { btn.textContent = 'Save'; btn.disabled = false; }
   },
 };

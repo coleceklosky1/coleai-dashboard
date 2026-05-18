@@ -11,7 +11,6 @@
   <meta name="apple-mobile-web-app-title" content="Cole.ai">
   <meta name="theme-color" content="#0C2340">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://accounts.google.com/gsi/client" async></script>
 </head>
 <body>
 
@@ -717,12 +716,11 @@
       </div>
     </div>
     <div id="gcal-connect-view">
-      <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:16px">Paste your Google OAuth Client ID below. You only need to do this once.</div>
+      <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:16px">Paste your Cloudflare Worker URL below. You only need to do this once — it never expires.</div>
       <div class="form-group">
-        <label class="form-label">OAuth Client ID</label>
-        <input type="text" class="inp" id="gcal-client-id-input" placeholder="123456789-abc....apps.googleusercontent.com" autocomplete="off">
+        <label class="form-label">Worker URL</label>
+        <input type="text" class="inp" id="gcal-worker-url-input" placeholder="https://coleai-gcal.YOUR_NAME.workers.dev" autocomplete="off">
       </div>
-      <div style="font-size:0.75rem;color:var(--text-dim);margin-bottom:16px">Get this from Google Cloud Console → APIs &amp; Services → Credentials → OAuth 2.0 Client IDs.</div>
       <div style="display:flex;gap:10px">
         <button class="btn-primary" onclick="GCal.connectFromModal()">Connect &amp; Authorize</button>
         <button class="btn-secondary" onclick="closeModal('modal-gcal-connect')">Cancel</button>
