@@ -258,6 +258,15 @@
         <div id="today-briefings"></div>
       </div>
     </div>
+
+    <!-- Today's Schedule -->
+    <div class="card">
+      <div class="row-sb mb16" style="align-items:center">
+        <div class="card-title" style="margin-bottom:0">Today's Schedule</div>
+        <button class="btn btn-ghost btn-sm" onclick="App.navigate('schedule')">Full week →</button>
+      </div>
+      <div id="today-schedule"></div>
+    </div>
   </section>
 
   <!-- ──────────────── TASKS ──────────────── -->
@@ -684,6 +693,7 @@
         <button class="btn-secondary" style="padding:6px 12px;font-size:1rem" onclick="GCal.prevWeek()">‹</button>
         <button class="btn-secondary" style="padding:6px 12px;font-size:0.8rem" onclick="GCal.thisWeek()">Today</button>
         <button class="btn-secondary" style="padding:6px 12px;font-size:1rem" onclick="GCal.nextWeek()">›</button>
+        <button class="btn-primary" style="padding:6px 12px;font-size:0.8rem" onclick="GCal.openAddEventModal()">+ Add Event</button>
         <button class="btn-secondary" style="padding:6px 10px;font-size:0.75rem" onclick="openModal('modal-gcal-connect');GCal._updateConnectModal()" title="Calendar settings">⚙</button>
       </div>
     </div>
@@ -720,6 +730,39 @@
         <button class="btn-primary" onclick="GCal.connectFromModal()">Connect &amp; Authorize</button>
         <button class="btn-secondary" onclick="closeModal('modal-gcal-connect')">Cancel</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Event -->
+<div class="modal-overlay" id="modal-add-event">
+  <div class="modal">
+    <div class="modal-title">Add Event</div>
+    <div class="form-group">
+      <label class="form-label">Title *</label>
+      <input type="text" class="inp" id="ae-title" placeholder="Event name" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Date *</label>
+      <input type="date" class="inp" id="ae-date">
+    </div>
+    <div style="display:flex;gap:12px">
+      <div class="form-group" style="flex:1">
+        <label class="form-label">Start time *</label>
+        <input type="time" class="inp" id="ae-start">
+      </div>
+      <div class="form-group" style="flex:1">
+        <label class="form-label">End time *</label>
+        <input type="time" class="inp" id="ae-end">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Notes (optional)</label>
+      <input type="text" class="inp" id="ae-notes" placeholder="Description…">
+    </div>
+    <div style="display:flex;gap:12px;margin-top:4px">
+      <button class="btn-primary" id="ae-save-btn" onclick="GCal.saveNewEvent()">Save</button>
+      <button class="btn-secondary" onclick="closeModal('modal-add-event')">Cancel</button>
     </div>
   </div>
 </div>

@@ -342,6 +342,32 @@ const App = {
         <div class="brief-meta"><span class="badge ${catBriefBadge(b.category)}">${b.category}</span><span>${b.source}</span></div>
         <a class="brief-headline" href="${b.link}" target="_blank" rel="noopener">${b.headline}</a>
       </div>`).join('') || '<div style="color:var(--text-dim);font-size:13px;padding:12px 0">No briefings yet — add one →</div>';
+
+    // Today's schedule preview
+    const tsEl = $('today-schedule');
+    if (tsEl) {
+      GCal._load();
+      if (!GCal.isConnected()) {
+        tsEl.innerHTML = `<div style="color:var(--text-dim);font-size:13px;padding:12px 0;text-align:center">
+          <a style="color:var(--accent);cursor:pointer" onclick="App.navigate('schedule')">Connect Google Calendar →</a>
+        </div>`;
+      } else if (GCal._todayCache === null) {
+        tsEl.innerHTML = `<div style="color:var(--text-dim);font-size:13px;padding:8px 0">Loading…</div>`;
+        GCal.fetchTodayEvents().then(() => App.renderToday());
+      } else if (GCal._todayCache.length === 0) {
+        tsEl.innerHTML = `<div style="color:var(--text-dim);font-size:13px;padding:8px 0">No events today</div>`;
+      } else {
+        const fmtT = s => new Date(s).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+        tsEl.innerHTML = GCal._todayCache.slice(0, 4).map(ev => {
+          const allDay = !ev.start?.dateTime;
+          const timeStr = allDay ? 'All day' : fmtT(ev.start.dateTime);
+          return `<div class="brief-item">
+            <div class="brief-meta"><span style="color:var(--accent);font-weight:600">${timeStr}</span></div>
+            <div style="font-size:0.85rem;color:var(--text);font-weight:500">${ev.summary || '(no title)'}</div>
+          </div>`;
+        }).join('');
+      }
+    }
   },
 
   calcStreak() {
@@ -1127,75 +1153,140 @@ const App = {
       return;
     }
 
-    const offset = GCal._weekOffset;
     const now = new Date();
     const dow = now.getDay();
     const monday = new Date(now);
-    monday.setDate(now.getDate() - (dow === 0 ? 6 : dow - 1) + offset * 7);
+    monday.setDate(now.getDate() - (dow === 0 ? 6 : dow - 1) + GCal._weekOffset * 7);
     monday.setHours(0, 0, 0, 0);
     const sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
     sunday.setHours(23, 59, 59, 999);
 
+    const fmt = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
     const labelEl = $('sched-week-label');
-    const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     if (labelEl) labelEl.textContent = `${fmt(monday)} – ${fmt(sunday)}`;
 
     content.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-dim)">Loading…</div>';
-
     const events = await GCal._fetchEvents(monday.toISOString(), sunday.toISOString());
 
     if (events === null) {
-      content.innerHTML = `
-        <div style="text-align:center;padding:40px 16px;color:var(--text-dim)">
-          <div style="margin-bottom:12px">Session expired.</div>
-          <button class="btn-primary" onclick="GCal.reconnect()">Reconnect</button>
-        </div>`;
+      content.innerHTML = `<div style="text-align:center;padding:40px 16px;color:var(--text-dim)">
+        <div style="margin-bottom:12px">Session expired.</div>
+        <button class="btn-primary" onclick="GCal.reconnect()">Reconnect</button></div>`;
       return;
     }
 
+    // Bucket events into days
     const days = Array.from({length:7}, (_, i) => {
       const d = new Date(monday); d.setDate(monday.getDate() + i);
-      return { date: d, events: [] };
+      return {date:d, allDay:[], timed:[]};
     });
-
     for (const ev of events) {
-      const start = ev.start?.dateTime || ev.start?.date;
-      if (!start) continue;
-      const idx = Math.round((new Date(start.length === 10 ? start + 'T12:00:00' : start) - monday) / 86400000);
-      if (idx >= 0 && idx < 7) days[idx].events.push(ev);
+      const isAllDay = !ev.start?.dateTime;
+      const raw = ev.start?.dateTime || ev.start?.date;
+      if (!raw) continue;
+      const evDate = new Date(isAllDay ? raw + 'T12:00:00' : raw);
+      const idx = Math.round((evDate - monday) / 86400000);
+      if (idx < 0 || idx >= 7) continue;
+      isAllDay ? days[idx].allDay.push(ev) : days[idx].timed.push(ev);
     }
 
-    const fmtTime = s => new Date(s).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+    // Dynamic hour range
+    let startHour = 8, endHour = 18;
+    for (const {timed} of days) {
+      for (const ev of timed) {
+        const sh = new Date(ev.start.dateTime).getHours();
+        const em = new Date(ev.end.dateTime);
+        const eh = em.getHours() + (em.getMinutes() > 0 ? 1 : 0);
+        if (sh < startHour) startHour = sh;
+        if (eh > endHour)   endHour   = eh;
+      }
+    }
+    startHour = Math.max(0,  startHour - 1);
+    endHour   = Math.min(24, endHour   + 1);
 
-    const cols = days.map(({ date, events }) => {
+    const HOUR_H   = 56;
+    const TIME_W   = 40;
+    const totalH   = (endHour - startHour) * HOUR_H;
+    const fmtTime  = s => new Date(s).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+    const dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+    // Time labels
+    const timeLabels = Array.from({length: endHour - startHour + 1}, (_, i) => {
+      const h = startHour + i;
+      const lbl = h === 0 ? '12a' : h < 12 ? `${h}a` : h === 12 ? '12p' : `${h-12}p`;
+      return `<div style="position:absolute;top:${i*HOUR_H - 7}px;right:4px;font-size:0.6rem;color:var(--text-dim);line-height:1">${lbl}</div>`;
+    }).join('');
+
+    // Grid lines
+    const gridLines = Array.from({length: endHour - startHour}, (_, i) =>
+      `<div style="position:absolute;top:${(i+1)*HOUR_H}px;left:0;right:0;border-top:1px solid rgba(255,255,255,0.07)"></div>`
+    ).join('');
+
+    // Current time indicator
+    let nowLine = '';
+    if (GCal._weekOffset === 0) {
+      const nowMins = now.getHours() * 60 + now.getMinutes();
+      const startMins = startHour * 60;
+      if (nowMins >= startMins && now.getHours() < endHour) {
+        const topPx = (nowMins - startMins) / 60 * HOUR_H;
+        nowLine = `<div style="position:absolute;top:${topPx}px;left:0;right:0;display:flex;align-items:center;z-index:3;pointer-events:none">
+          <div style="width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0;margin-left:-4px"></div>
+          <div style="flex:1;height:2px;background:#ef4444"></div>
+        </div>`;
+      }
+    }
+
+    // Day headers + all-day strip
+    const hasAnyAllDay = days.some(d => d.allDay.length > 0);
+    const headers = days.map(({date, allDay}, i) => {
       const ds = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
       const isToday = ds === isoToday;
-      const dayName = date.toLocaleDateString('en-US', {weekday:'short'});
       const dayNum  = date.toLocaleDateString('en-US', {month:'short', day:'numeric'});
-
-      const evHtml = events.length === 0
-        ? `<div style="font-size:0.75rem;color:var(--text-dim);padding:4px 2px">—</div>`
-        : events.map(ev => {
-            const allDay = !ev.start?.dateTime;
-            const timeStr = allDay ? 'All day'
-              : `${fmtTime(ev.start.dateTime)} – ${fmtTime(ev.end.dateTime)}`;
-            return `<div style="margin-bottom:5px;padding:5px 7px;background:var(--bg-card);border-radius:6px;border-left:3px solid var(--accent)">
-              <div style="font-size:0.75rem;font-weight:600;color:var(--text);line-height:1.3">${ev.summary || '(no title)'}</div>
-              <div style="font-size:0.68rem;color:var(--text-dim);margin-top:2px">${timeStr}</div>
-            </div>`;
-          }).join('');
-
-      return `<div style="min-width:0;flex:1;min-width:80px">
-        <div style="text-align:center;padding:7px 4px;border-radius:8px;margin-bottom:8px;${isToday ? 'background:var(--accent)' : 'background:var(--bg-card)'}">
-          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;color:${isToday ? '#fff' : 'var(--text-dim)'}">${dayName}</div>
-          <div style="font-size:0.82rem;font-weight:600;margin-top:2px;color:${isToday ? '#fff' : 'var(--text)'}">${dayNum}</div>
+      const adHtml  = allDay.map(ev =>
+        `<div style="font-size:0.65rem;background:var(--accent);color:#fff;border-radius:3px;padding:1px 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ev.summary||'(no title)'}</div>`
+      ).join('');
+      return `<div style="flex:1;min-width:0;text-align:center;padding:2px 2px 4px">
+        <div style="display:inline-flex;flex-direction:column;align-items:center;padding:4px 8px;border-radius:8px;${isToday ? 'background:var(--accent)' : ''}">
+          <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:${isToday?'#fff':'var(--text-dim)'}">${dayNames[i]}</div>
+          <div style="font-size:0.88rem;font-weight:600;color:${isToday?'#fff':'var(--text)'}">${dayNum}</div>
         </div>
-        ${evHtml}
+        ${adHtml}
       </div>`;
     }).join('');
 
-    content.innerHTML = `<div style="display:flex;gap:6px;align-items:flex-start;overflow-x:auto;padding-bottom:8px">${cols}</div>`;
+    // Timed event columns
+    const eventCols = days.map(({timed}) => {
+      const blocks = timed.map(ev => {
+        const sd  = new Date(ev.start.dateTime);
+        const ed  = new Date(ev.end.dateTime);
+        const top = ((sd.getHours() - startHour) * 60 + sd.getMinutes()) / 60 * HOUR_H;
+        const h   = Math.max((ed - sd) / 3600000 * HOUR_H, 20);
+        const showTime = h >= 28;
+        return `<div style="position:absolute;top:${top}px;left:1px;right:1px;height:${h}px;background:var(--accent);border-radius:4px;padding:2px 5px;overflow:hidden;cursor:default"
+          title="${(ev.summary||'').replace(/"/g,'&quot;')} · ${fmtTime(ev.start.dateTime)} – ${fmtTime(ev.end.dateTime)}">
+          <div style="font-size:0.68rem;font-weight:600;color:#fff;line-height:1.25;overflow:hidden">${ev.summary||'(no title)'}</div>
+          ${showTime ? `<div style="font-size:0.6rem;color:rgba(255,255,255,0.8)">${fmtTime(ev.start.dateTime)}</div>` : ''}
+        </div>`;
+      }).join('');
+      return `<div style="flex:1;min-width:0;position:relative;height:${totalH}px;border-left:1px solid rgba(255,255,255,0.07)">${blocks}</div>`;
+    }).join('');
+
+    content.innerHTML = `
+      <div style="overflow-x:auto">
+        <div style="min-width:480px">
+          <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:2px;margin-left:${TIME_W}px">
+            ${headers}
+          </div>
+          <div style="display:flex;overflow-y:auto;max-height:540px">
+            <div style="width:${TIME_W}px;flex-shrink:0;position:relative;height:${totalH}px">${timeLabels}</div>
+            <div style="flex:1;position:relative;display:flex;height:${totalH}px">
+              <div style="position:absolute;inset:0;pointer-events:none">${gridLines}${nowLine}</div>
+              ${eventCols}
+            </div>
+          </div>
+        </div>
+      </div>`;
   },
 };
 
@@ -1205,10 +1296,11 @@ const GCal = {
   _token: null,
   _tokenExpiry: 0,
   _weekOffset: 0,
+  _todayCache: null,
 
   _load() {
-    this._clientId   = localStorage.getItem('_gcal_client_id') || null;
-    this._token      = localStorage.getItem('_gcal_token') || null;
+    this._clientId    = localStorage.getItem('_gcal_client_id') || null;
+    this._token       = localStorage.getItem('_gcal_token') || null;
     this._tokenExpiry = parseInt(localStorage.getItem('_gcal_token_expiry') || '0');
   },
 
@@ -1218,7 +1310,7 @@ const GCal = {
     if (!window.google?.accounts?.oauth2) { alert('Google API not loaded yet. Try again in a moment.'); return; }
     google.accounts.oauth2.initTokenClient({
       client_id: this._clientId,
-      scope: 'https://www.googleapis.com/auth/calendar.readonly',
+      scope: 'https://www.googleapis.com/auth/calendar.events',
       callback: resp => {
         if (resp.error) { console.error('[GCal]', resp); return; }
         this._token = resp.access_token;
@@ -1236,20 +1328,21 @@ const GCal = {
     if (!id) { input?.focus(); return; }
     this._clientId = id;
     localStorage.setItem('_gcal_client_id', id);
-    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); });
+    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); GCal.fetchTodayEvents().then(() => App.renderToday()); });
   },
 
   reconnect() {
-    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); });
+    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); GCal.fetchTodayEvents().then(() => App.renderToday()); });
   },
 
   disconnect() {
     if (this._token && window.google?.accounts?.oauth2) google.accounts.oauth2.revoke(this._token, () => {});
-    this._token = null; this._tokenExpiry = 0;
+    this._token = null; this._tokenExpiry = 0; this._todayCache = null;
     localStorage.removeItem('_gcal_token');
     localStorage.removeItem('_gcal_token_expiry');
     closeModal('modal-gcal-connect');
     App.renderSchedule();
+    App.renderToday();
   },
 
   prevWeek()  { this._weekOffset--; App.renderSchedule(); },
@@ -1278,11 +1371,72 @@ const GCal = {
       url.searchParams.set('orderBy', 'startTime');
       url.searchParams.set('maxResults', '100');
       const res = await fetch(url.toString(), { headers: { Authorization: `Bearer ${this._token}` } });
-      if (res.status === 401) {
-        this._token = null; localStorage.removeItem('_gcal_token'); return null;
-      }
+      if (res.status === 401) { this._token = null; localStorage.removeItem('_gcal_token'); return null; }
       return (await res.json()).items || [];
     } catch(e) { console.warn('[GCal] fetch error', e); return null; }
+  },
+
+  async fetchTodayEvents() {
+    this._load();
+    if (!this.isConnected()) return;
+    const start = new Date(isoToday + 'T00:00:00').toISOString();
+    const end   = new Date(isoToday + 'T23:59:59').toISOString();
+    const evs   = await this._fetchEvents(start, end);
+    this._todayCache = evs || [];
+  },
+
+  openAddEventModal() {
+    const d = $('ae-date'); if (d) d.value = isoToday;
+    const st = $('ae-start'); if (st) st.value = '';
+    const et = $('ae-end');   if (et) et.value = '';
+    const ti = $('ae-title'); if (ti) ti.value = '';
+    const no = $('ae-notes'); if (no) no.value = '';
+    openModal('modal-add-event');
+    setTimeout(() => $('ae-title')?.focus(), 50);
+  },
+
+  async saveNewEvent() {
+    const title = ($('ae-title')?.value || '').trim();
+    const date  = $('ae-date')?.value;
+    const start = $('ae-start')?.value;
+    const end   = $('ae-end')?.value;
+    if (!title || !date || !start || !end) { alert('Title, date, start and end time are required.'); return; }
+    if (start >= end) { alert('End time must be after start time.'); return; }
+
+    const btn = $('ae-save-btn');
+    if (btn) { btn.textContent = 'Saving…'; btn.disabled = true; }
+
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const body = {
+      summary: title,
+      description: ($('ae-notes')?.value || '').trim(),
+      start: { dateTime: new Date(`${date}T${start}`).toISOString(), timeZone: tz },
+      end:   { dateTime: new Date(`${date}T${end}`).toISOString(),   timeZone: tz },
+    };
+
+    try {
+      const res = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${this._token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (res.status === 401) {
+        this._token = null; localStorage.removeItem('_gcal_token');
+        alert('Session expired. Please reconnect your calendar.');
+      } else if (res.status === 403) {
+        alert('Permission denied. Please disconnect and reconnect your calendar to grant write access.');
+      } else if (res.ok) {
+        closeModal('modal-add-event');
+        this._todayCache = null;
+        App.renderSchedule();
+        GCal.fetchTodayEvents().then(() => App.renderToday());
+      } else {
+        alert('Failed to create event. Please try again.');
+      }
+    } catch(e) {
+      alert('Network error. Please try again.');
+    }
+    if (btn) { btn.textContent = 'Save'; btn.disabled = false; }
   },
 };
 
@@ -1306,4 +1460,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bs.src = './daily_briefings.js?_t=' + Date.now();
   bs.onerror = () => {};
   document.head.appendChild(bs);
+  // Pre-fetch today's calendar events for Today tab preview
+  GCal._load();
+  if (GCal.isConnected()) GCal.fetchTodayEvents().then(() => App.renderToday());
 });
