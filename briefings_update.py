@@ -103,6 +103,7 @@ def write_js(briefings):
     var existing = raw ? JSON.parse(raw) : [];
     var filtered = existing.filter(function (b) {{ return b.date !== '{TODAY}'; }});
     localStorage.setItem('briefings', JSON.stringify(filtered.concat(todayBriefings)));
+    if (typeof Sync !== 'undefined' && Sync.schedulePush) Sync.schedulePush();
     if (typeof App !== 'undefined' && App.renderBriefings) {{
       App.renderBriefings();
       App.renderToday();
