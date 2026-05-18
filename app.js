@@ -187,7 +187,7 @@ const App = {
     document.querySelectorAll('[data-page]').forEach(n => n.classList.remove('active'));
     $('page-' + page).classList.add('active');
     document.querySelectorAll(`[data-page="${page}"]`).forEach(n => n.classList.add('active'));
-    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments',history:'History'};
+    const titles = {today:'Today',tasks:'Tasks',fitness:'Fitness',companies:'Career',network:'Network',briefings:'Briefings',accomplishments:'Accomplishments',history:'History',schedule:'Schedule'};
     const mpt = $('mobile-page-title'); if (mpt) mpt.textContent = titles[page] || page;
     App.closeDrawer();
     App.renderPage(page);
@@ -238,7 +238,8 @@ const App = {
   renderPage(p) {
     ({today:App.renderToday, tasks:App.renderTasks, fitness:App.renderFitness,
       companies:App.renderCompanies, network:App.renderContacts, briefings:App.renderBriefings,
-      accomplishments:App.renderAccomplishments, history:App.renderHistory}[p] || (()=>{}))();
+      accomplishments:App.renderAccomplishments, history:App.renderHistory,
+      schedule:App.renderSchedule}[p] || (()=>{}))();
   },
 
   goToFitness() { App.navigate('fitness'); },
@@ -1103,6 +1104,185 @@ const App = {
     LS.set('briefings', (LS.get('briefings')||[]).filter(b=>b.id!==id));
     App.renderBriefings();
     App.renderToday();
+  },
+
+  async renderSchedule() {
+    const content = $('sched-content');
+    if (!content) return;
+    GCal._load();
+
+    if (!GCal.isConnected()) {
+      const hasId = !!GCal._clientId;
+      content.innerHTML = `
+        <div style="text-align:center;padding:56px 16px">
+          <div style="font-size:2.5rem;margin-bottom:12px">📅</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px">Connect Google Calendar</div>
+          <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:20px;max-width:280px;margin-left:auto;margin-right:auto">
+            ${hasId ? 'Your session expired. Click below to re-authorize.' : 'See your live weekly events right in the dashboard.'}
+          </div>
+          <button class="btn-primary" onclick="openModal('modal-gcal-connect');GCal._updateConnectModal()">
+            ${hasId ? 'Reconnect Calendar' : 'Connect Calendar'}
+          </button>
+        </div>`;
+      return;
+    }
+
+    const offset = GCal._weekOffset;
+    const now = new Date();
+    const dow = now.getDay();
+    const monday = new Date(now);
+    monday.setDate(now.getDate() - (dow === 0 ? 6 : dow - 1) + offset * 7);
+    monday.setHours(0, 0, 0, 0);
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    sunday.setHours(23, 59, 59, 999);
+
+    const labelEl = $('sched-week-label');
+    const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    if (labelEl) labelEl.textContent = `${fmt(monday)} – ${fmt(sunday)}`;
+
+    content.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-dim)">Loading…</div>';
+
+    const events = await GCal._fetchEvents(monday.toISOString(), sunday.toISOString());
+
+    if (events === null) {
+      content.innerHTML = `
+        <div style="text-align:center;padding:40px 16px;color:var(--text-dim)">
+          <div style="margin-bottom:12px">Session expired.</div>
+          <button class="btn-primary" onclick="GCal.reconnect()">Reconnect</button>
+        </div>`;
+      return;
+    }
+
+    const days = Array.from({length:7}, (_, i) => {
+      const d = new Date(monday); d.setDate(monday.getDate() + i);
+      return { date: d, events: [] };
+    });
+
+    for (const ev of events) {
+      const start = ev.start?.dateTime || ev.start?.date;
+      if (!start) continue;
+      const idx = Math.round((new Date(start.length === 10 ? start + 'T12:00:00' : start) - monday) / 86400000);
+      if (idx >= 0 && idx < 7) days[idx].events.push(ev);
+    }
+
+    const fmtTime = s => new Date(s).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+
+    const cols = days.map(({ date, events }) => {
+      const ds = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+      const isToday = ds === isoToday;
+      const dayName = date.toLocaleDateString('en-US', {weekday:'short'});
+      const dayNum  = date.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+
+      const evHtml = events.length === 0
+        ? `<div style="font-size:0.75rem;color:var(--text-dim);padding:4px 2px">—</div>`
+        : events.map(ev => {
+            const allDay = !ev.start?.dateTime;
+            const timeStr = allDay ? 'All day'
+              : `${fmtTime(ev.start.dateTime)} – ${fmtTime(ev.end.dateTime)}`;
+            return `<div style="margin-bottom:5px;padding:5px 7px;background:var(--bg-card);border-radius:6px;border-left:3px solid var(--accent)">
+              <div style="font-size:0.75rem;font-weight:600;color:var(--text);line-height:1.3">${ev.summary || '(no title)'}</div>
+              <div style="font-size:0.68rem;color:var(--text-dim);margin-top:2px">${timeStr}</div>
+            </div>`;
+          }).join('');
+
+      return `<div style="min-width:0;flex:1;min-width:80px">
+        <div style="text-align:center;padding:7px 4px;border-radius:8px;margin-bottom:8px;${isToday ? 'background:var(--accent)' : 'background:var(--bg-card)'}">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;color:${isToday ? '#fff' : 'var(--text-dim)'}">${dayName}</div>
+          <div style="font-size:0.82rem;font-weight:600;margin-top:2px;color:${isToday ? '#fff' : 'var(--text)'}">${dayNum}</div>
+        </div>
+        ${evHtml}
+      </div>`;
+    }).join('');
+
+    content.innerHTML = `<div style="display:flex;gap:6px;align-items:flex-start;overflow-x:auto;padding-bottom:8px">${cols}</div>`;
+  },
+};
+
+// ─── GOOGLE CALENDAR ──────────────────────────────────────────────────────────
+const GCal = {
+  _clientId: null,
+  _token: null,
+  _tokenExpiry: 0,
+  _weekOffset: 0,
+
+  _load() {
+    this._clientId   = localStorage.getItem('_gcal_client_id') || null;
+    this._token      = localStorage.getItem('_gcal_token') || null;
+    this._tokenExpiry = parseInt(localStorage.getItem('_gcal_token_expiry') || '0');
+  },
+
+  isConnected() { return !!this._token && Date.now() < this._tokenExpiry; },
+
+  _requestToken(callback) {
+    if (!window.google?.accounts?.oauth2) { alert('Google API not loaded yet. Try again in a moment.'); return; }
+    google.accounts.oauth2.initTokenClient({
+      client_id: this._clientId,
+      scope: 'https://www.googleapis.com/auth/calendar.readonly',
+      callback: resp => {
+        if (resp.error) { console.error('[GCal]', resp); return; }
+        this._token = resp.access_token;
+        this._tokenExpiry = Date.now() + (parseInt(resp.expires_in) - 60) * 1000;
+        localStorage.setItem('_gcal_token', this._token);
+        localStorage.setItem('_gcal_token_expiry', String(this._tokenExpiry));
+        if (callback) callback();
+      }
+    }).requestAccessToken();
+  },
+
+  connectFromModal() {
+    const input = $('gcal-client-id-input');
+    const id = (input?.value || '').trim();
+    if (!id) { input?.focus(); return; }
+    this._clientId = id;
+    localStorage.setItem('_gcal_client_id', id);
+    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); });
+  },
+
+  reconnect() {
+    this._requestToken(() => { closeModal('modal-gcal-connect'); App.renderSchedule(); });
+  },
+
+  disconnect() {
+    if (this._token && window.google?.accounts?.oauth2) google.accounts.oauth2.revoke(this._token, () => {});
+    this._token = null; this._tokenExpiry = 0;
+    localStorage.removeItem('_gcal_token');
+    localStorage.removeItem('_gcal_token_expiry');
+    closeModal('modal-gcal-connect');
+    App.renderSchedule();
+  },
+
+  prevWeek()  { this._weekOffset--; App.renderSchedule(); },
+  nextWeek()  { this._weekOffset++; App.renderSchedule(); },
+  thisWeek()  { this._weekOffset = 0; App.renderSchedule(); },
+
+  _updateConnectModal() {
+    this._load();
+    const connected = this.isConnected();
+    const cv = $('gcal-connected-view'), nv = $('gcal-connect-view');
+    if (cv) cv.style.display = connected ? '' : 'none';
+    if (nv) nv.style.display = connected ? 'none' : '';
+    if (!connected && this._clientId) {
+      const inp = $('gcal-client-id-input');
+      if (inp) inp.value = this._clientId;
+    }
+  },
+
+  async _fetchEvents(timeMin, timeMax) {
+    if (!this.isConnected()) return null;
+    try {
+      const url = new URL('https://www.googleapis.com/calendar/v3/calendars/primary/events');
+      url.searchParams.set('timeMin', timeMin);
+      url.searchParams.set('timeMax', timeMax);
+      url.searchParams.set('singleEvents', 'true');
+      url.searchParams.set('orderBy', 'startTime');
+      url.searchParams.set('maxResults', '100');
+      const res = await fetch(url.toString(), { headers: { Authorization: `Bearer ${this._token}` } });
+      if (res.status === 401) {
+        this._token = null; localStorage.removeItem('_gcal_token'); return null;
+      }
+      return (await res.json()).items || [];
+    } catch(e) { console.warn('[GCal] fetch error', e); return null; }
   },
 };
 

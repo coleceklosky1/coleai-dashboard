@@ -5,7 +5,7 @@ const Sync = {
   _gistId: null,
   _timer:  null,
   _pushTimer: null,
-  _skip: new Set(['_sync_token','_sync_gist_id','_sync_dirty']),
+  _skip: new Set(['_sync_token','_sync_gist_id','_sync_dirty','_gcal_token','_gcal_token_expiry']),
 
   init() {
     this._token  = localStorage.getItem('_sync_token')  || null;
