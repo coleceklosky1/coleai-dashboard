@@ -13,10 +13,12 @@ const Sync = {
     if (!this._token) { this._updateIndicator(); return; }
 
     const start = () => {
+      if (typeof computeTaskResets !== 'undefined') computeTaskResets();
       if (typeof App !== 'undefined') {
         const active = document.querySelector('.page.active');
         if (active) App.renderPage(active.id.replace('page-',''));
       }
+      this._loadBriefings();
       this._startPolling();
     };
 
@@ -120,14 +122,25 @@ const Sync = {
     }
   },
 
+  _loadBriefings() {
+    try {
+      const s = document.createElement('script');
+      s.src = './daily_briefings.js?_t=' + Date.now();
+      s.onerror = () => {};
+      document.head.appendChild(s);
+    } catch(e) {}
+  },
+
   _startPolling() {
     clearInterval(this._timer);
     this._timer = setInterval(async () => {
       await this.pull();
+      if (typeof computeTaskResets !== 'undefined') computeTaskResets();
       if (typeof App !== 'undefined') {
         const active = document.querySelector('.page.active');
         if (active) App.renderPage(active.id.replace('page-',''));
       }
+      this._loadBriefings();
     }, 60000);
   },
 

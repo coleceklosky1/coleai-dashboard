@@ -480,6 +480,7 @@ const App = {
     if ($('at-category')) $('at-category').selectedIndex = 0;
     if ($('at-priority')) $('at-priority').value = '';
     if ($('at-type'))     $('at-type').value = 'ongoing';
+    if ($('at-effort'))   $('at-effort').value = '';
     if ($('at-notes'))    $('at-notes').value = '';
     if ($('at-deadline')) $('at-deadline').value = '';
     App.toggleAddTaskDeadline();
@@ -507,6 +508,7 @@ const App = {
       when:     isOngoing ? 'Ongoing' : deadline,
       deadline: isOngoing ? 'Ongoing' : deadline,
       status:   'Not started',
+      effort:   parseFloat($('at-effort')?.value) || null,
       notes:    ($('at-notes')?.value || '').trim(),
     });
     LS.set('tasks', tasks);
