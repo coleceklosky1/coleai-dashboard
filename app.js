@@ -1184,9 +1184,16 @@ const App = {
       const isAllDay = !ev.start?.dateTime;
       const raw = ev.start?.dateTime || ev.start?.date;
       if (!raw) continue;
-      const evDate = new Date(isAllDay ? raw + 'T12:00:00' : raw);
-      const idx = Math.round((evDate - monday) / 86400000);
-      if (idx < 0 || idx >= 7) continue;
+      // Compare by local date string to avoid timezone/rounding issues
+      const evLocalDate = isAllDay ? raw.slice(0, 10)
+        : new Date(raw).toLocaleDateString('en-CA'); // YYYY-MM-DD in local tz
+      const idx = days.findIndex(d => {
+        const ds = d.date.getFullYear() + '-' +
+          String(d.date.getMonth()+1).padStart(2,'0') + '-' +
+          String(d.date.getDate()).padStart(2,'0');
+        return ds === evLocalDate;
+      });
+      if (idx < 0) continue;
       isAllDay ? days[idx].allDay.push(ev) : days[idx].timed.push(ev);
     }
 
