@@ -6,28 +6,28 @@
     "id": "auto-2026-05-18-1",
     "date": "2026-05-18",
     "category": "Politics",
-    "headline": "U.S. Supreme Court Ends Redistricting Bid by Virginia Democrats",
-    "source": "Democracy Now!",
-    "link": "https://www.democracynow.org/2026/5/18/headlines",
-    "whyItMatters": "Redistricting outcomes shape which party controls Congress and, by extension, federal energy, manufacturing, and industrial policy — all of which directly influence the chemical and energy industries Cole is targeting for his career."
+    "headline": "Trump returns from Beijing with limited deliverables and no major breakthrough on US-China standoff",
+    "source": "Reuters (via Just Security)",
+    "link": "https://www.justsecurity.org/139231/early-edition-may-18-2026/",
+    "whyItMatters": "US-China trade relations directly affect chemical and energy supply chains, tariffs on feedstocks, and hiring at multinational manufacturers — all relevant to ChemE industry recruiting and starting roles in 2026-2027."
   },
   {
     "id": "auto-2026-05-18-2",
     "date": "2026-05-18",
     "category": "Chemical Engineering",
     "headline": "The war in Iran is disrupting the supply of sulfuric acid, the world's most common chemical",
-    "source": "Chemical & Engineering News",
+    "source": "Chemical & Engineering News (C&EN)",
     "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "Sulfuric acid is foundational to fertilizers, refining, batteries, and countless downstream processes; a global supply shock would ripple across nearly every ChemE-relevant industry and reshape near-term hiring and project priorities."
+    "whyItMatters": "Sulfuric acid underpins fertilizers, refining, mining, and bulk chemical processes; shortages or price spikes ripple across every ChemE-relevant industry and influence plant economics, process design choices, and where new capacity gets built."
   },
   {
     "id": "auto-2026-05-18-3",
     "date": "2026-05-18",
     "category": "Tech",
-    "headline": "Will the AI Boom Upend the Chip Industry?",
-    "source": "CEPA (Center for European Policy Analysis)",
-    "link": "https://cepa.org/article/will-the-ai-boom-upend-the-chip-industry/",
-    "whyItMatters": "As hyperscalers design custom silicon alongside NVIDIA, demand for ultra-pure chemicals, specialty gases, and advanced materials in semiconductor fabs is surging — a fast-growing industry pathway for ChemE graduates interested in tech and energy-intensive manufacturing."
+    "headline": "Qualcomm drops 11% as chip stocks pull back from record AI-driven rally",
+    "source": "CNBC",
+    "link": "https://www.cnbc.com/2026/05/12/qualcomm-chip-stocks-record-ai.html",
+    "whyItMatters": "The AI semiconductor boom is reshaping demand for ultrapure chemicals, specialty gases, and advanced materials — sectors where ChemEs land high-paying roles at firms like Linde, Air Products, Entegris, and TSMC suppliers."
   }
 ];
   try {
