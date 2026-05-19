@@ -9,7 +9,7 @@
     "headline": "Trump says he's postponing 'scheduled attack of Iran tomorrow' at Middle East leaders' request",
     "source": "CNBC",
     "link": "https://www.cnbc.com/politics/",
-    "whyItMatters": "Trump postponed an imminent U.S. attack on Iran at the request of Qatar, Saudi Arabia and the United Arab Emirates after repeatedly threatening to launch new strikes. A wider Iran conflict would shock global oil and petrochemical markets — directly affecting energy and chemical industry hiring, capex, and feedstock prices that ChemE grads will encounter on day one."
+    "whyItMatters": "Middle East conflict is already pushing US gas prices to $4.51/gallon and rattling global energy markets — directly affecting hiring, capital spending, and feedstock costs across the oil, gas, and petrochemical industries where many ChemE grads land their first jobs."
   },
   {
     "id": "auto-2026-05-19-2",
@@ -18,16 +18,16 @@
     "headline": "The war in Iran is disrupting the supply of sulfuric acid, the world's most common chemical",
     "source": "Chemical & Engineering News",
     "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "Shortages or price spikes in sulfuric acid could rattle industries across the economy. Sulfuric acid underpins fertilizers, mining, batteries, and refining — a real-world example of how geopolitics ripples through process industries and the kind of supply-chain problem ChemEs are hired to solve."
+    "whyItMatters": "Sulfuric acid is the highest-volume industrial chemical on Earth, feeding fertilizer, mining, refining, and battery supply chains. Shortages or price spikes would ripple through nearly every process industry a ChemE might work in, and understanding these supply shocks is exactly the kind of market awareness industry recruiters look for."
   },
   {
     "id": "auto-2026-05-19-3",
     "date": "2026-05-19",
     "category": "Tech",
-    "headline": "Weekly news roundup: TSMC faces AI supply strain as Samsung, Intel, and Apple test foundry alternatives",
-    "source": "DigiTimes",
-    "link": "https://www.digitimes.com/news/a20260518VL200/digitimes-asia-weekly-news-roundup-apple-intel-samsung-tsmc.html",
-    "whyItMatters": "Intel is mounting a broader comeback under CEO Lip-Bu Tan, fueled by US manufacturing expansion, and as AI demand strains TSMC capacity, Intel is emerging as a meaningful alternative in foundry and advanced packaging. Reshoring semiconductor fabs means massive demand for ChemEs in photolithography, CVD/etch process engineering, and ultra-pure chemicals — among the hottest industry career paths right now."
+    "headline": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
+    "source": "CNBC",
+    "link": "https://www.cnbc.com/2026/05/08/wall-street-ai-chip-love-moves-from-nvidia-to-intel-amd-and-micron.html",
+    "whyItMatters": "Intel's reported deal to manufacture Apple processors plus Nvidia's $3.2B Corning partnership for three new US optical-tech factories signal a domestic semiconductor manufacturing boom — creating major process/fab engineering roles for ChemE grads in areas like CVD, etch, materials, and ultrapure chemicals."
   }
 ];
   try {
