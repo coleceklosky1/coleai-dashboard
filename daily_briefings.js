@@ -6,28 +6,28 @@
     "id": "auto-2026-05-20-1",
     "date": "2026-05-20",
     "category": "Politics",
-    "headline": "Senate advances measure to end military action in Iran in rebuke to Trump",
+    "headline": "Trump endorses Ken Paxton in Texas Senate GOP runoff, dealing blow to John Cornyn",
     "source": "CNBC",
     "link": "https://www.cnbc.com/politics/",
-    "whyItMatters": "Congressional pushback on the Iran war could reshape Middle East oil supply dynamics and energy prices — directly relevant for ChemE grads eyeing refining, petrochemicals, and energy industry roles."
+    "whyItMatters": "Senate primary realignments shape energy and industrial policy committees that directly affect oil, gas, and chemical sector regulation in Texas — a key hub for ChemE jobs at companies like ExxonMobil, Dow, and LyondellBasell."
   },
   {
     "id": "auto-2026-05-20-2",
     "date": "2026-05-20",
     "category": "Chemical Engineering",
-    "headline": "Hyosung ramps up sugarcane-based Bio-BDO production at new Vietnam facility",
+    "headline": "Hyosung ramps up production of sugarcane-based 1,4-Butanediol (Bio-BDO) at new Vietnam facility",
     "source": "The Chemical Engineer",
     "link": "https://www.thechemicalengineer.com/",
-    "whyItMatters": "Bio-based 1,4-butanediol is a flagship example of bio-feedstock process engineering replacing petrochemical routes — exactly the kind of sustainable manufacturing roles Notre Dame ChemEs are increasingly recruited into."
+    "whyItMatters": "Bio-based BDO scale-up signals real industrial momentum for renewable feedstocks in commodity chemicals — exactly the kind of process design and sustainability work hiring ChemE grads at majors like BASF, Dow, and specialty chemical firms."
   },
   {
     "id": "auto-2026-05-20-3",
     "date": "2026-05-20",
     "category": "Tech",
-    "headline": "Wall Street sees 'changing of the guard in AI' as Intel, AMD shares soar while Nvidia lags",
-    "source": "CNBC",
-    "link": "https://www.cnbc.com/2026/05/08/wall-street-ai-chip-love-moves-from-nvidia-to-intel-amd-and-micron.html",
-    "whyItMatters": "Intel's deal with Apple and Corning's three new U.S. optical-tech factories for Nvidia show that the AI buildout is driving massive demand for chemical engineers in semiconductor fabs, materials, and advanced manufacturing."
+    "headline": "Nvidia embraces its role as an AI investor in 2026, committing $40B+ to equity investments including a $30B stake in OpenAI",
+    "source": "Techmeme / Distill Intelligence",
+    "link": "https://www.distillintelligence.com/briefings/semiconductors-ai-chips-2026-05-15",
+    "whyItMatters": "Massive AI capex flowing into data centers and chip supply chains drives demand for ChemEs in semiconductor manufacturing (CVD, ALD, photolithography chemistries) and power/cooling infrastructure — a fast-growing alternative career path beyond traditional oil & gas."
   }
 ];
   try {
