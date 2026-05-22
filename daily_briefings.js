@@ -9,25 +9,25 @@
     "headline": "GOP Leaders Delay Vote on Iran War Powers Resolution Until June",
     "source": "Democracy Now!",
     "link": "https://www.democracynow.org/2026/5/22/headlines",
-    "whyItMatters": "Continued US military involvement in Iran has direct implications for global oil markets and energy supply chains — sectors that heavily employ chemical engineers in refining, petrochemicals, and energy infrastructure."
+    "whyItMatters": "Ongoing U.S. involvement in the Iran war directly affects global oil markets, energy prices, and supply chains — all of which shape hiring and capital investment decisions across the chemical and energy industries where ChemE grads work."
   },
   {
     "id": "auto-2026-05-22-2",
     "date": "2026-05-22",
     "category": "Chemical Engineering",
-    "headline": "As plants close, industry blames Asian imports, high energy prices, and regulation",
-    "source": "Chemical & Engineering News (C&EN)",
-    "link": "https://cen.acs.org/index.html",
-    "whyItMatters": "A wave of US and European chemical plant closures driven by Asian competition, energy costs, and regulation directly affects the domestic ChemE job market — Cole should track which segments (specialty vs. commodity chemicals) are hiring versus contracting as he plans internships and full-time recruiting."
+    "headline": "Scientists just unlocked a cheaper way to make clean hydrogen fuel",
+    "source": "ScienceDaily (Washington University in St. Louis)",
+    "link": "https://www.sciencedaily.com/releases/2026/05/260517211437.htm",
+    "whyItMatters": "A platinum-free catalyst for anion-exchange membrane water electrolyzers could make green hydrogen economically scalable — a huge career pathway for ChemE grads moving into electrolyzer design, catalysis, and clean-energy manufacturing roles."
   },
   {
     "id": "auto-2026-05-22-3",
     "date": "2026-05-22",
     "category": "Tech",
-    "headline": "Semiconductor and Computing Industry Insights – May 20, 2026 Review",
-    "source": "IndexBox / SemiEngineering",
-    "link": "https://www.indexbox.io/blog/industry-insights-semiconductor-and-computing-developments-may-20-2026/",
-    "whyItMatters": "AI-driven overhauls of computing infrastructure, heterogeneous integration, and HBM3e-to-HBM4 thermal/signal challenges all rely on materials science, process engineering, and advanced packaging — fast-growing intersections where ChemEs find roles at fabs like TSMC, Intel, and Applied Materials."
+    "headline": "Innovation at the edge: Semiconductor startup highlights from Plug and Play Silicon Valley May Summit 2026",
+    "source": "DIGITIMES",
+    "link": "https://www.digitimes.com/news/a20260521VL226/pnp-summit-2026-semiconductor-industry-startup-data-security.html",
+    "whyItMatters": "The semiconductor industry's pivot toward hardware-level security and energy efficiency for AI is driving demand for advanced materials, ultrapure chemicals, and process engineers in chip fabs — a fast-growing recruiting pipeline for ChemE majors."
   }
 ];
   try {
