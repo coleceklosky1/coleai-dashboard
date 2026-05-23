@@ -9,16 +9,16 @@
     "headline": "Trump's revenge politics comes back to haunt him",
     "source": "Axios",
     "link": "https://www.axios.com/2026/05/22/trumps-revenge-ballroom-weaponization-fund",
-    "whyItMatters": "Senate Majority Leader John Thune sent the chamber home until June, sparing Republicans from voting on Trump's $1.8 billion 'anti-weaponization fund' to compensate people his administration says were targeted by the Biden Justice Department. Federal policy chaos and shifting GOP priorities directly affect funding for energy, manufacturing, and infrastructure programs Cole may encounter in industry roles."
+    "whyItMatters": "Senate Majority Leader John Thune sent the chamber home until June, sparing Republicans from voting on Trump's $1.8 billion 'anti-weaponization fund' and immigration enforcement reconciliation. Congressional gridlock on spending bills directly impacts federal funding for energy and manufacturing programs that shape ChemE industry hiring."
   },
   {
     "id": "auto-2026-05-23-2",
     "date": "2026-05-23",
     "category": "Chemical Engineering",
-    "headline": "Industrial Leads for the Week of May 25, 2026",
+    "headline": "X-Energy to Construct Small Modular Reactor Nuclear Plant at Dow Chemical's Seadrift Site",
     "source": "Engineering News-Record",
     "link": "https://www.enr.com/articles/63034-industrial-leads-for-the-week-of-may-25-2026",
-    "whyItMatters": "X-Energy is planning to construct a small modular reactor nuclear power plant at Dow Chemical's specialty chemicals plant site in Seadrift, with four SMR reactors generating 320 MW of electric power using high-temperature gas reactor technology, and Fluor Corp. has been selected to provide front-end loading stage two services. This SMR-powered chemical plant is exactly the kind of energy-process integration project that defines next-generation ChemE careers at majors like Dow and Fluor."
+    "whyItMatters": "X-Energy is planning a small modular reactor nuclear plant at Dow Chemical's Seadrift site with four SMR reactors generating 320 MW using high-temperature gas reactor technology and TRISO fuel, with Fluor Corp. providing front-end loading services and completion expected by 2030. This is exactly the type of energy-chemicals convergence project where Notre Dame ChemEs land jobs — combining process design, nuclear thermal systems, and large-scale chemical manufacturing."
   },
   {
     "id": "auto-2026-05-23-3",
@@ -27,7 +27,7 @@
     "headline": "Semiconductor and Computing Industry Insights – May 20, 2026 Review",
     "source": "IndexBox",
     "link": "https://www.indexbox.io/blog/industry-insights-semiconductor-and-computing-developments-may-20-2026/",
-    "whyItMatters": "Synopsys observes that the demands of AI model training and inference are driving a fundamental overhaul of computing infrastructure, prompting the industry to reconsider both the amount of compute that can fit in a rack and the complete architectural design of servers, while Intel Foundry contends heterogeneous integration is becoming the most viable route to sustain AI growth, with focus on how future chips will be stacked, connected, powered, and cooled. AI-driven chip cooling, thermal management, and advanced materials are creating massive demand for ChemE expertise in semiconductor fabs and data center design."
+    "whyItMatters": "Synopsys notes AI training and inference demands are driving a fundamental overhaul of computing infrastructure, while Intel Foundry argues heterogeneous integration is the most viable route to sustain AI growth, requiring detailed roadmaps for how chips are stacked, connected, powered, and cooled. ChemEs increasingly play a role in semiconductor manufacturing — thermal management, advanced materials, and fab process design are growing career tracks tied to the AI buildout."
   }
 ];
   try {
