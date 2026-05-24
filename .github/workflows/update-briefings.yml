@@ -2,8 +2,8 @@ name: Daily Briefings
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # 9:00 AM UTC = 5:00 AM EDT / articles well-published by then
-  workflow_dispatch:        # also lets you trigger manually from GitHub
+    - cron: '0 9 * * *'   # 9:00 AM UTC = 5:00 AM EDT
+  workflow_dispatch:        # allows manual trigger from GitHub
 
 jobs:
   update-briefings:
@@ -18,17 +18,17 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install anthropic
+        run: pip install google-genai
 
       - name: Generate briefings
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python briefings_update.py
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daily_briefings.js
+          git add daily_briefings.js briefings_history.json
           git diff --staged --quiet || git commit -m "Daily briefings $(date +%Y-%m-%d)"
           git push
