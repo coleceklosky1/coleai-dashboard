@@ -566,6 +566,15 @@
       </div>
     </div>
 
+    <!-- Coffee Chats -->
+    <div class="card mb20">
+      <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        ☕ Coffee Chats
+        <button class="btn btn-primary btn-sm" onclick="App.openAddCoffeeChat()">+ Schedule Chat</button>
+      </div>
+      <div id="coffee-chats-list"></div>
+    </div>
+
     <div class="search-bar">
       <input type="text" class="inp" id="net-search" placeholder="Search contacts…" oninput="App.renderContacts()">
       <select class="inp" id="net-filter-industry" onchange="App.renderContacts()">
@@ -899,6 +908,43 @@
     <div class="form-actions">
       <button class="btn btn-ghost" onclick="closeModal('modal-contact')">Cancel</button>
       <button class="btn btn-primary" onclick="App.saveContact()">Save Contact</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add / Edit Coffee Chat -->
+<div class="modal-overlay" id="modal-coffee-chat">
+  <div class="modal">
+    <div class="modal-title" id="modal-coffee-chat-title">Schedule Coffee Chat</div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Person *</label>
+        <input type="text" class="inp" id="cc-person" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Company / Organization</label>
+        <input type="text" class="inp" id="cc-company" placeholder="e.g. ExxonMobil">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Date *</label>
+        <input type="date" class="inp" id="cc-date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Time</label>
+        <input type="time" class="inp" id="cc-time">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Location / Medium</label>
+      <input type="text" class="inp" id="cc-location" placeholder="e.g. Zoom, Coffee shop, Phone call">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Notes</label>
+      <input type="text" class="inp" id="cc-notes" placeholder="e.g. Questions to ask, follow-up items…">
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-coffee-chat')">Cancel</button>
+      <button class="btn btn-primary" onclick="App.saveCoffeeChat()">Save</button>
     </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ function initState() {
   if (!LS.get('tasks'))       LS.set('tasks', TASKS_DATA);
   if (!LS.get('habits'))      LS.set('habits', {});
   if (!LS.get('contacts'))    LS.set('contacts', []);
+  if (!LS.get('coffeeChats')) LS.set('coffeeChats', []);
   if (!LS.get('briefings'))   LS.set('briefings', INITIAL_BRIEFINGS);
   if (!LS.get('workoutIdx'))  LS.set('workoutIdx', 0);   // cycles 0-3 only (not run)
   if (!LS.get('exerciseDone'))LS.set('exerciseDone', {});
@@ -881,6 +882,7 @@ const App = {
       </tr>`).join('');
 
     if (!filtered.length && contacts.length) tbody.innerHTML = '<tr><td colspan="12" style="text-align:center;color:var(--text-dim);padding:30px">No contacts match search</td></tr>';
+    App.renderCoffeeChats();
   },
 
   _editContactId: null,
@@ -926,6 +928,92 @@ const App = {
     if (!confirm('Delete this contact?')) return;
     LS.set('contacts', (LS.get('contacts')||[]).filter(c=>c.id!==id));
     App.renderContacts();
+  },
+
+  // ─── COFFEE CHATS ──────────────────────────────────────────────────────────
+  renderCoffeeChats() {
+    const el = $('coffee-chats-list'); if (!el) return;
+    const today = isoToday;
+    const all = (LS.get('coffeeChats') || []).slice().sort((a, b) => (a.date||'') < (b.date||'') ? -1 : 1);
+    if (!all.length) {
+      el.innerHTML = '<div style="color:var(--text-dim);font-size:13px;padding:10px 0;text-align:center">No coffee chats scheduled yet</div>';
+      return;
+    }
+    const upcoming = all.filter(c => !c.done && c.date >= today);
+    const past     = all.filter(c =>  c.done || c.date <  today);
+    const fmt = d => d ? new Date(d + 'T00:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : '—';
+    const row = c => {
+      const isToday = c.date === today;
+      const isPast  = c.done || c.date < today;
+      return `<div class="coffee-chat-item${isPast ? ' chat-past' : ''}">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span class="chat-date-pill${isToday ? ' chat-today' : ''}">${isToday ? 'Today' : fmt(c.date)}${c.time ? ' · ' + c.time : ''}</span>
+          <span style="font-weight:600;font-size:13px">${c.person}</span>
+          ${c.company ? `<span style="font-size:12px;color:var(--text-muted)">${c.company}</span>` : ''}
+          ${c.location ? `<span style="font-size:12px;color:var(--text-dim)">· ${c.location}</span>` : ''}
+        </div>
+        ${c.notes ? `<div style="font-size:12px;color:var(--text-dim);margin-top:4px;padding-left:2px">${c.notes}</div>` : ''}
+        <div class="action-btns" style="margin-top:6px">
+          <button class="btn btn-xs ${c.done ? 'btn-ghost' : 'btn-primary'}" onclick="App.toggleChatDone(${c.id})">${c.done ? 'Undo' : '✓ Done'}</button>
+          <button class="btn btn-xs btn-ghost" onclick="App.editCoffeeChat(${c.id})">Edit</button>
+          <button class="btn btn-xs btn-danger" onclick="App.deleteCoffeeChat(${c.id})">✕</button>
+        </div>
+      </div>`;
+    };
+    let html = upcoming.map(row).join('');
+    if (past.length) {
+      html += `<div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;padding:10px 0 4px;border-top:1px solid var(--border-soft);margin-top:6px">Past / Completed</div>`;
+      html += past.map(row).join('');
+    }
+    el.innerHTML = html;
+  },
+  openAddCoffeeChat() {
+    App._editChatId = null;
+    ['cc-person','cc-company','cc-time','cc-location','cc-notes'].forEach(id => { const el=$(id); if(el)el.value=''; });
+    $('cc-date').value = isoToday;
+    $('modal-coffee-chat-title').textContent = 'Schedule Coffee Chat';
+    openModal('modal-coffee-chat');
+  },
+  editCoffeeChat(id) {
+    const c = (LS.get('coffeeChats')||[]).find(x=>x.id===id); if (!c) return;
+    App._editChatId = id;
+    $('cc-person').value = c.person||''; $('cc-company').value = c.company||'';
+    $('cc-date').value = c.date||''; $('cc-time').value = c.time||'';
+    $('cc-location').value = c.location||''; $('cc-notes').value = c.notes||'';
+    $('modal-coffee-chat-title').textContent = 'Edit Coffee Chat';
+    openModal('modal-coffee-chat');
+  },
+  saveCoffeeChat() {
+    const person = $('cc-person').value.trim();
+    if (!person) { $('cc-person').style.borderColor='var(--red)'; return; }
+    $('cc-person').style.borderColor = '';
+    const date = $('cc-date').value;
+    if (!date) { $('cc-date').style.borderColor='var(--red)'; return; }
+    $('cc-date').style.borderColor = '';
+    const chats = LS.get('coffeeChats') || [];
+    const existing = App._editChatId ? chats.find(x=>x.id===App._editChatId) : null;
+    const obj = {
+      id: App._editChatId || Date.now(), person, date,
+      company:$('cc-company').value.trim(), time:$('cc-time').value.trim(),
+      location:$('cc-location').value.trim(), notes:$('cc-notes').value.trim(),
+      done: existing ? existing.done : false,
+    };
+    if (App._editChatId) { const i=chats.findIndex(x=>x.id===App._editChatId); if(i>=0)chats[i]=obj; }
+    else chats.push(obj);
+    LS.set('coffeeChats', chats);
+    closeModal('modal-coffee-chat');
+    App.renderCoffeeChats();
+  },
+  toggleChatDone(id) {
+    const chats = LS.get('coffeeChats') || [];
+    const i = chats.findIndex(x=>x.id===id); if (i>=0) chats[i].done = !chats[i].done;
+    LS.set('coffeeChats', chats);
+    App.renderCoffeeChats();
+  },
+  deleteCoffeeChat(id) {
+    if (!confirm('Delete this coffee chat?')) return;
+    LS.set('coffeeChats', (LS.get('coffeeChats')||[]).filter(c=>c.id!==id));
+    App.renderCoffeeChats();
   },
 
   // ─── BRIEFINGS ─────────────────────────────────────────────────────────────
