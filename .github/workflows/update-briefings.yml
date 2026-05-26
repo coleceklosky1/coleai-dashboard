@@ -5,6 +5,9 @@ on:
     - cron: '0 9 * * *'   # 9:00 AM UTC = 5:00 AM EDT
   workflow_dispatch:        # allows manual trigger from GitHub
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   update-briefings:
     runs-on: ubuntu-latest
