@@ -6,28 +6,28 @@
     "id": "auto-2026-05-26-1",
     "date": "2026-05-26",
     "category": "Politics",
-    "headline": "The Latest: Iran deal progress is murky after US military says it carried out 'self-defense' strikes",
-    "source": "Associated Press (via KSAT)",
-    "link": "https://www.ksat.com/news/world/2026/05/26/the-latest-iran-deal-progress-is-murky-after-us-military-says-it-carried-out-self-defense-strikes/",
-    "whyItMatters": "This directly impacts global energy markets due to the Strait of Hormuz, a critical chokepoint for oil and gas. Chemical engineers in the energy sector would be keenly aware of geopolitical stability and its effects on supply chains and project viability."
+    "headline": "Governor Newsom secures Presidential Emergency Declaration approval for Orange County hazmat response",
+    "source": "Governor of California",
+    "link": "https://www.gov.ca.gov/2026/05/25/governor-newsom-secures-presidential-emergency-declaration-approval-for-orange-county-hazmat-response/",
+    "whyItMatters": "This is a significant government response to a chemical incident, demonstrating the real-world impact of chemical hazards and the interdisciplinary efforts (including chemical expertise) required for emergency management and public safety in industry."
   },
   {
     "id": "auto-2026-05-26-2",
     "date": "2026-05-26",
     "category": "Chemical Engineering",
-    "headline": "Green Chemicals Industry Expected to Grow from USD 59.1 billion in 2025 to USD 149.2 billion by 2035",
-    "source": "openPR.com (MarketGenics Global Research)",
-    "link": "https://www.openpr.com/news/3512502/green-chemicals-industry-expected-to-grow-from-usd-59-1-billion",
-    "whyItMatters": "This highlights the significant growth in sustainable chemical manufacturing, a key area for chemical engineers interested in environmentally friendly processes, bio-based materials, and new market opportunities in the industry."
+    "headline": "Research spotlight: Global fellow advances greener battery manufacturing",
+    "source": "Morehead-Cain",
+    "link": "https://moreheadcain.org/news/research-spotlight-global-fellow-advances-greener-battery-manufacturing/",
+    "whyItMatters": "This article highlights a technical advancement in sustainable battery manufacturing using \"all-dry manufacturing\" and jet milling, directly relevant to energy technology, materials science, and process engineering careers in the chemical industry."
   },
   {
     "id": "auto-2026-05-26-3",
     "date": "2026-05-26",
     "category": "Tech",
-    "headline": "Gemini for Science: AI experiments and tools for a new era of discovery",
-    "source": "Google Blog",
-    "link": "https://blog.google/technology/ai/gemini-for-science-ai-experiments-tools-google-io-2026/",
-    "whyItMatters": "These new AI tools for scientific research, including hypothesis generation and computational discovery, can revolutionize how chemical engineers approach R&D, accelerate materials discovery, and optimize complex processes in industry."
+    "headline": "COMPUTEX 2026: Where the World's AI Future Comes Together",
+    "source": "AlphaMatch",
+    "link": "https://alphamatch.com/computex-2026-where-the-worlds-ai-future-comes-together/",
+    "whyItMatters": "This article provides an overview of a major industry event showcasing the latest in AI, computing, robotics, and embedded systems, offering insights into future technological trends and potential career paths in tech for chemical engineers."
   }
 ];
   try {
