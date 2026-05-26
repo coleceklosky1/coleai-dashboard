@@ -19,6 +19,7 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import date, timedelta
 
 TODAY = date.today().isoformat()
@@ -134,7 +135,9 @@ def generate_briefings():
             )
         except Exception as e:
             last_error = str(e)
-            print(f"Attempt {attempt} API error: {e}. Retrying...")
+            delay = 60 * attempt
+            print(f"Attempt {attempt} API error: {e}. Waiting {delay}s before retry...")
+            time.sleep(delay)
             continue
 
         text = response.text or ""
@@ -143,6 +146,7 @@ def generate_briefings():
         if not match:
             last_error = f"No JSON array in response:\n{text[:500]}"
             print(f"Attempt {attempt}: no JSON array found. Retrying...")
+            time.sleep(30)
             continue
 
         try:
@@ -150,6 +154,7 @@ def generate_briefings():
         except json.JSONDecodeError as e:
             last_error = f"JSON parse error: {e}\nRaw text:\n{text[:500]}"
             print(f"Attempt {attempt} JSON error: {e}. Retrying...")
+            time.sleep(30)
             continue
 
         bad_links = [b for b in briefings if not is_article_url(b.get("link", ""))]
@@ -157,6 +162,7 @@ def generate_briefings():
             cats = [b.get("category") for b in bad_links]
             last_error = f"Homepage URLs returned for categories: {cats}"
             print(f"Attempt {attempt}: homepage URLs detected {cats}. Retrying...")
+            time.sleep(30)
             continue
 
         # Warn (don't fail) if a duplicate headline slips through
