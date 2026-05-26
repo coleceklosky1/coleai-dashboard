@@ -6,28 +6,28 @@
     "id": "auto-2026-05-26-1",
     "date": "2026-05-26",
     "category": "Politics",
-    "headline": "OPINION: History Will Not Yield to Power",
-    "source": "Pagosa Daily Post",
-    "link": "https://pagosadailypost.com/2026/05/26/opinion-history-will-not-yield-to-power/",
-    "whyItMatters": "This article provides a critical perspective on the Israeli-Palestinian conflict, highlighting the complexities of international relations and the role of global diplomacy, which is crucial for understanding geopolitical stability and its impact on global industries."
+    "headline": "The Latest: Iran deal progress is murky after US military says it carried out 'self-defense' strikes",
+    "source": "Associated Press (via KSAT)",
+    "link": "https://www.ksat.com/news/world/2026/05/26/the-latest-iran-deal-progress-is-murky-after-us-military-says-it-carried-out-self-defense-strikes/",
+    "whyItMatters": "This directly impacts global energy markets due to the Strait of Hormuz, a critical chokepoint for oil and gas. Chemical engineers in the energy sector would be keenly aware of geopolitical stability and its effects on supply chains and project viability."
   },
   {
     "id": "auto-2026-05-26-2",
     "date": "2026-05-26",
     "category": "Chemical Engineering",
-    "headline": "DOE's Office of Critical Minerals and Energy Innovation Announces Over $45 Million To Support Reliable and Affordable Domestic Critical Mineral and Material Supply Chains",
-    "source": "U.S. Department of Energy",
-    "link": "https://www.energy.gov/eere/critical-minerals-innovation/articles/does-office-critical-minerals-and-energy-innovation",
-    "whyItMatters": "This news directly impacts chemical engineering students interested in energy and materials, as it details significant government investment in securing domestic supply chains for critical minerals, which are essential for various advanced technologies and manufacturing processes."
+    "headline": "Green Chemicals Industry Expected to Grow from USD 59.1 billion in 2025 to USD 149.2 billion by 2035",
+    "source": "openPR.com (MarketGenics Global Research)",
+    "link": "https://www.openpr.com/news/3512502/green-chemicals-industry-expected-to-grow-from-usd-59-1-billion",
+    "whyItMatters": "This highlights the significant growth in sustainable chemical manufacturing, a key area for chemical engineers interested in environmentally friendly processes, bio-based materials, and new market opportunities in the industry."
   },
   {
     "id": "auto-2026-05-26-3",
     "date": "2026-05-26",
     "category": "Tech",
-    "headline": "Thinking of Riding on Lumentum Stock? Don't -- Until You Consider This Red Flag",
-    "source": "The Motley Fool",
-    "link": "https://www.fool.com/investing/2026/05/26/thinking-of-riding-on-lumentum-stock-dont-until-yo/",
-    "whyItMatters": "This article highlights the rapid growth and potential risks in the AI infrastructure and optical networking sectors, offering insights into the technological demands and market dynamics that chemical engineers might encounter when developing materials or processes for advanced computing and data transfer."
+    "headline": "Gemini for Science: AI experiments and tools for a new era of discovery",
+    "source": "Google Blog",
+    "link": "https://blog.google/technology/ai/gemini-for-science-ai-experiments-tools-google-io-2026/",
+    "whyItMatters": "These new AI tools for scientific research, including hypothesis generation and computational discovery, can revolutionize how chemical engineers approach R&D, accelerate materials discovery, and optimize complex processes in industry."
   }
 ];
   try {
