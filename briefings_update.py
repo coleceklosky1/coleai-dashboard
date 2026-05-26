@@ -86,19 +86,20 @@ def build_prompt(history):
 
 {history_block}Find exactly 3 real news articles — one for each category below. Do NOT substitute or swap categories.
 
-1. Politics — a major US or global political development published within the LAST 24 HOURS only (today or yesterday — no older).
+1. Politics — the single most important hard-news political development of the last 24 HOURS (today or yesterday — no older). Must be a factual news report, NOT an opinion piece, editorial, or commentary. Pick the biggest breaking story, not analysis.
 2. Chemical Engineering — process engineering, chemicals, materials, energy tech, or relevant manufacturing news published within the last 7 days.
-3. Tech — AI, semiconductors, software, or tech industry news published within the last 7 days. Category must be exactly "Tech".
+3. Tech — a technical or industry development in AI, semiconductors, software engineering, hardware, or scientific computing published within the last 7 days. Focus on what was built, discovered, or released — NOT on stock prices, earnings, valuations, or financial performance. Category must be exactly "Tech".
 
-CRITICAL LINK REQUIREMENT: The "link" field MUST be the full URL to the specific article page — never a website homepage.
-BAD (homepage) examples: https://cen.acs.org/index.html, https://reuters.com, https://cnbc.com/
-GOOD (article) examples: https://cen.acs.org/energy/renewables/2026/05/green-hydrogen-costs.html
+CRITICAL LINK REQUIREMENT: The "link" field MUST be the direct URL to the exact article you are citing — the URL must resolve to a page whose headline matches the headline you provide. Never use a homepage, section page, search page, or a URL that redirects to a different article.
+BAD examples: https://reuters.com, https://cen.acs.org/index.html, https://cnbc.com/tech/, https://nytimes.com
+GOOD examples: https://cen.acs.org/energy/renewables/2026/05/green-hydrogen-costs.html, https://arstechnica.com/science/2026/05/new-chip-architecture.html
+Before returning a link, verify it points to the specific article, not a listing or homepage.
 
 For each article, return a JSON object with exactly these fields:
   category     — must be exactly one of: "Politics", "Chemical Engineering", "Tech"
   headline     — the actual article headline, verbatim
-  source       — publication name (e.g. Reuters, WSJ, C&EN, CNBC)
-  link         — full URL to the SPECIFIC article page (never the homepage)
+  source       — publication name (e.g. Reuters, WSJ, C&EN, Ars Technica)
+  link         — direct URL to the specific article page
   whyItMatters — 1-2 sentences on why this matters to a ChemE student interested in industry careers
 
 CRITICAL JSON RULES — follow exactly:
