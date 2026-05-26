@@ -87,8 +87,8 @@ def build_prompt(history):
 {history_block}Find exactly 3 real news articles — one for each category below. Do NOT substitute or swap categories.
 
 1. Politics — the single most important hard-news political development of the last 24 HOURS (today or yesterday — no older). Must be a factual news report, NOT an opinion piece, editorial, or commentary. Pick the biggest breaking story, not analysis.
-2. Chemical Engineering — process engineering, chemicals, materials, energy tech, or relevant manufacturing news published within the last 7 days.
-3. Tech — a technical or industry development in AI, semiconductors, software engineering, hardware, or scientific computing published within the last 7 days. Focus on what was built, discovered, or released — NOT on stock prices, earnings, valuations, or financial performance. Category must be exactly "Tech".
+2. Chemical Engineering — process engineering, chemicals, materials, energy tech, or relevant manufacturing news published within the last 7 days. The article should be primarily technical or scientific — some financial context is fine but the core must be about the chemistry, process, or engineering.
+3. Tech — a technical or industry development in AI, semiconductors, software engineering, hardware, or scientific computing published within the last 7 days. The article should be primarily about what was built, discovered, or released — not purely a financial story. Some financial context is fine but the core of the article must be technical. Category must be exactly "Tech".
 
 CRITICAL LINK REQUIREMENT: The "link" field MUST be the direct URL to the exact article you are citing — the URL must resolve to a page whose headline matches the headline you provide. Never use a homepage, section page, search page, or a URL that redirects to a different article.
 BAD examples: https://reuters.com, https://cen.acs.org/index.html, https://cnbc.com/tech/, https://nytimes.com
