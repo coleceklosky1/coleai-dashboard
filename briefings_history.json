@@ -124,5 +124,23 @@
     "category": "Tech",
     "headline": "HUAWEI Presents the Tau (τ) Scaling Law, Enabling Breakthroughs in Transistor Density and System Performance",
     "link": "https://www.huawei.com/en/news/2026/5/tau-scaling-law-transistor-density"
+  },
+  {
+    "date": "2026-05-30",
+    "category": "Politics",
+    "headline": "Trump enters Situation Room to make 'final determination' on Iran",
+    "link": "https://www.foxnews.com/politics/trump-enters-situation-room-make-final-determination-iran"
+  },
+  {
+    "date": "2026-05-30",
+    "category": "Chemical Engineering",
+    "headline": "Nanostructured Black Metal Desalinates Ocean Water Without Brine Waste",
+    "link": "https://www.azom.com/news.aspx?newsID=66497"
+  },
+  {
+    "date": "2026-05-30",
+    "category": "Tech",
+    "headline": "OpenAI Model Disproves 80-Year-Old Erdős Unit Distance Conjecture",
+    "link": "https://letsdatascience.com/openai-model-disproves-80-year-old-erdos-unit-distance-conjecture/"
   }
 ]
