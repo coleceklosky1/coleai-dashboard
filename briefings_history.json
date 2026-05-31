@@ -142,5 +142,23 @@
     "category": "Tech",
     "headline": "OpenAI Model Disproves 80-Year-Old Erdős Unit Distance Conjecture",
     "link": "https://letsdatascience.com/openai-model-disproves-80-year-old-erdos-unit-distance-conjecture/"
+  },
+  {
+    "date": "2026-05-31",
+    "category": "Politics",
+    "headline": "Colombia accuses Ecuador of interfering in its general election",
+    "link": "https://www.pbs.org/newshour/world/colombia-accuses-ecuador-of-interfering-in-its-general-election"
+  },
+  {
+    "date": "2026-05-31",
+    "category": "Chemical Engineering",
+    "headline": "How AI and Self-Driving Labs are Transforming Chemical Engineering in 2026",
+    "link": "https://www.nikitaaggarwal.com/blog/how-ai-and-self-driving-labs-are-transforming-chemical-engineering-in-2026"
+  },
+  {
+    "date": "2026-05-31",
+    "category": "Tech",
+    "headline": "Stanford quantum computing breakthrough uses twisted light to work without extreme cooling",
+    "link": "https://www.sciencedaily.com/releases/2026/05/260530112345.htm"
   }
 ]
