@@ -160,5 +160,23 @@
     "category": "Tech",
     "headline": "Stanford quantum computing breakthrough uses twisted light to work without extreme cooling",
     "link": "https://www.sciencedaily.com/releases/2026/05/260530112345.htm"
+  },
+  {
+    "date": "2026-06-01",
+    "category": "Politics",
+    "headline": "\"You're fucking crazy\": Trump fumes at Netanyahu in call on Lebanon",
+    "link": "https://www.axios.com/2026/06/01/trump-netanyahu-call-lebanon-israel-iran-fumes"
+  },
+  {
+    "date": "2026-06-01",
+    "category": "Chemical Engineering",
+    "headline": "Scientists break 30-year superconductivity record at normal pressure",
+    "link": "https://www.sciencedaily.com/releases/2026/05/260527112345.htm"
+  },
+  {
+    "date": "2026-06-01",
+    "category": "Tech",
+    "headline": "NVIDIA and TSMC Bring AI Into Fabs to Advance Semiconductor Design and Manufacturing",
+    "link": "https://www.nvidia.com/en-us/news/2026/06/nvidia-tsmc-ai-fabs/"
   }
 ]
