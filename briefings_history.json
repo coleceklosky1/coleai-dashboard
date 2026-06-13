@@ -358,5 +358,23 @@
     "category": "Tech",
     "headline": "Brain-inspired chip runs near absolute zero and could transform quantum computing",
     "link": "https://www.sciencedaily.com/releases/2026/06/260612112345.htm"
+  },
+  {
+    "date": "2026-06-13",
+    "category": "Politics",
+    "headline": "Kennedy Center removing Trump's name from building",
+    "link": "https://www.washingtonpost.com/politics/2026/06/13/kennedy-center-removing-trump-name/"
+  },
+  {
+    "date": "2026-06-13",
+    "category": "Chemical Engineering",
+    "headline": "Novel catalyst design boosts solar-driven ammonia production under mild conditions",
+    "link": "https://phys.org/news/2026-06-catalyst-solar-driven-ammonia-production-mild.html"
+  },
+  {
+    "date": "2026-06-13",
+    "category": "Tech",
+    "headline": "Microsoft's Next-Gen Quantum Chip Cuts Timeline to Useful Quantum Computing",
+    "link": "https://singularityhub.com/2026/06/07/this-weeks-awesome-tech-stories-from-around-the-web-through-june-7/"
   }
 ]
