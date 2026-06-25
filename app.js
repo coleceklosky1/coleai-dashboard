@@ -18,6 +18,7 @@ function initState() {
   if (!LS.get('workoutLog'))  LS.set('workoutLog', []);
   if (!LS.get('weightLog'))   LS.set('weightLog', [{date:'2026-05-16', weight:176}]);
   if (!LS.get('coStatus'))    LS.set('coStatus', {});
+  if (!LS.get('customCompanies')) LS.set('customCompanies', []);
   if (!LS.get('taskHistory')) LS.set('taskHistory', []);
 }
 
@@ -124,25 +125,37 @@ function fmtDate(d) {
   };
 }
 
-function isFriday() { return new Date().getDay() === 5; }
-
-// Returns {wo, woIdx, isFri} for any date string (YYYY-MM-DD).
-// Rotation anchored: May 16 2026 = index 0 (Shoulders/Back). Friday always = Run.
-function getWorkoutForDate(dateStr) {
-  const date = new Date(dateStr + 'T12:00:00');
-  if (date.getDay() === 5) return { wo: WORKOUT_ROTATION[4], woIdx: 4, isFri: true };
-  const ANCHOR = new Date('2026-05-16T12:00:00');
-  const days   = Math.round((date - ANCHOR) / 86400000);
-  const idx    = ((days % 4) + 4) % 4;
-  return { wo: WORKOUT_ROTATION[idx], woIdx: idx, isFri: false };
+// Rotation indices in WORKOUT_ROTATION: 0 Push · 1 Pull · 2 Legs · 3 Run
+const RUN_IDX = 3;
+const LIFT_COUNT = 3; // Push/Pull/Legs
+const RUN_ANCHOR = '2026-05-16'; // a run day; run lands every 7 days from here
+function isRunName(name) {
+  return name === 'Weekly Run' || name === 'Friday Run';
 }
-function getTodaysWorkout() { return getWorkoutForDate(isoToday); }
 
-// Rotation position based on logged lifting sessions, so skipped days don't advance the rotation.
+// True if the given date (YYYY-MM-DD) is a scheduled run day (every 7 days).
+function isRunDay(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const anchor = new Date(RUN_ANCHOR + 'T12:00:00');
+  const days = Math.round((d - anchor) / 86400000);
+  return (((days % 7) + 7) % 7) === 0;
+}
+
+// Suggested rotation index for a given date: run on run-days, otherwise the
+// next lift (Push→Pull→Legs) based on how many lifts were logged before it.
+function getSuggestedWorkoutIdx(dateStr) {
+  if (isRunDay(dateStr)) return RUN_IDX;
+  const log = LS.get('workoutLog') || [];
+  const liftsBefore = log.filter(e => e.date < dateStr && !isRunName(e.workout));
+  return liftsBefore.length % LIFT_COUNT;
+}
+
+// What to surface as "today" — if today is already logged, preview tomorrow so
+// the rotation visibly advances. Skipped days don't advance the lift cycle.
 function getEffectiveWorkoutIdx() {
   const log = LS.get('workoutLog') || [];
-  const liftSessions = log.filter(e => e.workout !== 'Weekly Run' && e.workout !== 'Friday Run');
-  return liftSessions.length % 4;
+  const todayLogged = log.some(e => e.date === isoToday);
+  return getSuggestedWorkoutIdx(todayLogged ? getTomorrowDateStr() : isoToday);
 }
 
 function getTomorrowDateStr() {
@@ -178,6 +191,11 @@ function catBriefBadge(cat) {
     'Politics':'badge-red','Tech':'badge-navy','Chemical Engineering':'badge-cyan',
   };
   return m[cat] || 'badge-dim';
+}
+
+// Built-in companies (data.js) plus any the user has added (localStorage).
+function getAllCompanies() {
+  return COMPANIES.concat(LS.get('customCompanies') || []);
 }
 
 // ─── NAVIGATION ──────────────────────────────────────────────────────────────
@@ -277,7 +295,7 @@ const App = {
     const lastW = wLog.length ? wLog[wLog.length - 1].weight : 176;
     const todayLogged = (LS.get('workoutLog') || []).some(e => e.date === isoToday);
     const woIdx = getEffectiveWorkoutIdx(); // accounts for today if already logged
-    const wo = WORKOUT_ROTATION[woIdx % 4];
+    const wo = WORKOUT_ROTATION[woIdx % WORKOUT_ROTATION.length];
     const woLabel = todayLogged ? 'Tomorrow' : 'Today';
 
     $('stat-streak').textContent = App.calcStreak();
@@ -478,6 +496,7 @@ const App = {
               </div>
               ${t.notes?`<div class="task-notes">${t.notes}</div>`:''}
             </div>
+            <button class="task-remove" onclick="App.removeTask(${t.id})" title="Remove this task without completing it">✕</button>
           </div>`;
       }).join('');
     };
@@ -497,6 +516,17 @@ const App = {
       t.completedOn = isoToday;
     }
     LS.set('tasks', tasks);
+    App.renderTasks();
+    App.renderToday();
+  },
+
+  // Remove a task from the list without marking it complete (no history entry).
+  removeTask(id) {
+    const tasks = LS.get('tasks') || [];
+    const t = tasks.find(x => x.id === id);
+    if (!t) return;
+    if (!confirm(`Remove "${t.task}" from your to-do list? This does not mark it done.`)) return;
+    LS.set('tasks', tasks.filter(x => x.id !== id));
     App.renderTasks();
     App.renderToday();
   },
@@ -596,7 +626,8 @@ const App = {
     const locked = !!(todayLogEntry && todayLogEntry.workout === wo.name);
 
     const titleEl = $('current-workout-title');
-    if (titleEl) titleEl.innerHTML = `<span style="margin-right:8px">${wo.icon}</span>${wo.name}`;
+    if (titleEl) titleEl.innerHTML = `<span style="margin-right:8px">${wo.icon}</span>${wo.name}` +
+      (wo.sub ? `<span style="font-size:12px;font-weight:500;color:var(--text-dim);margin-left:8px">${wo.sub}</span>` : '');
 
     // Dots
     const dotsEl = $('workout-dots');
@@ -769,21 +800,24 @@ const App = {
     const st = $('co-filter-status')?.value || '';
     const coStatus = LS.get('coStatus') || {};
 
-    const sizeCategory = s => s.split(/[\s(]/)[0]; // "Mega-cap" from "Mega-cap (~$160B, PFE)"
+    const sizeCategory = s => (s || '').split(/[\s(]/)[0]; // "Mega-cap" from "Mega-cap (~$160B, PFE)"
+    const companies = getAllCompanies();
 
-    const filtered = COMPANIES.filter(c => {
+    const filtered = companies.filter(c => {
       if (ind && c.industry !== ind) return false;
       if (sz && sizeCategory(c.size) !== sz) return false;
       const cs = coStatus[c.id] || {};
       if (st === 'interested' && !cs.interested) return false;
       if (st === 'applied' && !cs.applied) return false;
+      if (st === 'connected' && !cs.connected) return false;
       if (q && !`${c.company} ${c.industry} ${c.roles} ${c.hubs} ${c.notes}`.toLowerCase().includes(q)) return false;
       return true;
     });
 
     const interested = Object.values(coStatus).filter(s => s.interested).length;
     const applied = Object.values(coStatus).filter(s => s.applied).length;
-    const largePlus = COMPANIES.filter(c => ['Mega-cap','Large-cap'].includes(sizeCategory(c.size))).length;
+    const largePlus = companies.filter(c => ['Mega-cap','Large-cap'].includes(sizeCategory(c.size))).length;
+    const ctEl = $('co-total'); if (ctEl) ctEl.textContent = companies.length;
     const ciEl = $('co-interested'); if (ciEl) ciEl.textContent = interested;
     const caEl = $('co-applied'); if (caEl) caEl.textContent = applied;
     const lcEl = $('co-large-cap'); if (lcEl) lcEl.textContent = largePlus;
@@ -799,14 +833,17 @@ const App = {
             ${cs.applied?'<span class="badge badge-green" style="margin-left:6px;font-size:9px">Applied</span>':''}
           </td>
           <td><span class="badge ${industryBadge(c.industry)}">${c.industry}</span></td>
-          <td style="font-size:11px;color:var(--text-dim)">${c.size.replace(/\s*\([^)]+\)/,'')}</td>
-          <td style="max-width:200px;font-size:11.5px">${c.roles}</td>
-          <td style="white-space:nowrap;font-size:12px;color:var(--amber);font-weight:600">${c.window}</td>
-          <td style="max-width:160px;font-size:11px;color:var(--text-dim)">${c.hubs}</td>
+          <td style="font-size:11px;color:var(--text-dim)">${(c.size||'').replace(/\s*\([^)]+\)/,'')}</td>
+          <td style="text-align:center">
+            <div class="co-check ${cs.connected?'on':''}" onclick="App.toggleCo(${c.id},'connected')" title="${cs.connected?'Connected with someone here':'Mark that you have connected with someone here'}">${cs.connected?'✓':''}</div>
+          </td>
+          <td style="white-space:nowrap;font-size:12px;color:var(--amber);font-weight:600">${c.window||''}</td>
+          <td style="max-width:160px;font-size:11px;color:var(--text-dim)">${c.hubs||''}</td>
           <td>
             <div class="action-btns">
               <button class="btn btn-xs btn-ghost" onclick="App.toggleCo(${c.id},'applied')">${cs.applied?'✓ Applied':'Apply'}</button>
               <button class="btn btn-xs btn-ghost" onclick="App.openCoNotes(${c.id})">📝</button>
+              ${c.custom?`<button class="btn btn-xs btn-danger" onclick="App.deleteCompany(${c.id})" title="Remove this company">✕</button>`:''}
             </div>
           </td>
         </tr>`;
@@ -825,7 +862,7 @@ const App = {
 
   _coNotesId: null,
   openCoNotes(id) {
-    const c = COMPANIES.find(x => x.id === id);
+    const c = getAllCompanies().find(x => x.id === id);
     App._coNotesId = id;
     $('modal-company-title').textContent = `Notes — ${c.company}`;
     const cs = LS.get('coStatus') || {};
@@ -838,6 +875,49 @@ const App = {
     cs[App._coNotesId].personalNotes = $('company-notes-input').value;
     LS.set('coStatus', cs);
     closeModal('modal-company');
+  },
+
+  // ─── ADD / REMOVE COMPANY ──────────────────────────────────────────────────
+  openAddCompany() {
+    ['ac-company','ac-size','ac-roles','ac-url','ac-window','ac-hubs'].forEach(id => { const el=$(id); if(el)el.value=''; });
+    if ($('ac-industry')) $('ac-industry').selectedIndex = 0;
+    openModal('modal-add-company');
+    setTimeout(() => $('ac-company')?.focus(), 50);
+  },
+  saveNewCompany() {
+    const name = ($('ac-company')?.value || '').trim();
+    if (!name) { $('ac-company').style.borderColor='var(--red)'; return; }
+    $('ac-company').style.borderColor = '';
+    let url = ($('ac-url')?.value || '').trim();
+    if (url && !/^https?:\/\//i.test(url)) url = 'https://' + url;
+    const customs = LS.get('customCompanies') || [];
+    customs.push({
+      id: Date.now(),               // large id — never collides with built-ins (0-119)
+      custom: true,
+      company: name,
+      industry: $('ac-industry')?.value || 'Other',
+      size: ($('ac-size')?.value || '').trim(),
+      roles: ($('ac-roles')?.value || '').trim(),
+      url: url || '#',
+      window: ($('ac-window')?.value || '').trim(),
+      hubs: ($('ac-hubs')?.value || '').trim(),
+      biotech: 'No',
+      notes: '',
+    });
+    LS.set('customCompanies', customs);
+    closeModal('modal-add-company');
+    App.renderCompanies();
+  },
+  deleteCompany(id) {
+    const customs = LS.get('customCompanies') || [];
+    const c = customs.find(x => x.id === id);
+    if (!c) return; // built-in companies can't be deleted
+    if (!confirm(`Remove "${c.company}" from your companies list?`)) return;
+    LS.set('customCompanies', customs.filter(x => x.id !== id));
+    const cs = LS.get('coStatus') || {};
+    delete cs[id];
+    LS.set('coStatus', cs);
+    App.renderCompanies();
   },
 
   // ─── NETWORK ───────────────────────────────────────────────────────────────

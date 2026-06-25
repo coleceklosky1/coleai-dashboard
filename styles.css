@@ -318,6 +318,14 @@ tr:last-child td { border-bottom:none; }
 .task-check:hover { border-color:var(--green); }
 .task-check.done { background:var(--green); border-color:var(--green); }
 .task-body { flex:1; min-width:0; }
+.task-remove {
+  flex-shrink:0; margin-top:1px; width:22px; height:22px; padding:0;
+  border:none; background:transparent; color:var(--text-dim);
+  font-size:13px; line-height:1; border-radius:5px; cursor:pointer;
+  opacity:0; transition:all 0.12s;
+}
+.task-item:hover .task-remove { opacity:1; }
+.task-remove:hover { background:rgba(220,38,38,0.1); color:var(--red); }
 .task-text { font-size:13.5px; color:var(--text); font-weight:500; }
 .task-text.done { text-decoration:line-through; color:var(--text-dim); }
 .task-meta { font-size:11px; color:var(--text-dim); margin-top:3px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -457,6 +465,15 @@ tr:last-child td { border-bottom:none; }
 
 .star-btn { background:none; border:none; cursor:pointer; font-size:16px; padding:2px; opacity:0.35; transition:opacity 0.12s; }
 .star-btn:hover, .star-btn.on { opacity:1; }
+
+/* Connection checkbox in the companies table */
+.co-check {
+  width:18px; height:18px; border:2px solid var(--border); border-radius:4px;
+  cursor:pointer; display:inline-flex; align-items:center; justify-content:center;
+  font-size:11px; color:#fff; transition:all 0.12s; margin:0 auto;
+}
+.co-check:hover { border-color:var(--green); }
+.co-check.on { background:var(--green); border-color:var(--green); }
 
 .status-dot { width:7px; height:7px; border-radius:50%; display:inline-block; margin-right:5px; }
 
@@ -698,6 +715,9 @@ tr:last-child td { border-bottom:none; }
   /* ── Workout dots ── */
   .wd-dots { flex-wrap:wrap; gap:6px; }
   .wd-dot  { min-width:58px; padding:6px 8px; font-size:11px; }
+
+  /* Remove-task button is always visible on touch (no hover) */
+  .task-remove { opacity:0.6; }
 
   /* ── Tables ── */
   .table-wrap        { font-size:12px; max-width:100%; overflow-x:auto; }

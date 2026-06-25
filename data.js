@@ -100,6 +100,26 @@ const COMPANIES = [
   {id:97,company:"Argonne National Lab",industry:"National Lab / Govt",size:"Federal Lab",roles:"Battery materials, separations, catalysis",url:"https://anl.gov/careers",window:"Oct – Feb",hubs:"Lemont IL",biotech:"Tangential",notes:"Very close to ND — ~2 hrs"},
   {id:98,company:"Pacific Northwest National Lab",industry:"National Lab / Govt",size:"Federal Lab",roles:"Process eng, separations, materials",url:"https://pnnl.gov/careers",window:"Oct – Feb",hubs:"Richland WA",biotech:"Tangential",notes:""},
   {id:99,company:"NASA",industry:"National Lab / Govt",size:"Federal Govt (US citizens only)",roles:"Propulsion, life support, ECLSS, materials",url:"https://intern.nasa.gov",window:"Aug – Feb (varies by center)",hubs:"JSC TX, KSC FL, JPL CA, Glenn OH, Langley VA, Marshall AL",biotech:"No",notes:"Glenn (Cleveland OH) is closest to ND"},
+  {id:100,company:"Takeda",industry:"Pharma / Biotech",size:"Large-cap (~$60B, TAK)",roles:"Process dev, MSAT, drug substance/product, plasma-derived therapies",url:"https://careers.takeda.com",window:"Sept – Jan",hubs:"Cambridge MA, Social Circle GA, Round Lake IL, Los Angeles CA",biotech:"Yes",notes:"Large Boston-area footprint; strong biologics + plasma operations"},
+  {id:101,company:"CSL Behring",industry:"Pharma / Biotech",size:"Large-cap (~$130B, CSL.AX)",roles:"Bioprocess, plasma fractionation, fill-finish, manufacturing science",url:"https://careers.csl.com",window:"Sept – Dec",hubs:"King of Prussia PA, Kankakee IL, Holly Springs NC",biotech:"Yes",notes:"World leader in plasma-derived therapies; big PA presence"},
+  {id:102,company:"Catalent",industry:"Pharma / Biotech",size:"Large-cap (CDMO)",roles:"Drug product, formulation, fill-finish, process eng (CDMO)",url:"https://careers.catalent.com",window:"Oct – Feb",hubs:"Somerset NJ, Bloomington IN, Madison WI, Greenville NC",biotech:"Yes",notes:"CDMO — Bloomington IN is close to ND; broad exposure across many drug programs"},
+  {id:103,company:"Lonza",industry:"Pharma / Biotech",size:"Large-cap (~$45B, LONN.SW)",roles:"Bioprocess, cell & gene therapy, drug product, mfg science (CDMO)",url:"https://careers.lonza.com",window:"Sept – Jan",hubs:"Portsmouth NH, Hopkinton MA, Walkersville MD, Houston TX",biotech:"Yes",notes:"Leading CDMO; strong cell & gene therapy manufacturing"},
+  {id:104,company:"Thermo Fisher Scientific",industry:"Pharma / Biotech",size:"Mega-cap (~$170B, TMO)",roles:"Bioproduction, process dev, pharma services (Patheon CDMO)",url:"https://jobs.thermofisher.com",window:"Aug – Dec",hubs:"Waltham MA, Grand Island NY, Greenville NC, St. Louis MO",biotech:"Yes",notes:"Huge intern program across bioproduction + Patheon pharma services"},
+  {id:105,company:"Cytiva (Danaher)",industry:"Pharma / Biotech",size:"Large-cap (parent: Danaher)",roles:"Bioprocess hardware/consumables, process dev, applications eng",url:"https://careers.cytiva.com",window:"Sept – Jan",hubs:"Marlborough MA, Logan UT, Miami FL",biotech:"Yes",notes:"Bioprocessing tools leader; great place to learn upstream/downstream"},
+  {id:106,company:"Chemours",industry:"Specialty Chemicals",size:"Mid-cap (~$3B, CC)",roles:"Process eng, fluoroproducts, titanium tech, production",url:"https://careers.chemours.com",window:"Sept – Feb",hubs:"Wilmington DE, Corpus Christi TX, Louisville KY",biotech:"No",notes:"Spun out of DuPont; titanium dioxide + fluoropolymers"},
+  {id:107,company:"Huntsman",industry:"Specialty Chemicals",size:"Mid-cap (~$3B, HUN)",roles:"Process eng, polyurethanes, performance products",url:"https://www.huntsman.com/careers",window:"Sept – Feb",hubs:"The Woodlands TX, Geismar LA, Auburn Hills MI",biotech:"No",notes:"Polyurethanes and specialty chemicals"},
+  {id:108,company:"Ecolab",industry:"Specialty Chemicals",size:"Large-cap (~$70B, ECL)",roles:"Process eng, water treatment, R&D, field engineering",url:"https://jobs.ecolab.com",window:"Aug – Dec",hubs:"St. Paul MN, Naperville IL, Sugar Land TX",biotech:"No",notes:"Water, hygiene and infection-prevention; strong Midwest base near ND"},
+  {id:109,company:"IFF (Intl Flavors & Fragrances)",industry:"Specialty Chemicals",size:"Large-cap (~$22B, IFF)",roles:"Process eng, fermentation, flavors/fragrances, biosciences",url:"https://careers.iff.com",window:"Sept – Jan",hubs:"New York NY, Wilmington DE, St. Louis MO, Cedar Rapids IA",biotech:"Tangential",notes:"Flavors, fragrances, enzymes & cultures after DuPont N&B merger"},
+  {id:110,company:"Albemarle",industry:"Energy / Battery",size:"Mid-cap (~$10B, ALB)",roles:"Process eng, lithium production, battery materials",url:"https://careers.albemarle.com",window:"Sept – Feb",hubs:"Charlotte NC, Kings Mountain NC, Silver Peak NV",biotech:"No",notes:"Top lithium producer — core to EV battery supply chain"},
+  {id:111,company:"Occidental (OxyChem)",industry:"Oil & Gas / Refining",size:"Large-cap (~$55B, OXY)",roles:"Process eng, chlor-alkali, vinyls, carbon capture (1PointFive)",url:"https://oxy.com/careers",window:"Aug – Jan",hubs:"Houston TX, Wichita KS, Ingleside TX",biotech:"No",notes:"OxyChem + leading Direct Air Capture program (1PointFive)"},
+  {id:112,company:"Nutrien",industry:"AgChem / Agriculture",size:"Large-cap (~$25B, NTR)",roles:"Process eng, nitrogen/potash production, reliability",url:"https://careers.nutrien.com",window:"Sept – Jan",hubs:"Northbrook IL, Borger TX, Augusta GA, Lima OH",biotech:"No",notes:"World's largest fertilizer producer; Lima OH plant is near ND"},
+  {id:113,company:"FMC Corporation",industry:"AgChem / Agriculture",size:"Mid-cap (~$8B, FMC)",roles:"Process eng, crop protection, formulation, R&D",url:"https://careers.fmc.com",window:"Sept – Jan",hubs:"Philadelphia PA, Newark DE, Baltimore MD",biotech:"No",notes:"Agricultural sciences — insecticides, herbicides, fungicides"},
+  {id:114,company:"Entegris",industry:"Semiconductors / Materials",size:"Large-cap (~$15B, ENTG)",roles:"Process eng, advanced materials, filtration, specialty chemicals",url:"https://careers.entegris.com",window:"Sept – Jan",hubs:"Billerica MA, Colorado Springs CO, Chaska MN",biotech:"No",notes:"Materials and purity solutions for chip fabs — ChemE-heavy roles"},
+  {id:115,company:"GlobalFoundries",industry:"Semiconductors / Materials",size:"Large-cap (~$25B, GFS)",roles:"Process eng, diffusion, etch, thin films, yield",url:"https://gf.com/careers",window:"Aug – Dec",hubs:"Malta NY, Essex Junction VT",biotech:"No",notes:"US-based semiconductor foundry; process engineering internships"},
+  {id:116,company:"First Solar",industry:"Energy / Battery",size:"Large-cap (~$20B, FSLR)",roles:"Process eng, thin-film PV (CdTe), manufacturing, R&D",url:"https://www.firstsolar.com/careers",window:"Sept – Feb",hubs:"Perrysburg OH, Lake Township OH, Tempe AZ",biotech:"No",notes:"Largest US solar manufacturer; Perrysburg OH is ~2.5 hrs from ND"},
+  {id:117,company:"Bloom Energy",industry:"Energy / Battery",size:"Mid-cap (~$5B, BE)",roles:"Process eng, solid-oxide fuel cells, electrolyzers, materials",url:"https://www.bloomenergy.com/careers",window:"Sept – Jan",hubs:"San Jose CA, Newark DE, Fremont CA",biotech:"No",notes:"Solid-oxide fuel cells + hydrogen electrolyzers"},
+  {id:118,company:"Plug Power",industry:"Energy / Battery",size:"Small-cap (~$3B, PLUG)",roles:"Process eng, green hydrogen, fuel cells, electrolyzers",url:"https://www.plugpower.com/careers",window:"Sept – Feb",hubs:"Latham NY, Rochester NY, Concord MA",biotech:"No",notes:"Green hydrogen production and PEM fuel cell systems"},
+  {id:119,company:"Redwood Materials",industry:"Climate Tech",size:"Private (~$5B val.)",roles:"Process eng, battery recycling, cathode/anode materials",url:"https://www.redwoodmaterials.com/careers",window:"Rolling",hubs:"Carson City NV, McClellan Park CA, Charleston SC",biotech:"No",notes:"Battery recycling + domestic anode/cathode supply; founded by JB Straubel (ex-Tesla)"},
 ];
 
 // ─── TASKS ────────────────────────────────────────────────────────────────────
@@ -234,35 +254,42 @@ function getHabitsForDate(dateStr) {
 const HABITS_CONFIG = getHabitsForDate((function(){ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; })());
 
 // ─── WORKOUTS ─────────────────────────────────────────────────────────────────
-// 7 exercises · 4 sets each · all to failure
-// Run is every FRIDAY — not part of the rotating 4-day cycle
+// Lift rotation: Push → Pull → Legs (cycles by logged lifting sessions).
+// A run day lands every 7 days (see getEffectiveWorkoutIdx in app.js).
+// 4 sets each · all to failure.
 const WORKOUT_ROTATION = [
   {
-    name:"Shoulders / Back", short:"Shoulders\n& Back", icon:"🔺",
+    name:"Push", short:"Push", icon:"🔺",
+    sub:"Chest · Triceps · Shoulders · Abs",
     exercises:[
-      {name:"Shoulder Press",         sets:4, note:"Barbell or dumbbell — full lockout at top"},
-      {name:"Arnold Press",           sets:4, note:"\"Schwarzeneggers\" — rotate palms out as you press"},
-      {name:"Lateral Raises",         sets:4, note:"Lead with elbows, control the descent"},
-      {name:"Rotational Front Raise", sets:4, note:"Start palms down, rotate to palms up at top"},
-      {name:"Lat Pulldown",           sets:4, note:"Full stretch at top, drive elbows to hips"},
-      {name:"Barbell Row",            sets:4, note:"Chest on pad or bent-over, retract scapula"},
-      {name:"Cable Row",              sets:4, note:"Neutral grip, pause and squeeze at chest"},
+      {name:"Barbell Bench Press",     sets:4, note:"Retract scapula, controlled descent"},
+      {name:"Incline Dumbbell Press",  sets:4, note:"30–45° — upper chest emphasis"},
+      {name:"Shoulder Press",          sets:4, note:"Barbell or dumbbell — full lockout at top"},
+      {name:"Lateral Raises",          sets:4, note:"Lead with elbows, control the descent"},
+      {name:"Cable Flyes",             sets:4, note:"Arms slightly bent, squeeze at center"},
+      {name:"Cable Pushdowns",         sets:4, note:"Rope or bar — elbows glued, full extension"},
+      {name:"Overhead Extensions",     sets:4, note:"Long head — full stretch overhead"},
+      {name:"Hanging Leg Raises",      sets:4, note:"Abs — control up and down, no swinging"},
+      {name:"Cable Crunch",            sets:4, note:"Abs — round the spine, squeeze hard"},
     ]
   },
   {
-    name:"Biceps / Triceps", short:"Biceps\n& Triceps", icon:"💪",
+    name:"Pull", short:"Pull", icon:"🪝",
+    sub:"Back · Biceps",
     exercises:[
-      {name:"Twist Curls",               sets:4, note:"Supinate at top for peak contraction"},
-      {name:"Preacher Curls",            sets:4, note:"Full stretch at bottom, slow negative"},
-      {name:"Incline Dumbbell Curls",    sets:4, note:"Long-head stretch at full extension"},
-      {name:"Cable Pushdowns",           sets:4, note:"Rope or bar — elbows glued, full extension"},
-      {name:"One Arm Kickbacks",         sets:4, note:"Upper arm parallel to floor, full extension"},
-      {name:"Overhead Extensions",       sets:4, note:"Long head — full stretch overhead"},
-      {name:"Skull Crushers",            sets:4, note:"EZ bar to forehead, press back up"},
+      {name:"Pull-ups",               sets:4, note:"Full stretch at bottom, chin over bar"},
+      {name:"Lat Pulldown",           sets:4, note:"Full stretch at top, drive elbows to hips"},
+      {name:"Barbell Row",            sets:4, note:"Chest on pad or bent-over, retract scapula"},
+      {name:"Cable Row",              sets:4, note:"Neutral grip, pause and squeeze at chest"},
+      {name:"Face Pulls",             sets:4, note:"Rear delts — pull to forehead, elbows high"},
+      {name:"Twist Curls",            sets:4, note:"Supinate at top for peak contraction"},
+      {name:"Preacher Curls",         sets:4, note:"Full stretch at bottom, slow negative"},
+      {name:"Incline Dumbbell Curls", sets:4, note:"Long-head stretch at full extension"},
     ]
   },
   {
     name:"Legs", short:"Legs", icon:"🦵",
+    sub:"Quads · Hamstrings · Calves",
     exercises:[
       {name:"Barbell Back Squat",  sets:4, note:"Break parallel, knees track over toes"},
       {name:"Romanian Deadlift",   sets:4, note:"Hip hinge — feel the hamstring stretch"},
@@ -274,19 +301,8 @@ const WORKOUT_ROTATION = [
     ]
   },
   {
-    name:"Chest", short:"Chest", icon:"🫁",
-    exercises:[
-      {name:"Barbell Bench Press",     sets:4, note:"Retract scapula, controlled descent"},
-      {name:"Incline Dumbbell Press",  sets:4, note:"30–45° — upper chest emphasis"},
-      {name:"Cable Flyes",             sets:4, note:"Arms slightly bent, squeeze at center"},
-      {name:"Dips",                    sets:4, note:"Lean forward for chest, not tricep focus"},
-      {name:"Pec Deck / Machine Fly",  sets:4, note:"Isolate the chest, no shoulder compensation"},
-      {name:"DB Pullover",             sets:4, note:"Rib cage expansion + serratus"},
-      {name:"Push-ups",                sets:4, note:"Full lockout — use as burnout finisher"},
-    ]
-  },
-  {
     name:"Weekly Run", short:"Weekly\nRun", icon:"🏃",
+    sub:"Every 7 days",
     exercises:[
       {name:"Warm-up walk",  sets:1, note:"5 min easy pace"},
       {name:"Run",           sets:1, note:"3–5 miles · target 8:00–9:00 min/mile"},

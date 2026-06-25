@@ -464,13 +464,13 @@
   <section class="page" id="page-companies">
     <div class="page-header">
       <div class="page-title">Internship Companies</div>
-      <div class="page-subtitle">100 ChemE-relevant companies · Start applying Aug–Nov for Summer 2027</div>
+      <div class="page-subtitle">ChemE-relevant companies · Start applying Aug–Nov for Summer 2027</div>
     </div>
 
     <div class="grid-4 mb20">
       <div class="card stat-card">
         <div class="stat-label">Total Companies</div>
-        <div class="stat-value">100</div>
+        <div class="stat-value" id="co-total">120</div>
       </div>
       <div class="card stat-card">
         <div class="stat-label">Starred / Interested</div>
@@ -516,7 +516,9 @@
         <option value="">All Status</option>
         <option value="interested">⭐ Starred</option>
         <option value="applied">✓ Applied</option>
+        <option value="connected">🤝 Connected</option>
       </select>
+      <button class="btn btn-primary" onclick="App.openAddCompany()">+ Add Company</button>
     </div>
 
     <div class="card">
@@ -528,7 +530,7 @@
               <th>Company</th>
               <th>Industry</th>
               <th>Size</th>
-              <th>Typical Roles</th>
+              <th style="text-align:center">Connection</th>
               <th>Apply Window</th>
               <th>US Hubs</th>
               <th>Actions</th>
@@ -1003,6 +1005,61 @@
     <div class="form-actions">
       <button class="btn btn-ghost" onclick="closeModal('modal-company')">Cancel</button>
       <button class="btn btn-primary" onclick="App.saveCompanyNotes()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Company -->
+<div class="modal-overlay" id="modal-add-company">
+  <div class="modal">
+    <div class="modal-title">Add Company</div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Company *</label>
+        <input type="text" class="inp" id="ac-company" placeholder="e.g. Genentech">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Industry</label>
+        <select class="inp" id="ac-industry">
+          <option>Pharma / Biotech</option>
+          <option>Specialty Chemicals</option>
+          <option>Oil & Gas / Refining</option>
+          <option>CPG / Consumer</option>
+          <option>Food & Beverage</option>
+          <option>AgChem / Agriculture</option>
+          <option>Semiconductors / Materials</option>
+          <option>Energy / Battery</option>
+          <option>Nuclear</option>
+          <option>Climate Tech</option>
+          <option>Industrial / Aerospace</option>
+          <option>National Lab / Govt</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Size</label>
+        <input type="text" class="inp" id="ac-size" placeholder="e.g. Large-cap or Private">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Apply Window</label>
+        <input type="text" class="inp" id="ac-window" placeholder="e.g. Sept – Jan">
+      </div>
+      <div class="form-group" style="grid-column:span 2">
+        <label class="form-label">Typical Roles</label>
+        <input type="text" class="inp" id="ac-roles" placeholder="e.g. Process eng, manufacturing science">
+      </div>
+      <div class="form-group">
+        <label class="form-label">US Hubs</label>
+        <input type="text" class="inp" id="ac-hubs" placeholder="e.g. Boston MA, Durham NC">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Careers URL</label>
+        <input type="text" class="inp" id="ac-url" placeholder="e.g. company.com/careers">
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-add-company')">Cancel</button>
+      <button class="btn btn-primary" onclick="App.saveNewCompany()">Add Company</button>
     </div>
   </div>
 </div>
