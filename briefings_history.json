@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-05-27",
-    "category": "Politics",
-    "headline": "The Latest: Trump will meet with his Cabinet as talks to end war in Iran remain in flux",
-    "link": "https://www.ksat.com/news/politics/2026/05/27/the-latest-trump-will-meet-with-his-cabinet-as-talks-to-end-war-in-iran-remain-in-flux/"
-  },
-  {
-    "date": "2026-05-27",
-    "category": "Chemical Engineering",
-    "headline": "Scientists finally discover why gold never loses its shine after thousands of years",
-    "link": "https://www.independent.co.uk/tech/gold-shine-scientists-discover-reason-b2550186.html"
-  },
-  {
-    "date": "2026-05-27",
-    "category": "Tech",
-    "headline": "Google I/O 2026: All the Major AI Announcements",
-    "link": "https://www.eweek.com/ai/google-io-2026-ai-announcements/"
-  },
-  {
     "date": "2026-05-28",
     "category": "Politics",
     "headline": "The Latest: Iran negotiators agree to extend ceasefire, begin nuclear talks pending Trump approval",
@@ -985,6 +967,24 @@
   },
   {
     "date": "2026-07-26",
+    "category": "Tech",
+    "headline": "Nvidia, Amkor strike $1.5 billion chip packaging deal",
+    "link": "https://www.business-standard.com/content/technology/nvidia-amkor-strike-1-5-billion-chip-packaging-deal-126071700018_1.html"
+  },
+  {
+    "date": "2026-07-27",
+    "category": "Politics",
+    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
+    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
+  },
+  {
+    "date": "2026-07-27",
+    "category": "Chemical Engineering",
+    "headline": "Fusion Breakthrough: Materials Key to Success",
+    "link": "https://www.miragenews.com/fusion-breakthrough-materials-key-to-success-101234/"
+  },
+  {
+    "date": "2026-07-27",
     "category": "Tech",
     "headline": "Nvidia, Amkor strike $1.5 billion chip packaging deal",
     "link": "https://www.business-standard.com/content/technology/nvidia-amkor-strike-1-5-billion-chip-packaging-deal-126071700018_1.html"
