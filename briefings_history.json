@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-05-28",
-    "category": "Politics",
-    "headline": "The Latest: Iran negotiators agree to extend ceasefire, begin nuclear talks pending Trump approval",
-    "link": "https://www.click2houston.com/news/world/2026/05/28/the-latest-iran-negotiators-agree-to-extend-ceasefire-begin-nuclear-talks-pending-trump-approval/"
-  },
-  {
-    "date": "2026-05-28",
-    "category": "Chemical Engineering",
-    "headline": "In 2020, Philipp Heck's team dated forty presolar grains from Australia's Murchison meteorite and found stardust as old as seven billion years, older than the Sun, Earth, and every solid material ever measured on this planet",
-    "link": "https://www.maketecheasier.com/oldest-stardust-murchison-meteorite/"
-  },
-  {
-    "date": "2026-05-28",
-    "category": "Tech",
-    "headline": "SiMa.ai announces a collaboration with Emerson to bring Physical AI to the industrial edge",
-    "link": "https://www.globenewswire.com/news-release/2026/05/28/3512502/0/en/SiMa-ai-announces-a-collaboration-with-Emerson-to-bring-Physical-AI-to-the-industrial-edge.html"
-  },
-  {
     "date": "2026-05-29",
     "category": "Politics",
     "headline": "White House moves to give political appointees more power over federal grants",
@@ -988,5 +970,23 @@
     "category": "Tech",
     "headline": "Nvidia, Amkor strike $1.5 billion chip packaging deal",
     "link": "https://www.business-standard.com/content/technology/nvidia-amkor-strike-1-5-billion-chip-packaging-deal-126071700018_1.html"
+  },
+  {
+    "date": "2026-07-28",
+    "category": "Politics",
+    "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
+    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
+  },
+  {
+    "date": "2026-07-28",
+    "category": "Chemical Engineering",
+    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
+    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
+  },
+  {
+    "date": "2026-07-28",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
   }
 ]
