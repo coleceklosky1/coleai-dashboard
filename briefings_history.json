@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-05-29",
-    "category": "Politics",
-    "headline": "White House moves to give political appointees more power over federal grants",
-    "link": "https://www.news4jax.com/news/politics/2026/05/29/white-house-moves-to-give-political-appointees-more-power-over-federal-grants/"
-  },
-  {
-    "date": "2026-05-29",
-    "category": "Chemical Engineering",
-    "headline": "UQ tech turns captured CO₂ into valuable chemicals",
-    "link": "https://www.uq.edu.au/news/article/2026/05/uq-tech-turns-captured-co%E2%82%82-valuable-chemicals"
-  },
-  {
-    "date": "2026-05-29",
-    "category": "Tech",
-    "headline": "HUAWEI Presents the Tau (τ) Scaling Law, Enabling Breakthroughs in Transistor Density and System Performance",
-    "link": "https://www.huawei.com/en/news/2026/5/tau-scaling-law-transistor-density"
-  },
-  {
     "date": "2026-05-30",
     "category": "Politics",
     "headline": "Trump enters Situation Room to make 'final determination' on Iran",
@@ -985,6 +967,24 @@
   },
   {
     "date": "2026-07-28",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-07-29",
+    "category": "Politics",
+    "headline": "US and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
+    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
+  },
+  {
+    "date": "2026-07-29",
+    "category": "Chemical Engineering",
+    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
+    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
+  },
+  {
+    "date": "2026-07-29",
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
