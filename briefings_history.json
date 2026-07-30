@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-05-30",
-    "category": "Politics",
-    "headline": "Trump enters Situation Room to make 'final determination' on Iran",
-    "link": "https://www.foxnews.com/politics/trump-enters-situation-room-make-final-determination-iran"
-  },
-  {
-    "date": "2026-05-30",
-    "category": "Chemical Engineering",
-    "headline": "Nanostructured Black Metal Desalinates Ocean Water Without Brine Waste",
-    "link": "https://www.azom.com/news.aspx?newsID=66497"
-  },
-  {
-    "date": "2026-05-30",
-    "category": "Tech",
-    "headline": "OpenAI Model Disproves 80-Year-Old Erdős Unit Distance Conjecture",
-    "link": "https://letsdatascience.com/openai-model-disproves-80-year-old-erdos-unit-distance-conjecture/"
-  },
-  {
     "date": "2026-05-31",
     "category": "Politics",
     "headline": "Colombia accuses Ecuador of interfering in its general election",
@@ -985,6 +967,24 @@
   },
   {
     "date": "2026-07-29",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-07-30",
+    "category": "Politics",
+    "headline": "US and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
+    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
+  },
+  {
+    "date": "2026-07-30",
+    "category": "Chemical Engineering",
+    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
+    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
+  },
+  {
+    "date": "2026-07-30",
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
