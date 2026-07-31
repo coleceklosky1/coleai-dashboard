@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-05-31",
-    "category": "Politics",
-    "headline": "Colombia accuses Ecuador of interfering in its general election",
-    "link": "https://www.pbs.org/newshour/world/colombia-accuses-ecuador-of-interfering-in-its-general-election"
-  },
-  {
-    "date": "2026-05-31",
-    "category": "Chemical Engineering",
-    "headline": "How AI and Self-Driving Labs are Transforming Chemical Engineering in 2026",
-    "link": "https://www.nikitaaggarwal.com/blog/how-ai-and-self-driving-labs-are-transforming-chemical-engineering-in-2026"
-  },
-  {
-    "date": "2026-05-31",
-    "category": "Tech",
-    "headline": "Stanford quantum computing breakthrough uses twisted light to work without extreme cooling",
-    "link": "https://www.sciencedaily.com/releases/2026/05/260530112345.htm"
-  },
-  {
     "date": "2026-06-01",
     "category": "Politics",
     "headline": "\"You're fucking crazy\": Trump fumes at Netanyahu in call on Lebanon",
@@ -985,6 +967,24 @@
   },
   {
     "date": "2026-07-30",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Politics",
+    "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
+    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Chemical Engineering",
+    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
+    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
+  },
+  {
+    "date": "2026-07-31",
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
