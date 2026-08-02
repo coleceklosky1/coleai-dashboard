@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-02",
-    "category": "Politics",
-    "headline": "Trump Signs Executive Order Granting Oversight of AI Models",
-    "link": "https://gvwire.com/2026/06/02/trump-signs-executive-order-granting-oversight-of-ai-models/"
-  },
-  {
-    "date": "2026-06-02",
-    "category": "Chemical Engineering",
-    "headline": "Catalyst Upcycles PET Plastic Waste Into High-Value Chemicals",
-    "link": "https://cen.acs.org/materials/polymers/Catalyst-Upcycles-PET-Plastic-Waste-Into-High-Value-Chemicals/104/web/2026/06/01"
-  },
-  {
-    "date": "2026-06-02",
-    "category": "Tech",
-    "headline": "AI moves from pilot to production: Meet the third MINDS cohort",
-    "link": "https://www.weforum.org/agenda/2026/06/ai-moves-from-pilot-to-production-meet-the-third-minds-cohort/"
-  },
-  {
     "date": "2026-06-03",
     "category": "Politics",
     "headline": "Iran Update Special Report, June 2, 2026",
@@ -985,6 +967,24 @@
   },
   {
     "date": "2026-08-01",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Politics",
+    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
+    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Chemical Engineering",
+    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
+    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
+  },
+  {
+    "date": "2026-08-02",
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
