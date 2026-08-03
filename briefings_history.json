@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-03",
-    "category": "Politics",
-    "headline": "Iran Update Special Report, June 2, 2026",
-    "link": "https://www.understandingwar.org/backgrounder/iran-update-special-report-june-2-2026"
-  },
-  {
-    "date": "2026-06-03",
-    "category": "Chemical Engineering",
-    "headline": "New Hydrogen Breakthrough Turns Waste Heat Into Clean Fuel",
-    "link": "https://www.sciencedaily.com/releases/2026/06/260602112345.htm"
-  },
-  {
-    "date": "2026-06-03",
-    "category": "Tech",
-    "headline": "New Light-powered Chip Could Accelerate AI and Quantum Computing",
-    "link": "https://www.sciencedaily.com/releases/2026/06/260602112345.htm"
-  },
-  {
     "date": "2026-06-04",
     "category": "Politics",
     "headline": "House votes to block Trump from ordering more strikes on Iran.",
@@ -988,5 +970,23 @@
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Politics",
+    "headline": "President Trump announced on Saturday night that he had paused further U.S. attacks against Iran, saying the “perimeters of a deal has been agreed to” to end the months-long conflict between Washington and Tehran.",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeZukYNsaKBk9R25HNABycGch1Q5Mf_zOeiErMFvyDsQuOA2BytzBCEvrlE_aAWrne87rdsMsqMlEIQRZZUMhPhCEE9MRzF4wRQkIrr2B93Dy0eOGyIpM_hOVfn74QUxecWFCi6fHkqZvAyJYRfgWTJBY="
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Chemical Engineering",
+    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrH1vD6UTur_rj53CLHNXbVZ_zTpQqdrurtq6ZoQYLkXCYm-YE7qaUYnpqHqa3ZGXjqjO4WcaNRmfHTjxEba7QUno9lL5KOdv0bwmIQsOBB-cLBjV8cxHX24IDo8f8SM_B8u72Qb6TTkn-eFMURvulksb0eBGJY6O3P60-PFOG0b7VhCZou8affZA0YWx2h9GnQUvT"
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Tech",
+    "headline": "Nvidia and Amkor strike $1.5B US semiconductor packaging deal",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDVcI0O69Qp1YoTAv7cbjAzyFW7TeD1rYzqmj-pPrzHla5l8vAvXS5Db23ses4XZw5DxtA73VNvOxFOgbmDPdqwS0qAFHLhystYRoG-hiXhNdm0dyj8NQzkphgBNhEEmcPr93d3dQc0d1CuOSlIdF9OoNp4TSvVN3f3qeexhIA_t26ZwXkHCPhLXLfDytYFVjleb8usmE="
   }
 ]
