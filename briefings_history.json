@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-09",
-    "category": "Politics",
-    "headline": "Iran Update Special Report, June 8, 2026",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEctDCoHQx8KIzcJLYEbEjpBYxP7bQcxvY11jGfEMYNNK1tZZvYd_BYf9AT_kMBDDTwBxqNfv7F3-vPJmh3TTg4n0oMUtm6XojrI1v8e1XiC8zL3j8dZwxTYlyDiVDKOOb0jPwJr60D1M9EXVjPYAkmE8NndPYE9_xebV_0b61skNTB7J_PqLl4UtlBrrXNby5lwxrJ"
-  },
-  {
-    "date": "2026-06-09",
-    "category": "Chemical Engineering",
-    "headline": "The Expanding Frontier of Chemical Engineering: ChemE Show 2026 Opens June 9-10 in Houston",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPdHWA0PD8Yi3-C7RrAffajOROu4lN3a8PTAz9OIHqT8gB0IwXno75YOVG_iaEUAt-n4lEh2YApi6BSbExqhQ4VLppRH9AR7NsVWYbexT1fLJPjOnIOtfsliN7iaNev1UE88VQklHIbV1N8llev4rj9Pu9L5ulCxGpYDduoXQOjDDO5Dr24rg1Dx4ajyt9LoA1pMFd1tg80lB6jVjtENxCZ28rDiycBgYB"
-  },
-  {
-    "date": "2026-06-09",
-    "category": "Tech",
-    "headline": "NVIDIA and SK hynix Announce Multiyear Technology Partnership to Advance Memory for AI Factories",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk-QvRUlJu-OBpXUpGhfNaDJQAxWO8I2f1rSRrb5jOwGwM_RSkMSCG4rn_9jfaXwZEpcRs0RMK8hDOD-tyQcCmp039whrS7G9xU2R8EHlo2tMFOHHKE4nk9BF6CSTJpSeHR1zaL3rMhX3-tdll69xmfQ=="
-  },
-  {
     "date": "2026-06-10",
     "category": "Politics",
     "headline": "Trump signs bill giving nearly $70B to his immigration enforcement agenda through end of his term",
@@ -1006,5 +988,23 @@
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Politics",
+    "headline": "Trump loyalist Todd Blanche confirmed by Senate as US attorney general",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7tBz0Uvyxl1_2Y0lWtCsbmpUj4HwoM2QFP0dGayhXiIr5x2bzES02mOSj_tZ5JJ7yUwrmZhmuEsPspTP-dNCVs09NVeuVgnciQDAo0O3_eSSqd3peAgm1anLeYXQr-g94nKbjZj6NJBLj"
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Chemical Engineering",
+    "headline": "Cell-inspired nanoreactor turns sunlight into hydrogen peroxide",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbEyzzEIOLZGv8l66nrR-SzX3CKYAc7j2S65ZYIz_xPJB0-Gmg8Bc3DkFM-7ZrcCjFut5Vazssv4yl6w9tTiVCSLDHDy5vlUiPGEDbMbSRQRCndSzdK7hhCW-uBdiGB3Emlnp32dsHt8SisWtt12sl_yxj1hb25f7m"
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Tech",
+    "headline": "AI Efficiency Boost Through Multiverse And Qualcomm Collaboration",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2DpnZKiwULrlxT8v6kYg7HEKavO-JymdRO4zIgsMAtfzf3KDRc8bWmx6AWjKaHkW-cwlAUyYI2Pzrw0B7JY0vJlA0G4NhKTjxHBGuCa1fxj1oJWuFjMkOdzJQSOnFx8HdOXZzzNmFQKbXf_Tmi_zvw5cNva64b1GJAYePqKY464NeSxP8sKVQtBpRreAK9VgMBeYe9fttHyNaGToKr5fv1_PYUXG8_c1lNm4V3jTXKx3Lju69UIju9y_USkkuw=="
   }
 ]
