@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-10",
-    "category": "Politics",
-    "headline": "Trump signs bill giving nearly $70B to his immigration enforcement agenda through end of his term",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiGrYekm8GlXsvnzEhUr17wuUFctjFR-wj3Mzq-owJLh9MfwJAWbcIX3ezuN8eLsM3UhyOWFQ-6xQ6qL9Dh3xzao3Z6HpvUUdu8Qwm3WGGLajVPOJM4LAb41U2Ug2TBl-D2Qtrgot5c-GipQK1IGY37dxv5G832pkYIOTITnWPKfIRUlntelPHLWMIfOYzo052PMQ8RijMd4eoqL2sB0tujcB6RX8-tBhLFdA0ZpoTkfBv1-K1OsA6anG8m29i"
-  },
-  {
-    "date": "2026-06-10",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Revolution: How Additive Manufacturing Is Driving Industrial Innovation",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZEzsvN-tZk0YuA8tqL0OpIZBuVvDNBvfH1v5d3pSZteX1Vgq12-jbuQpTbyUPtYHB87EiwZRAhqxQlbIJOcZCtvviFa3ocxV1ONvve9Y6-gCv_ExLvu20f2O9qRlgQHMMw2SGgZ5LLYxqv-jyagxCAsAbV6AIOdJ40eGVPzJc65WyQ8snVs8fFVT1T5DfXVr_3-0Lm2hn"
-  },
-  {
-    "date": "2026-06-10",
-    "category": "Tech",
-    "headline": "AI and quantum computing accelerate materials development at UW",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2vG5kKyopbnIF2XsNvzCTu3YmAFjs4qcyD5r8EpQxw_H73brSeEXea84pDsMyYvA5Dcwd8Hrz8pq7xE5u9A-ygjYnRSDAX6DrewZFXEqOJxRLT6PPQAJ23b-AX4m9pszRrTP600fBCfvSQ58iRrnj_2NfGX_9YG0rPFv8DcuE_1_qCDZ-q-7ivrzNnJBSWAxoN3Izkxggqb8AXmAfX6YhvgUDkUc"
-  },
-  {
     "date": "2026-06-11",
     "category": "Politics",
     "headline": "The Latest: Trump says he's called off new military strikes on Iran after threatening escalation",
@@ -1006,5 +988,23 @@
     "category": "Tech",
     "headline": "AI Efficiency Boost Through Multiverse And Qualcomm Collaboration",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2DpnZKiwULrlxT8v6kYg7HEKavO-JymdRO4zIgsMAtfzf3KDRc8bWmx6AWjKaHkW-cwlAUyYI2Pzrw0B7JY0vJlA0G4NhKTjxHBGuCa1fxj1oJWuFjMkOdzJQSOnFx8HdOXZzzNmFQKbXf_Tmi_zvw5cNva64b1GJAYePqKY464NeSxP8sKVQtBpRreAK9VgMBeYe9fttHyNaGToKr5fv1_PYUXG8_c1lNm4V3jTXKx3Lju69UIju9y_USkkuw=="
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Politics",
+    "headline": "Trump Administration Urges Supreme Court to Allow Order Targeting Mail-In Voting Before Midterms",
+    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Chemical Engineering",
+    "headline": "New membrane accelerates purification of industrial solvents",
+    "link": "https://www.bath.ac.uk/announcements/new-membrane-accelerates-purification-of-industrial-solvents/"
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
   }
 ]
