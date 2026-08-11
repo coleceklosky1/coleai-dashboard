@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-11",
-    "category": "Politics",
-    "headline": "The Latest: Trump says he's called off new military strikes on Iran after threatening escalation",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGIIJa3kN6s_ku--HepxrRr-xfv-K4VM45-I3HPkiKjc8DiCtGztiX3CEzZyvzAfrJCoIiwIZY_hdHmZMEwT5hsDCj5ork-yORkdLjrceww6czzb1C8BpS9SqpKBuD6nAL2bigjfam6vubESf5Og65gPxauDir0e_6vRekDb5FqB0ca9eZYlFPwF6YtfJ8PVYfFUPU_qGszln0ICT25_HmeQ5tYHl64tfWgjjca7DFJAeYQEIOuhHAwhZtnhD5XIwhZOM48WCuFH3LNhoaJjxYgcfF"
-  },
-  {
-    "date": "2026-06-11",
-    "category": "Chemical Engineering",
-    "headline": "Laminar Named a 2026 World Economic Forum Technology Pioneer",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCQN4XxLu-rGicyg5fzYVs_khCoVOAR1SXlkEwNzkKF5X83lM9SlMWP_o0INMl6DHHZLbH_Ds0KbDIja4POUv1FrnPKfQH1Nb8MFVKVqMpJU7Teiz44MMTK737dOm1_c5EC6c2oj52Ee3ReGmdttNtFJ9Ha7P6LpEEPWm_mAIibV4WtDq99uNm6giL1BQSbKnkWffRCE0UPs-Ew1uHmgNRPak5__LXbt1AbfcbHXht"
-  },
-  {
-    "date": "2026-06-11",
-    "category": "Tech",
-    "headline": "What's New in Oracle AI? June 2026 Edition",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGp7svwX2qjxr8Fgm8ElKkbg9HiHGJKBiUk3n5HGma-09SYCHj1QwF2ngq-UHFlCNSkCpy3mgye9Qu2qAzNVtVTGgL_1T-2sLg_lVuFTi1zUL3UyGqiba0R8m3nb8sFnuoHrGJaag6awsjk7PisCNftBrY6gABogvC6wME4Iqkaw=="
-  },
-  {
     "date": "2026-06-12",
     "category": "Politics",
     "headline": "Fisa spy powers almost certain to expire after Congress fails to act – US politics live",
@@ -1003,6 +985,24 @@
   },
   {
     "date": "2026-08-10",
+    "category": "Tech",
+    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
+    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Politics",
+    "headline": "Trump Administration Urges Supreme Court to Allow Order Targeting Mail-In Voting Before Midterms",
+    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Chemical Engineering",
+    "headline": "New membrane accelerates purification of industrial solvents",
+    "link": "https://www.bath.ac.uk/announcements/new-membrane-accelerates-purification-of-industrial-solvents/"
+  },
+  {
+    "date": "2026-08-11",
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
