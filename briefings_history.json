@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-12",
-    "category": "Politics",
-    "headline": "Fisa spy powers almost certain to expire after Congress fails to act – US politics live",
-    "link": "https://www.theguardian.com/us-news/2026/jun/12/fisa-spy-powers-expire-congress-fails-act-us-politics-live"
-  },
-  {
-    "date": "2026-06-12",
-    "category": "Chemical Engineering",
-    "headline": "One Photon, Two Reactions - New Catalyst Converts CO2 and Biowaste Simultaneously",
-    "link": "https://www.azom.com/news.aspx?newsID=66500"
-  },
-  {
-    "date": "2026-06-12",
-    "category": "Tech",
-    "headline": "Brain-inspired chip runs near absolute zero and could transform quantum computing",
-    "link": "https://www.sciencedaily.com/releases/2026/06/260612112345.htm"
-  },
-  {
     "date": "2026-06-13",
     "category": "Politics",
     "headline": "Kennedy Center removing Trump's name from building",
@@ -1006,5 +988,23 @@
     "category": "Tech",
     "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
     "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Politics",
+    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
+    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Chemical Engineering",
+    "headline": "New membrane accelerates purification of industrial solvents",
+    "link": "https://www.bath.ac.uk/announcements/new-membrane-accelerates-purification-of-industrial-solvents/"
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Tech",
+    "headline": "AI Efficiency Boost Through Multiverse And Qualcomm Collaboration",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2DpnZKiwULrlxT8v6kYg7HEKavO-JymdRO4zIgsMAtfzf3KDRc8bWmx6AWjKaHkW-cwlAUyYI2Pzrw0B7JY0vJlA0G4NhKTjxHBGuCa1fxj1oJWuFjMkOdzJQSOnFx8HdOXZzzNmFQKbXf_Tmi_zvw5cNva64b1GJAYePqKY464NeSxP8sKVQtBpRreAK9VgMBeYe9fttHyNaGToKr5fv1_PYUXG8_c1lNm4V3jTXKx3Lju69UIju9y_USkkuw=="
   }
 ]
