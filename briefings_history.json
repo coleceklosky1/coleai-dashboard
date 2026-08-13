@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-13",
-    "category": "Politics",
-    "headline": "Kennedy Center removing Trump's name from building",
-    "link": "https://www.washingtonpost.com/politics/2026/06/13/kennedy-center-removing-trump-name/"
-  },
-  {
-    "date": "2026-06-13",
-    "category": "Chemical Engineering",
-    "headline": "Novel catalyst design boosts solar-driven ammonia production under mild conditions",
-    "link": "https://phys.org/news/2026-06-catalyst-solar-driven-ammonia-production-mild.html"
-  },
-  {
-    "date": "2026-06-13",
-    "category": "Tech",
-    "headline": "Microsoft's Next-Gen Quantum Chip Cuts Timeline to Useful Quantum Computing",
-    "link": "https://singularityhub.com/2026/06/07/this-weeks-awesome-tech-stories-from-around-the-web-through-june-7/"
-  },
-  {
     "date": "2026-06-14",
     "category": "Politics",
     "headline": "Live Updates: Qatari mediators travel to Tehran to finalize truce in U.S.-Iran war, diplomat says",
@@ -1006,5 +988,23 @@
     "category": "Tech",
     "headline": "AI Efficiency Boost Through Multiverse And Qualcomm Collaboration",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2DpnZKiwULrlxT8v6kYg7HEKavO-JymdRO4zIgsMAtfzf3KDRc8bWmx6AWjKaHkW-cwlAUyYI2Pzrw0B7JY0vJlA0G4NhKTjxHBGuCa1fxj1oJWuFjMkOdzJQSOnFx8HdOXZzzNmFQKbXf_Tmi_zvw5cNva64b1GJAYePqKY464NeSxP8sKVQtBpRreAK9VgMBeYe9fttHyNaGToKr5fv1_PYUXG8_c1lNm4V3jTXKx3Lju69UIju9y_USkkuw=="
+  },
+  {
+    "date": "2026-08-13",
+    "category": "Politics",
+    "headline": "Trump administration bars federal funding of gender-affirming care for low-income minors",
+    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
+  },
+  {
+    "date": "2026-08-13",
+    "category": "Chemical Engineering",
+    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
+    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
+  },
+  {
+    "date": "2026-08-13",
+    "category": "Tech",
+    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
+    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
   }
 ]
