@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-15",
-    "category": "Politics",
-    "headline": "Trump celebrates 80th birthday with Iran peace deal and White House cage-fights",
-    "link": "https://www.inkl.com/news/trump-celebrates-80th-birthday-with-iran-peace-deal-and-white-house-cage-fights"
-  },
-  {
-    "date": "2026-06-15",
-    "category": "Chemical Engineering",
-    "headline": "Cell-inspired material captures energy and releases it on demand",
-    "link": "https://www.eurekalert.org/news-releases/1047461"
-  },
-  {
-    "date": "2026-06-15",
-    "category": "Tech",
-    "headline": "Apple introduces Siri AI, a profoundly more capable and personal assistant",
-    "link": "https://www.techpowerup.com/334267/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant"
-  },
-  {
     "date": "2026-06-16",
     "category": "Politics",
     "headline": "WATCH LIVE: Jay Clayton testifies at confirmation hearing for national intelligence director",
@@ -1003,6 +985,24 @@
   },
   {
     "date": "2026-08-14",
+    "category": "Tech",
+    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
+    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
+  },
+  {
+    "date": "2026-08-15",
+    "category": "Politics",
+    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
+    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
+  },
+  {
+    "date": "2026-08-15",
+    "category": "Chemical Engineering",
+    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
+    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
+  },
+  {
+    "date": "2026-08-15",
     "category": "Tech",
     "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
     "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
