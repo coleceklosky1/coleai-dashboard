@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-16",
-    "category": "Politics",
-    "headline": "WATCH LIVE: Jay Clayton testifies at confirmation hearing for national intelligence director",
-    "link": "https://www.pbs.org/newshour/politics/watch-live-jay-clayton-testifies-at-confirmation-hearing-for-national-intelligence-director"
-  },
-  {
-    "date": "2026-06-16",
-    "category": "Chemical Engineering",
-    "headline": "New state-of-the-art facility provides access to advanced materials, manufacturing tools",
-    "link": "https://news.asu.edu/20260616-science-and-technology-new-stateoftheart-facility-provides-access-advanced-materials-manufacturing-tools"
-  },
-  {
-    "date": "2026-06-16",
-    "category": "Tech",
-    "headline": "TSMC and Amkor Technology Announce Long Term Partnership to Accelerate Advanced Packaging in the United States",
-    "link": "https://stocktitan.com/news/TSM/tsmc-and-amkor-technology-announce-long-term-partnership-to-accelerate-v805177700000000.html"
-  },
-  {
     "date": "2026-06-17",
     "category": "Politics",
     "headline": "Morning Briefing: June 17, 2026",
@@ -1003,6 +985,24 @@
   },
   {
     "date": "2026-08-15",
+    "category": "Tech",
+    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
+    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
+  },
+  {
+    "date": "2026-08-16",
+    "category": "Politics",
+    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
+    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
+  },
+  {
+    "date": "2026-08-16",
+    "category": "Chemical Engineering",
+    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
+    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
+  },
+  {
+    "date": "2026-08-16",
     "category": "Tech",
     "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
     "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
