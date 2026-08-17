@@ -9,7 +9,7 @@
     "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
     "source": "The Daily Record",
     "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/",
-    "whyItMatters": "This policy decision highlights the intersection of government regulation and healthcare, a field where chemical engineers play a crucial role in developing and manufacturing pharmaceuticals and medical devices. Understanding such policy shifts can impact future industry opportunities and ethical considerations in chemical production."
+    "whyItMatters": "This policy decision highlights the intersection of government regulation and healthcare, a space where chemical engineers can play a role in developing and manufacturing pharmaceuticals and medical devices. Understanding political landscapes can be crucial for navigating industry regulations and market access."
   },
   {
     "id": "auto-2026-08-17-2",
@@ -18,16 +18,16 @@
     "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
     "source": "The Chemical Engineer",
     "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/",
-    "whyItMatters": "This development showcases innovative biochemical engineering approaches to waste valorization, transforming byproducts into valuable resources like biofuels. It's a prime example of sustainable chemical process development relevant to the energy sector and the circular economy."
+    "whyItMatters": "This development showcases innovative biochemical engineering approaches to waste valorization, converting a dairy byproduct into a valuable energy source. It's a prime example of sustainable process design and the circular economy, areas of growing importance in the chemical industry."
   },
   {
     "id": "auto-2026-08-17-3",
     "date": "2026-08-17",
     "category": "Tech",
     "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
-    "source": "EleTimes",
+    "source": "eletimes",
     "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/",
-    "whyItMatters": "This collaboration between academia and industry in semiconductor research is vital for advancing microelectronics, a field increasingly reliant on advanced materials and precision manufacturing processes. Chemical engineers are integral to developing the materials and processes used in chip fabrication."
+    "whyItMatters": "This collaboration between academia and industry aims to accelerate advancements in semiconductor manufacturing, a field with significant overlap with materials science and process engineering. Such partnerships are key to driving innovation in the high-tech materials sector."
   }
 ];
   try {
