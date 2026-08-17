@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-17",
-    "category": "Politics",
-    "headline": "Morning Briefing: June 17, 2026",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-h3eaxTta8vKXM_TlFWv76ZJmDc6lcftq6OOu-a50ocCqHAeXaN8stQuVx1517-Lrd8g35STX0mv2yJIeeAfQofU6p4X0YnN8PfJGXhwglahpGN43FBHJ-0r-re_ZnuQ7XZV-AwVqHtbAHLFF0ABO8RrkYnL17T0ooKHR0_wl"
-  },
-  {
-    "date": "2026-06-17",
-    "category": "Chemical Engineering",
-    "headline": "China achieves breakthrough in key material for silicon-based quantum chips",
-    "link": "https://www.globaltimes.cn/page/202606/1292555.shtml"
-  },
-  {
-    "date": "2026-06-17",
-    "category": "Tech",
-    "headline": "Imec achieves breakthroughs in ferroelectric memory research for next-generation memory solutions to meet AI-era data needs",
-    "link": "https://www.imec-int.com/en/articles/imec-achieves-breakthroughs-ferroelectric-memory-research-next-generation-memory-solutions-meet-ai-era-data-needs"
-  },
-  {
     "date": "2026-06-18",
     "category": "Politics",
     "headline": "U.S. and Iran sign initial deal to end war and open Strait of Hormuz.",
@@ -1003,6 +985,24 @@
   },
   {
     "date": "2026-08-16",
+    "category": "Tech",
+    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
+    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
+  },
+  {
+    "date": "2026-08-17",
+    "category": "Politics",
+    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
+    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
+  },
+  {
+    "date": "2026-08-17",
+    "category": "Chemical Engineering",
+    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
+    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
+  },
+  {
+    "date": "2026-08-17",
     "category": "Tech",
     "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
     "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
