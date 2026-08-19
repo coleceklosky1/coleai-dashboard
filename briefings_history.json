@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-19",
-    "category": "Politics",
-    "headline": "U.S.-Iran Interim Agreement: Implications for the Maritime Industry and Oil Trade",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7_jUxryunU0NJhHT9y1VVRGHkRLb60fRKlcFfoPemZ99M_FISQwwJG8DH_YyKG6_Gsgdg2JsH2bCfBuJnVSJjxISLVaK5M5xauFH4XYefdEm3aiFT7IELb5We2oebjjw0R2mc_P_fxTCv56xSaaEM4o2sl8WR0cR27y2lIdyvtYZJ4sz278P7B4FIRAivYWfbnxiSh2dk2Itj7zCXbDZ7bMBJXlg4LAowzj_MlsE8mCdM"
-  },
-  {
-    "date": "2026-06-19",
-    "category": "Chemical Engineering",
-    "headline": "Sustainable chemistry through innovative catalyst research",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ3tvsc29TLxp1ujdbWhKmoketvXwr35FfNAA2JJ1JhMadmWyp-DfO0KMukB-6g12cAvO9khfZ5NFaxyP6lhDj9BdEiSqUggAWJriBwHno8FkY_yuj--PzOzMxUyukdJYZZS2tcfrWTetz3VHcHbjtjA2pRIqJDTLQzKJyatwx_qPf1qSZ6XesER_dGeUBBqluPXWXtEf-nf2s7fR9boWcHVc"
-  },
-  {
-    "date": "2026-06-19",
-    "category": "Tech",
-    "headline": "Brain-Inspired Memory Device Boosts AI Energy Efficiency",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFahc9s9fnz0kxjAupLJ3Qie9AAaimoAwTQt6SlKmAIgu8ZOWoHe3lwVHM9_96SiMDDDmslnPX0J-pkA437G6b7VEdqMaXHNFemBm9LVkRTScejrVSP2PQ901NYdHMQSzppThgsPggGRhLOLhpZwMkLGSPE32l5ew6AebRSZFzXGgy02_PjBurob-F-OQ=="
-  },
-  {
     "date": "2026-06-20",
     "category": "Politics",
     "headline": "Trump envoy and Iranian minister head to Switzerland for talks",
@@ -1021,6 +1003,24 @@
   },
   {
     "date": "2026-08-18",
+    "category": "Tech",
+    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
+    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
+  },
+  {
+    "date": "2026-08-19",
+    "category": "Politics",
+    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
+    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
+  },
+  {
+    "date": "2026-08-19",
+    "category": "Chemical Engineering",
+    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
+    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
+  },
+  {
+    "date": "2026-08-19",
     "category": "Tech",
     "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
     "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
