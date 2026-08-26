@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-26",
-    "category": "Politics",
-    "headline": "Attorney General Ellison wins lawsuit against second Trump executive order on elections",
-    "link": "https://www.google.com/search?q=Attorney+General+Ellison+wins+lawsuit+against+second+Trump+executive+order+on+elections+Minnesota+Attorney+General%27s+Office"
-  },
-  {
-    "date": "2026-06-26",
-    "category": "Chemical Engineering",
-    "headline": "2D Materials Research Recognised by the Kavli Prize for the First Time",
-    "link": "https://www.google.com/search?q=2D+Materials+Research+Recognised+by+the+Kavli+Prize+for+the+First+Time+Graphene+Flagship"
-  },
-  {
-    "date": "2026-06-26",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-06-27",
     "category": "Politics",
     "headline": "US strikes Iran sites after cargo ship attack",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "Quantum Computing's Latest Breakthrough and What It Means for AI",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp741Y9WyRfkQ1VJJ5xuU1faD5GjXgaXLgOPNyK1_K5RmB5M_VUNqnXOZfseaHRNJzfGyiQdhfBTLUUUjf2IdxV1m5e4A8F14pJKPPyLiWoPJ8jlcsIiTDIo9BNQ_gO24WQLwTFOXOY1SOecV6Hx5l9c_zganXqZM="
+  },
+  {
+    "date": "2026-08-26",
+    "category": "Politics",
+    "headline": "Supreme Court conservatives rule Trump can decide who gets mail-in ballots",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsWx2McEdvTQGZBQ-FpnBhNzrszmeGQ2glf-E1b-7_cGXE_5MRKubYEkRBTC19na-9zEtzJCs-tkw_BUZ-8ek_gsRltghDAnPCxSnkpCeA8iCwJ6xCocd55KMyxXYzcJ5eKEqztbK7o3VWD54fKH6lTp3s6pThmUpJepXObBp66DA="
+  },
+  {
+    "date": "2026-08-26",
+    "category": "Chemical Engineering",
+    "headline": "Westinghouse eVinci™ Microreactor Achieves Zero-Power Criticality",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxsZeV6z4Czysw612-nNAjGP0GPm-HPfgWS0_6FKqsEFClhBvD5L9ZWALuGiTu3-0vzM_swaO2XlCx736gEX7QRjObMOVDtq8SKPF31-CAxxiCbUF6z2bS_MwdATX2b1RlYVb9Ymn5cLXhgK_jqfv-Mc3evIUs6tHr2pGCUzkpWfBF7la5R4GkuXaXVu3yuWHeg7rGOze3mxQbBGcz-MRycMlGDik="
+  },
+  {
+    "date": "2026-08-26",
+    "category": "Tech",
+    "headline": "AI data center spending drives growth in semiconductor market",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsKC8JeYjI5k1-FOT2OM-iTQe1HSNTUvSVZ9UTYvoZA7K_nKtcqYafqU4K5waJ0hUxbNQgaMgzd7FP-c4_JU9ZOSk2cpk-wQjTdUqjIedg8s45MdaOZY35y9ZD9iXM_UHbI145wn0BSoRyDK3SC83kD6vPctld5h9MuHX_9iHFqvTkB1RqBUnSDJsNhNu_6yN-cnpuiwk6ykvtO4F5sfRQCw=="
   }
 ]
