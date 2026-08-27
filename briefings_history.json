@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-27",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-06-27",
-    "category": "Chemical Engineering",
-    "headline": "Chinese sodium battery surprised scientists by matching key Tesla benchmarks",
-    "link": "https://www.google.com/search?q=Chinese+sodium+battery+surprised+scientists+by+matching+key+Tesla+benchmarks+ScienceDaily"
-  },
-  {
-    "date": "2026-06-27",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-06-28",
     "category": "Politics",
     "headline": "US strikes Iran sites after cargo ship attack",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "AI data center spending drives growth in semiconductor market",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsKC8JeYjI5k1-FOT2OM-iTQe1HSNTUvSVZ9UTYvoZA7K_nKtcqYafqU4K5waJ0hUxbNQgaMgzd7FP-c4_JU9ZOSk2cpk-wQjTdUqjIedg8s45MdaOZY35y9ZD9iXM_UHbI145wn0BSoRyDK3SC83kD6vPctld5h9MuHX_9iHFqvTkB1RqBUnSDJsNhNu_6yN-cnpuiwk6ykvtO4F5sfRQCw=="
+  },
+  {
+    "date": "2026-08-27",
+    "category": "Politics",
+    "headline": "US weighs a new round of tariffs on semiconductors, Politico reports",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH513W137em4Vj1vDyj71U8QhCF36gSvD5XitDAh_834mGKPph8VXRoUv6Opi9U2A7SJSWf9JzUIkrZGPZcqK0-lYtmE6he5meQNP43-a85C1L0obUa_A2XeBy0QAJINJpCIWvne-nvojFE-jmj9BSDZOY9dzf05iGvzPCKRuRpYs39UarGpshskOWnO_qI9fTuM2FVftykFonU_1YEOz64hnlNe2U"
+  },
+  {
+    "date": "2026-08-27",
+    "category": "Chemical Engineering",
+    "headline": "How Innovation Could Reshape Chemistry by 2050",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzX6O42PNpiyYA0a6F1sSQxetV4wTTbdHfrzphBM_KZRtz8qqLD0whkO49NRI-B82avu6sIDzSqrQ9rQwksfhKC45slLPpBFuCV2iefpRqtoqakQVxkZ_pvwzGmUmzLDK2kcZmRvJBJHI4S8x89m0SjpiXslxu2qgw2H-Iu4UOZGLpOdjWWFmrbj1ICjBH4sM="
+  },
+  {
+    "date": "2026-08-27",
+    "category": "Tech",
+    "headline": "Hot Chips 2026: Cerebras lays out the future of wafer-scale AI — Nexus system architecture triples rack-scale performance, CS-6 wafer to incorporate stacked DRAM",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3HVVZC9-6B-SCDAakaSc8Ja15UvP4p96EsXIuM1_7F_MtgSPHjNXCZ7MO_hYZtxsERPvHCpk6dZwg_doOW6uBZYR3oBqPlDbcrKxca2s_opxm1ps5dibbXlJlGxrZDS4djBQo0cykvdFAELh8fYX8MFrhfb3OCo_Sf1FAEL0NDeJHzdL-6KGLhQDdOaRxuFPSUac6kQf2xSQKvoZ2uEQtI06jC2y17hZXYMumG_7-ueZbf1qe7DRMp0gWmXQ8rw16RtaAiaUPVQ0vwGL-G_TlARd7_yGHWTQYjUGd6Egmlw_KrJyLwcXsjH5BAXgFTFSk0q20a0GouaxGFKQ589RRq4wvatzENS0F0TBIXfyjTCpV_Am1LJSFLDOBjA=="
   }
 ]
