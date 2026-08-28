@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-28",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-06-28",
-    "category": "Chemical Engineering",
-    "headline": "Chinese sodium battery surprised scientists by matching key Tesla benchmarks",
-    "link": "https://www.google.com/search?q=Chinese+sodium+battery+surprised+scientists+by+matching+key+Tesla+benchmarks+ScienceDaily"
-  },
-  {
-    "date": "2026-06-28",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-06-29",
     "category": "Politics",
     "headline": "US strikes Iran sites after cargo ship attack",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "Hot Chips 2026: Cerebras lays out the future of wafer-scale AI — Nexus system architecture triples rack-scale performance, CS-6 wafer to incorporate stacked DRAM",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3HVVZC9-6B-SCDAakaSc8Ja15UvP4p96EsXIuM1_7F_MtgSPHjNXCZ7MO_hYZtxsERPvHCpk6dZwg_doOW6uBZYR3oBqPlDbcrKxca2s_opxm1ps5dibbXlJlGxrZDS4djBQo0cykvdFAELh8fYX8MFrhfb3OCo_Sf1FAEL0NDeJHzdL-6KGLhQDdOaRxuFPSUac6kQf2xSQKvoZ2uEQtI06jC2y17hZXYMumG_7-ueZbf1qe7DRMp0gWmXQ8rw16RtaAiaUPVQ0vwGL-G_TlARd7_yGHWTQYjUGd6Egmlw_KrJyLwcXsjH5BAXgFTFSk0q20a0GouaxGFKQ589RRq4wvatzENS0F0TBIXfyjTCpV_Am1LJSFLDOBjA=="
+  },
+  {
+    "date": "2026-08-28",
+    "category": "Politics",
+    "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
+    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
+  },
+  {
+    "date": "2026-08-28",
+    "category": "Chemical Engineering",
+    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
+    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
+  },
+  {
+    "date": "2026-08-28",
+    "category": "Tech",
+    "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
+    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
   }
 ]
