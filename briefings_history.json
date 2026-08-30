@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-06-30",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-06-30",
-    "category": "Chemical Engineering",
-    "headline": "New heat-regulating fabric feels fluffy like cotton — but doesn't get wet",
-    "link": "https://www.google.com/search?q=New+heat-regulating+fabric+feels+fluffy+like+cotton+%E2%80%94+but+doesn%27t+get+wet+ScienceDaily"
-  },
-  {
-    "date": "2026-06-30",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-07-01",
     "category": "Politics",
     "headline": "As Trump rants, Democrats and advocates hail U.S. birthright ruling",
@@ -1093,6 +1075,24 @@
   },
   {
     "date": "2026-08-29",
+    "category": "Tech",
+    "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
+    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
+  },
+  {
+    "date": "2026-08-30",
+    "category": "Politics",
+    "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
+    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
+  },
+  {
+    "date": "2026-08-30",
+    "category": "Chemical Engineering",
+    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
+    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
+  },
+  {
+    "date": "2026-08-30",
     "category": "Tech",
     "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
     "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
