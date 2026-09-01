@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-02",
-    "category": "Politics",
-    "headline": "Supreme Court upholds principle that almost all born on U.S. soil are American",
-    "link": "https://www.google.com/search?q=Supreme+Court+upholds+principle+that+almost+all+born+on+U.S.+soil+are+American+The+Washington+Post"
-  },
-  {
-    "date": "2026-07-02",
-    "category": "Chemical Engineering",
-    "headline": "US manufacturing expands again in June, but at slower rate than in May",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw-ZD4IcHYfdWYqDrOCzzIRosdbPbRuRsF1QjLy9Ig3xosZ7uUX-8VyOX6FOvscigG9l2fmXBgKH-wpvwT6XOexwueZ-WXXCa7LVlKQRznni6ztJRNuiMKr2NHtGWszUmUvzwUO1tpHp-wPh1NECeNaeiDo2ah0qe1otaf33Y8VF3LGtm7_QNmDGfENd6a"
-  },
-  {
-    "date": "2026-07-02",
-    "category": "Tech",
-    "headline": "GV's Dave Munichiello On Qualcomm's Modular Purchase, The Firm's 10x Return And The Shift In AI Software",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVNnoOoLPc-aNIaLTApwiPBxxb_DnMKpYcIpBYyKj0J6LeBZh4K8DHkp-tdv-qrSq0SDM0Dq3XC34ZMv61hJVB1sYPPYFvbDiVlqwDZfHQPlbq8GuzSF7sBxMB7xCVaTLoEiIfAtrZ3cujeMmgrOxlHkyFb1jrTzjCHdpAwXc2lnUBE44ShURJrCiLNfKUNNY="
-  },
-  {
     "date": "2026-07-03",
     "category": "Politics",
     "headline": "World News Today Live Updates on : Russia launches largest-ever drone, missile barrage on Ukraine's Kyiv, at least 27 killed, 91 injured: Details",
@@ -1093,6 +1075,24 @@
   },
   {
     "date": "2026-08-31",
+    "category": "Tech",
+    "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
+    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
+  },
+  {
+    "date": "2026-09-01",
+    "category": "Politics",
+    "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
+    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
+  },
+  {
+    "date": "2026-09-01",
+    "category": "Chemical Engineering",
+    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
+    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
+  },
+  {
+    "date": "2026-09-01",
     "category": "Tech",
     "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
     "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
