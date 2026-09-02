@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-03",
-    "category": "Politics",
-    "headline": "World News Today Live Updates on : Russia launches largest-ever drone, missile barrage on Ukraine's Kyiv, at least 27 killed, 91 injured: Details",
-    "link": "https://www.google.com/search?q=World+News+Today+Live+Updates+on+%3A+Russia+launches+largest-ever+drone%2C+missile+barrage+on+Ukraine%27s+Kyiv%2C+at+least+27+killed%2C+91+injured%3A+Details+Mint"
-  },
-  {
-    "date": "2026-07-03",
-    "category": "Chemical Engineering",
-    "headline": "Simple water trick slashes diesel engine pollution by over 60%",
-    "link": "https://www.google.com/search?q=Simple+water+trick+slashes+diesel+engine+pollution+by+over+60%25+ScienceDaily"
-  },
-  {
-    "date": "2026-07-03",
-    "category": "Tech",
-    "headline": "Tiny Magnetic Waves Could Unlock Quantum Computers the Size of a Penny",
-    "link": "https://www.google.com/search?q=Tiny+Magnetic+Waves+Could+Unlock+Quantum+Computers+the+Size+of+a+Penny+ScienceDaily"
-  },
-  {
     "date": "2026-07-05",
     "category": "Politics",
     "headline": "US strikes Iran sites after cargo ship attack",
@@ -1093,6 +1075,24 @@
   },
   {
     "date": "2026-09-01",
+    "category": "Tech",
+    "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
+    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
+  },
+  {
+    "date": "2026-09-02",
+    "category": "Politics",
+    "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
+    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
+  },
+  {
+    "date": "2026-09-02",
+    "category": "Chemical Engineering",
+    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
+    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
+  },
+  {
+    "date": "2026-09-02",
     "category": "Tech",
     "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
     "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
