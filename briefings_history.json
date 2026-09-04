@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-05",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-07-05",
-    "category": "Chemical Engineering",
-    "headline": "Chinese sodium battery surprised scientists by matching key Tesla benchmarks",
-    "link": "https://www.google.com/search?q=Chinese+sodium+battery+surprised+scientists+by+matching+key+Tesla+benchmarks+ScienceDaily"
-  },
-  {
-    "date": "2026-07-05",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-07-06",
     "category": "Politics",
     "headline": "US strikes Iran sites after cargo ship attack",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "China's Semiconductor Equipment Push Enters Deeper Water",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfPr5i_So9626zeOorFr3xmx8ewS9pcZNlRgdeKSFfgOXGP51KtyVcM3lADqQHSQm9-FED4lWGThP3ZLrg4fhqoKLcXiurywq3EKEGqZHAf8AouCIX6CmBaQMxJxDBKz3YmWGBshTamK7pUb2eESLyMvFEg2T15oYWif-oCT7Qnvp2y92aD0wHXEgc1Sw"
+  },
+  {
+    "date": "2026-09-04",
+    "category": "Politics",
+    "headline": "Missouri supreme court blocks congressional maps backed by Trump for midterms – US politics live",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZVVpdpAEQR7Z4fa0T7rXzir9f1IduAaplPNEe4tiaPGwMTWypOlYhIoikR7WkchtKb8rt-GNnyJ-3kr6dCfkotqL5k1fWyHCk9i9nJdv1bQ9NgI9Jd26XlbAK6D5rRmIS7rBTQMkEJS-A8-2MOVmco8M8zPmUQ7x4fAZPwjdlpY0CD8FaZzfDhiYG7NXOCpsgH3eOafH7TzLLE1qC_dwJUEwKf-FMxKuTx5hj4BJntmuX_48TcHibewzbsT-ZpsJ2CrsdCANXbP7Sa0ZUZyI-e_T4cfLLU4-j6cooIpgKQqGCOQH1U9fsYhE="
+  },
+  {
+    "date": "2026-09-04",
+    "category": "Chemical Engineering",
+    "headline": "OMV Petrom raises Petrobrazi green hydrogen capacity to 55 MW with second 35 MW electrolyzer",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9L0x0GQtVHHVOXe-ITXIwVKkDV-wMbYNHxgVd_scqH-bYugmD67C-zywhhDCKNZ_zxZZbopIvar59XkLl-OwdAKU2Q6awv1N04RAWDEq45TqajBbKPlAoz_XstVrkof-c7cwAgYWS4xH6aX7O_F8_9RM="
+  },
+  {
+    "date": "2026-09-04",
+    "category": "Tech",
+    "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT_D1K8fXEco_ssFJwkR__QDZ-Y5NMniQXh0Jt2rjFAn7v_Y-FhbnhQtVveb9UgfZ-kZIgLugCQCKPAhUV2ggaWR6UzT2XJ8droQzCfdU0J5GO"
   }
 ]
