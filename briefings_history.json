@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-06",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-07-06",
-    "category": "Chemical Engineering",
-    "headline": "Chinese sodium battery surprised scientists by matching key Tesla benchmarks",
-    "link": "https://www.google.com/search?q=Chinese+sodium+battery+surprised+scientists+by+matching+key+Tesla+benchmarks+ScienceDaily"
-  },
-  {
-    "date": "2026-07-06",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-07-07",
     "category": "Politics",
     "headline": "US strikes Iran sites after cargo ship attack",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT_D1K8fXEco_ssFJwkR__QDZ-Y5NMniQXh0Jt2rjFAn7v_Y-FhbnhQtVveb9UgfZ-kZIgLugCQCKPAhUV2ggaWR6UzT2XJ8droQzCfdU0J5GO"
+  },
+  {
+    "date": "2026-09-05",
+    "category": "Politics",
+    "headline": "US weighs a new round of tariffs on semiconductors, Politico reports",
+    "link": "https://www.politico.com/news/2026/09/04/us-tariffs-semiconductors-china-513000"
+  },
+  {
+    "date": "2026-09-05",
+    "category": "Chemical Engineering",
+    "headline": "Battelle Researchers Demonstrate Biotech Breakthrough for Rare Earth Element Separation",
+    "link": "https://www.battelle.org/news/battelle-researchers-demonstrate-biotech-breakthrough-for-rare-earth-element-separation"
+  },
+  {
+    "date": "2026-09-05",
+    "category": "Tech",
+    "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
+    "link": "https://openai.com/blog/gpt-6-astra-rollout"
   }
 ]
