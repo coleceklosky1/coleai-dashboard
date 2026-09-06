@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-07",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-07-07",
-    "category": "Chemical Engineering",
-    "headline": "Chinese sodium battery surprised scientists by matching key Tesla benchmarks",
-    "link": "https://www.google.com/search?q=Chinese+sodium+battery+surprised+scientists+by+matching+key+Tesla+benchmarks+ScienceDaily"
-  },
-  {
-    "date": "2026-07-07",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-07-08",
     "category": "Politics",
     "headline": "The Latest: Danish prime minister vows to defend Greenland during NATO summit in Turkey",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
     "link": "https://openai.com/blog/gpt-6-astra-rollout"
+  },
+  {
+    "date": "2026-09-06",
+    "category": "Politics",
+    "headline": "Witkoff and Kushner discussed 'next steps' with Putin to end Ukraine war, says US",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVfZz0cyF38I3ZStheniqdpyd3nNM3ZFSedlJU8WITOQKsXIQEmpE33MGBMWyt43uCT3zuVE6FGviqQ28xjjl_uahWxzk9kfwhehedNZvO-WDvU_Coj2KMJdaqOo57IrfXEMQRklvMyz_BDQbRNd8k99B4UBx0H0H9KyNNRNGFqOBMLHMxT25I5RNfy8-lfHiAw3sTi6BW1RMIDMs0cEV4"
+  },
+  {
+    "date": "2026-09-06",
+    "category": "Chemical Engineering",
+    "headline": "Canada plugs 'major source' of methane emissions from oil and gas field leak",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYfkOdc3LY8DDGmcWOGWCwVd2shQ0wgBsDajtj5JUy0zq1DIOQFXqplMJ0caPk9toUuJefTiIkx561NUfZ4IITro4OzR8vRqKF1WkEtKFhpwrRXS_S9zvaKHfsExfgB4SF79RVPsIeCr_HW3OD32caEqqdmPqIQBa345BfWkF7kMoHe00Q2jNc5_5nOIb_8fEkX8Ybi8QxYdmgMYdOjPjEBZklS_y8RIcktFq8eeYs"
+  },
+  {
+    "date": "2026-09-06",
+    "category": "Tech",
+    "headline": "G7 Tells Industry to Prep for Post-Quantum Encryption",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXpaBs4nnH8O3n6jXgsCmnH6hD4EYI_94yzAcoSNQbgPG0MXUv_Zk5NdlejFTN51nmkME7XCJpp17qwSzb7yol-IURAVexnMzvdel9t-hhsO4r6Yp_7edH9YIknk1A9w=="
   }
 ]
