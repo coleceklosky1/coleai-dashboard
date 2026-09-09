@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-10",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-07-10",
-    "category": "Chemical Engineering",
-    "headline": "WACKER Opens New Specialty Silicones Production in Karlovy Vary, Czech Republic",
-    "link": "https://www.wacker.com/cms/en-us/press/news/2026/2026-06-17_wacker-opens-new-specialty-silicones-production-in-karlovy-vary-czech-republic.html"
-  },
-  {
-    "date": "2026-07-10",
-    "category": "Tech",
-    "headline": "IBM Debuts World's First Sub-1 Nanometer Chip Technology",
-    "link": "https://newsroom.ibm.com/2026-06-25-IBM-Debuts-Worlds-First-Sub-1-Nanometer-Chip-Technology"
-  },
-  {
     "date": "2026-07-11",
     "category": "Politics",
     "headline": "Live updates: U.S. and Iran to continue talks after tensions escalated over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "ASML and TSMC Announce Initiative to Pioneer Industry Transition to Large-Format Photomasks for High NA EUV",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSSuNpMiW9RbF-oJhZTKGxXqvioiKtD_NzJK1HJ2LbjSKYwhDAKQ2btdc6jXH1qd47o_LS-6DVXSgBwSDDpsBvC03U-dOUEswZ7dHAAwmYA1dLxTyRtJuSjyZEHXPc7dK15nzbCAyhuYERQ1c16Ie1oOsHZieYdfS6057zSDSWEeKk9eSEhbQaNGqsXeQL8kKwFjohkri1bdcxV5EscAAcfaGvo0opM3UrQLSxhsui-BBSiDfIVp1w9cn7egn1QlEa"
+  },
+  {
+    "date": "2026-09-09",
+    "category": "Politics",
+    "headline": "Supreme Court says parties should get lower TV ad rates",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6Z7_uVT3aaRkdqlaUZBtdVNq7H1BLVP82Ym2qurFaB2c1SQ9k35sPrmPMvJ0q-ByGnxHXMgLI78YpkkJet6GzbpX3jCP6zk8Sp43F-3dYsw2Bi5wsI_klgpLc-XBqcJSqw8oru-sJ_5VsjvsRVqonwDr-J2ISorZWiNH81HXmwD_E5NRySGIZ9wl5iFM5YTOZVg=="
+  },
+  {
+    "date": "2026-09-09",
+    "category": "Chemical Engineering",
+    "headline": "Ole Miss, Texas A&M Engineering Partner to Fuel Martian Exploration",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlSAiKuzkqGE-keT96Lh5u26BBaeGgbvYmo5Sv2XWi3J0Otk4197bayx0OGyvvs3gzeMaetjbfOpntrkM2341-h0NeV1mnm4L3qgU8_OIx1uYIq5tm1YPEuOI9Hix1uKjT3pm_JGDlasUgPWI9BD4V9q3oX23kHXp-AR-vK2gsi1QlghRX67xPsmOQWW30OQ1p6lrvmajJIrkX6NZU99cqHUaydrbf0xY="
+  },
+  {
+    "date": "2026-09-09",
+    "category": "Tech",
+    "headline": "Quantum computers finally get an upgrade: this chip promises a game-changing breakthrough",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz2NyOFCEiASHatVt_hmwE7TFr5EdcgY_8LQu2HWlKjkM4zAk-bbztPHdCt6Fp3UdTlYVvAIB-MP5dF8N9oZwR71l56c_PnRWrmE7fgWczzphoqlHuLmVsbwbnu9q8rWitEvekD9UXhtf_x4l5f7e6YdJjU8Cwy2kIJoYI8o8zWaRVQBVm4IklOgU1EIPYtUakpgHZnCgm2LugSxiu4PB2xQL1mdLxoCmD5XxUp-GUitBZ1dy96BmkCKAUZGHB"
   }
 ]
