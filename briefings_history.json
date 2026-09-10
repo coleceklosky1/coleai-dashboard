@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-11",
-    "category": "Politics",
-    "headline": "Live updates: U.S. and Iran to continue talks after tensions escalated over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-07-11",
-    "category": "Chemical Engineering",
-    "headline": "Michelin and Axens enter into discussions to accelerate the deployment of a key bio-based molecule for green chemistry",
-    "link": "https://www.hydrocarbonprocessing.com/news/2026/07/michelin-and-axens-enter-into-discussions-to-accelerate-the-deployment-of-a-key-bio-based-molecule-for-green-chemistry"
-  },
-  {
-    "date": "2026-07-11",
-    "category": "Tech",
-    "headline": "Micron Announces Up to $3 Billion Strategic Investment to Strengthen U.S. Semiconductor Ecosystem",
-    "link": "https://investors.micron.com/news-releases/news-release-details/micron-announces-3-billion-strategic-investment-strengthen-us"
-  },
-  {
     "date": "2026-07-12",
     "category": "Politics",
     "headline": "U.S. and Iran to continue talks after tensions escalated over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Quantum computers finally get an upgrade: this chip promises a game-changing breakthrough",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz2NyOFCEiASHatVt_hmwE7TFr5EdcgY_8LQu2HWlKjkM4zAk-bbztPHdCt6Fp3UdTlYVvAIB-MP5dF8N9oZwR71l56c_PnRWrmE7fgWczzphoqlHuLmVsbwbnu9q8rWitEvekD9UXhtf_x4l5f7e6YdJjU8Cwy2kIJoYI8o8zWaRVQBVm4IklOgU1EIPYtUakpgHZnCgm2LugSxiu4PB2xQL1mdLxoCmD5XxUp-GUitBZ1dy96BmkCKAUZGHB"
+  },
+  {
+    "date": "2026-09-10",
+    "category": "Politics",
+    "headline": "At RNC midterm convention, Trump pitches $5,000 checks to U.S. citizens — but only if GOP wins House and Senate",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2cenausaYdMJKY3BHdcHW1EMlhcB9HnqKTeQVg-HmSF-bVa0OZXg8gBdc07a7RLK53TbRY1XsgRplKurYlYudPi31EFjss3cjZ8oA-QwPx_nTx8WOkENWB0dTHEatmf4S2iK_cCvGwEuHhqQNRA0bfk2tfIZQM8oyMNq_nw6wj8hYKoRWM0CL3mg="
+  },
+  {
+    "date": "2026-09-10",
+    "category": "Chemical Engineering",
+    "headline": "RTI International opens $14M expansion of Pilot Xcelerator to help innovators scale promising new energy and industrial technologies",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaq8yiP6HnWLFfLNLzosdzollHDfTSxvI0WOxMGiLnkm5b753EkSUqpfEYE0zgjlI9ch4oqJuy8ICW5z2qxEN6b8F01t51JvRGu1M4RBBrHFQXsz_7kUrPtPAxGOthBSsNTWWSk8d95AKNglQ1ZtbeMuMrymfkIi5jx-hK"
+  },
+  {
+    "date": "2026-09-10",
+    "category": "Tech",
+    "headline": "Apple A20 Pro powers iPhone Duo, 18 Pro — the company's first 2-nanometer smartphone chip",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRSVevgnFrLf9fHfo3NEDNXX03wCF36mcSjhCH4UXLzuGp4bskh3I9PwEzYDB3nS3cpKB22fXoFPXCQOWJsYZYO_9EWgNPg8wp_bKu6e_-kg6dR_7y3VhDfB0T"
   }
 ]
