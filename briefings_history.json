@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-12",
-    "category": "Politics",
-    "headline": "U.S. and Iran to continue talks after tensions escalated over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-07-12",
-    "category": "Chemical Engineering",
-    "headline": "Michelin and Axens enter into discussions to accelerate the deployment of a key bio-based molecule for green chemistry",
-    "link": "https://www.hydrocarbonprocessing.com/news/2026/07/michelin-and-axens-enter-into-discussions-to-accelerate-the-deployment-of-a-key-bio-based-molecule-for-green-chemistry"
-  },
-  {
-    "date": "2026-07-12",
-    "category": "Tech",
-    "headline": "Micron Announces Up to $3 Billion Strategic Investment to Strengthen U.S. Semiconductor Ecosystem",
-    "link": "https://investors.micron.com/news-releases/news-release-details/micron-announces-3-billion-strategic-investment-strengthen-us"
-  },
-  {
     "date": "2026-07-13",
     "category": "Politics",
     "headline": "U.S. and Iran to continue talks after tensions escalated over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Apple A20 Pro powers iPhone Duo, 18 Pro — the company's first 2-nanometer smartphone chip",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRSVevgnFrLf9fHfo3NEDNXX03wCF36mcSjhCH4UXLzuGp4bskh3I9PwEzYDB3nS3cpKB22fXoFPXCQOWJsYZYO_9EWgNPg8wp_bKu6e_-kg6dR_7y3VhDfB0T"
+  },
+  {
+    "date": "2026-09-11",
+    "category": "Politics",
+    "headline": "Thursday, September 10, 2026 - U.S. Senate Daily Press",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs75jnNshcXziASGjPgze9lBdMhfmX5Q-V-acD7q73icnoxKdqkgMkwagUC0hscBWPHQOI1McuhVJmzc5BC-_s9wW5AoQT2x3wG2_a8fgFjOdGQM_JyfUJxYbUHKkYCcDCFoWCskLb15nFo-hnkI78Obx5P8PVAw=="
+  },
+  {
+    "date": "2026-09-11",
+    "category": "Chemical Engineering",
+    "headline": "U.S. Department of Energy - OE's Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
+    "link": "https://www.google.com/search?q=U.S.+Department+of+Energy+-+OE%27s+Alternative+Fuels+and+Feedstocks+Office+Announces+up+to+%2458+Million+to+Promote+Chemical+Innovation+Global+Renewable+News"
+  },
+  {
+    "date": "2026-09-11",
+    "category": "Tech",
+    "headline": "Samsung Foundry and Cadence Partner on 2nm Chip Design Platform for AI and Datacenters",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIGm6AmI6bxeqoNtws2vH6NL0YUuh71D40zhy-RtQAI3xWLGGg52UDM2EQ3AZV2Ap7dILgpKVUphTiYURflqBUjQCqY6d6Q48KS6FExC5COPNqhoI3_sZABiGmcEWlZniW-UuF5Uh0h9P_aI62odH8fcQxzNjIi7zOYEJpgFowgX8aLclmSIWSgvuqUzDHs48P4VvS2e6YuzR7pPGK55Bq321yVJJ0VDIOo_OGIw=="
   }
 ]
