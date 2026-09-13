@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-14",
-    "category": "Politics",
-    "headline": "US strikes Iran sites after cargo ship attack",
-    "link": "https://news.abs-cbn.com/overseas/2026/06/27/us-strikes-iran-sites-after-cargo-ship-attack"
-  },
-  {
-    "date": "2026-07-14",
-    "category": "Chemical Engineering",
-    "headline": "Michelin and Axens enter into discussions to accelerate the deployment of a key bio-based molecule for green chemistry",
-    "link": "https://www.hydrocarbonprocessing.com/news/2026/07/michelin-and-axens-enter-into-discussions-to-accelerate-the-deployment-of-a-key-bio-based-molecule-for-green-chemistry"
-  },
-  {
-    "date": "2026-07-14",
-    "category": "Tech",
-    "headline": "Micron Announces Up to $3 Billion Strategic Investment to Strengthen U.S. Semiconductor Ecosystem",
-    "link": "https://investors.micron.com/news-releases/news-release-details/micron-announces-3-billion-strategic-investment-strengthen-us"
-  },
-  {
     "date": "2026-07-15",
     "category": "Politics",
     "headline": "U.S. and Iran to continue talks after tensions escalated over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHijlTqmwiSHiMUADy5_uJq2A8UF0tcr2ijsY4PgrkRLcwWt-uIaX257Eer4GIeoZeJT1zTwjLWuhRsr0DIXblxoQ_7d-lAsyhMCztBDY77WiyCRwuKqdBuUlFKrEiAP0tfBhJq8YM05xAlkNzCzDdJKb08wQ_RRRbWAJ31TvfguNxYfSXew9ZLDg_O0d1C0A9ttQY="
+  },
+  {
+    "date": "2026-09-13",
+    "category": "Politics",
+    "headline": "European troops deployment to Ukraine will mean war with Russia, Putin warns",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGihpr--dU8Ke9ldWKeDoCvAhol1GUqnVuhgNBMPCo2Hl14ej0COP4A1AfjYSPRxZysd087CsMFz9BGtzl_xKjcXOnNcZuNmSPFJdbLnVcOG0uua8H_IlXhK3JsWYabasxEApYMl7QTitfi3BNmpIu3O59bI3n5irp1aetDWTn0ZIkYjRhpeTQIbWtbkkPVNHbyvZQ"
+  },
+  {
+    "date": "2026-09-13",
+    "category": "Chemical Engineering",
+    "headline": "Battelle Researchers Demonstrate Biotech Breakthrough for Rare Earth Element Separation",
+    "link": "https://www.battelle.org/news/battelle-researchers-demonstrate-biotech-breakthrough-for-rare-earth-element-separation"
+  },
+  {
+    "date": "2026-09-13",
+    "category": "Tech",
+    "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
+    "link": "https://openai.com/blog/gpt-6-astra-rollout"
   }
 ]
