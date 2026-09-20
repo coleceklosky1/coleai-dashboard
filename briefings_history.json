@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-21",
-    "category": "Politics",
-    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-07-21",
-    "category": "Chemical Engineering",
-    "headline": "Michelin and Axens Enter Into Discussions to Accelerate the Deployment of a Key Bio-Based Molecule for Green Chemistry",
-    "link": "https://www.hydrocarbonprocessing.com/news/2026/07/michelin-and-axens-enter-into-discussions-to-accelerate-the-deployment-of-a-key-bio-based-molecule-for-green-chemistry"
-  },
-  {
-    "date": "2026-07-21",
-    "category": "Tech",
-    "headline": "Co-Packaged Optics Demand Reshapes AI Chip Supply Chains in 2026",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsIodRPBb12tnk73Eq7Nq49B4SfPTSmSG18MG-7ayr4JJ58iMEsOn2FYSiHP-zGgpKFYF9KNi0OChWEXTIIrpP_icbGMzr3-Fzc4W9HOvH4uEUHN4hkNcAYdBcgkoMaz6KvmLHfsYZ6JKHhzvfErGBncWEEzOYeR5TcA8ilF5qq3kETs4zs5z2C5Zbvn5E6rI-30ZX52X66ALvMPbR7vpw0eGCtIDTG-uNsjQcM0E="
-  },
-  {
     "date": "2026-07-22",
     "category": "Politics",
     "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHijlTqmwiSHiMUADy5_uJq2A8UF0tcr2ijsY4PgrkRLcwWt-uIaX257Eer4GIeoZeJT1zTwjLWuhRsr0DIXblxoQ_7d-lAsyhMCztBDY77WiyCRwuKqdBuUlFKrEiAP0tfBhJq8YM05xAlkNzCzDdJKb08wQ_RRRbWAJ31TvfguNxYfSXew9ZLDg_O0d1C0A9ttQY="
+  },
+  {
+    "date": "2026-09-20",
+    "category": "Politics",
+    "headline": "Ukraine fires over 1,000 drones at Russia, including hundreds launched at Moscow",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmHlwTuKnWPzYqN7FxVxVXNcJNIUe8ig9m_XGRQHX2y_uWs2mBz-c99BU3CVqUAFINBI7nkUNsHwkuuyDXaiITRvHV7Zs6crGPpRsO1sDZr4l1-GnXgqcVWaZgtQpp5o-PSpF90y39A-YyvcwzxoiFAcqpoLdAEgRh5zP_2QjpFTjUetjUM_WaNT0cZAp_afPuN51wq3ETkTpzJa4QUh63ty37k5zKP34jIwl0G_q5ABtXVTk8WlU="
+  },
+  {
+    "date": "2026-09-20",
+    "category": "Chemical Engineering",
+    "headline": "New nanoparticles make hidden chemical differences light up",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUVTHGO8DqiQD70a3qvGTJywl8hpN7Tz8KCqdGpHNA1aY4PzmMvnHFvf7QfXLBq4pkZJ2QoGa12sjDCc47V4nqD3mdh1CIKvIPQJUx4cdPLfsrc1xQaCYiRzoRb-5fROQXhRuXqrkcetrQqpEldsEiftTdLXN3Fw=="
+  },
+  {
+    "date": "2026-09-20",
+    "category": "Tech",
+    "headline": "IonQ Demonstrates Computer-Aided Engineering Workload Acceleration by up to 14.6% with Quantum Technology",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4ZxQlhm_tXeDn_rAQIn4fj7o0bIdvR65dXkWQHBf9M-QD48NmacRJS_2V8YkWNJ8oifg98VcRQoS7qzwU81NiKF5G-5MpWa5E_elFS-QgHKEBQ2mu3Ph_8Ai3xnR1_WUGVwFB7MxCXewwazr5j99jnJmSeBzDTj0Rv5OksI9BJu7m8T5AZscinhS83tqGO66UJY6mc2MBTg0dkWMzgto1V7kqj3WC66oghAlj70lj9OcH2GfvKDso2LFJ9gryMj4uZN_FV_khrgdQT28anY44mq-AXsIh9JoUORjpsA21EfH2"
   }
 ]
