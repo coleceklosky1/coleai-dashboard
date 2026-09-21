@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-22",
-    "category": "Politics",
-    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-07-22",
-    "category": "Chemical Engineering",
-    "headline": "Michelin and Axens Enter Into Discussions to Accelerate the Deployment of a Key Bio-Based Molecule for Green Chemistry",
-    "link": "https://www.hydrocarbonprocessing.com/news/2026/07/michelin-and-axens-enter-into-discussions-to-accelerate-the-deployment-of-a-key-bio-based-molecule-for-green-chemistry"
-  },
-  {
-    "date": "2026-07-22",
-    "category": "Tech",
-    "headline": "Co-Packaged Optics Demand Reshapes AI Chip Supply Chains in 2026",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsIodRPBb12tnk73Eq7Nq49B4SfPTSmSG18MG-7ayr4JJ58iMEsOn2FYSiHP-zGgpKFYF9KNi0OChWEXTIIrpP_icbGMzr3-Fzc4W9HOvH4uEUHN4hkNcAYdBcgkoMaz6KvmLHfsYZ6JKHhzvfErGBncWEEzOYeR5TcA8ilF5qq3kETs4zs5z2C5Zbvn5E6rI-30ZX52X66ALvMPbR7vpw0eGCtIDTG-uNsjQcM0E="
-  },
-  {
     "date": "2026-07-23",
     "category": "Politics",
     "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "IonQ Demonstrates Computer-Aided Engineering Workload Acceleration by up to 14.6% with Quantum Technology",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4ZxQlhm_tXeDn_rAQIn4fj7o0bIdvR65dXkWQHBf9M-QD48NmacRJS_2V8YkWNJ8oifg98VcRQoS7qzwU81NiKF5G-5MpWa5E_elFS-QgHKEBQ2mu3Ph_8Ai3xnR1_WUGVwFB7MxCXewwazr5j99jnJmSeBzDTj0Rv5OksI9BJu7m8T5AZscinhS83tqGO66UJY6mc2MBTg0dkWMzgto1V7kqj3WC66oghAlj70lj9OcH2GfvKDso2LFJ9gryMj4uZN_FV_khrgdQT28anY44mq-AXsIh9JoUORjpsA21EfH2"
+  },
+  {
+    "date": "2026-09-21",
+    "category": "Politics",
+    "headline": "CNN, MS NOW and Politico will sue Trump after being barred from White House",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgJAJh5iwpyV9e-_qGNnnj3FWW1tcKJYyZc-enFnApRZcO3bKIVLgKd4IV_X3rXU0zVF_g0U0BVcKhsJHFioR-hZFBalzO5I8BShn6_lpjhSu5wA1wKSFHzSdrLgF6m7kkbLLBOtYCOF8i9G8XrYhOcp_cL_o67X7CzYc7sSM1J7jn-pATmD828IzqCHUGh4o2P_WBP-_ngVtr26vohP3X3QRcYdk-8hx7qBPOpK5mAgGBjZFKVaxXx59BdAGV8A=="
+  },
+  {
+    "date": "2026-09-21",
+    "category": "Chemical Engineering",
+    "headline": "SiC Systems Applies Multi-Agent AI to First-of-a-Kind Methane-to-Hydrogen and Carbon Nanotube Plants Under Teaming Agreement with CarbonLume",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrxxHNT4g0GqoFWcLvFM-htzES0pplwiM9_SggLLC1gpm892FaixjdomuDu_R5YyV3X3FCtuMzQ1XtVTv8B1JhZajeJ7TOZBJ2LSTEt-XzuSbpnH7DNa-ryEdX8hGQxq0xPuYq6lF-Gf3hRRQzgX0HmIPHfB5mDv-MjEunR3DbC2fU5woCz8vkBaU="
+  },
+  {
+    "date": "2026-09-21",
+    "category": "Tech",
+    "headline": "CXMT closes in on DRAM leaders with G5 process breakthrough",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoc4XmrjzcjX-cVsY_niqB8NdxUnkYMvYlesR4K1F3MIL92V7M9hMtTVUpseJbRvYdou_rI1PwdhEW7IK7x557UOPx2PyJBmAvV8izJxtlutqAlQ75DK11GZRYHpjgvQE0-ur8Njrtur5SEK4A20uHdm25vZUkEmIhQswtwtw2-AaCIcKaNeWyfJLlvFt_fp0wjOk9USU="
   }
 ]
