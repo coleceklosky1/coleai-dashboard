@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-24",
-    "category": "Politics",
-    "headline": "Trump imposes fresh tariffs on more than 80 countries, drawing protests from US allies and trading partners",
-    "link": "https://www.google.com/search?q=Trump+imposes+fresh+tariffs+on+more+than+80+countries%2C+drawing+protests+from+US+allies+and+trading+partners+The+Guardian"
-  },
-  {
-    "date": "2026-07-24",
-    "category": "Chemical Engineering",
-    "headline": "Fusion Breakthrough: Materials Key to Success",
-    "link": "https://www.google.com/search?q=Fusion+Breakthrough%3A+Materials+Key+to+Success+Mirage+News"
-  },
-  {
-    "date": "2026-07-24",
-    "category": "Tech",
-    "headline": "Nvidia, Amkor strike $1.5 billion chip packaging deal",
-    "link": "https://www.google.com/search?q=Nvidia%2C+Amkor+strike+%241.5+billion+chip+packaging+deal+The+Business+Standard"
-  },
-  {
     "date": "2026-07-25",
     "category": "Politics",
     "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHijlTqmwiSHiMUADy5_uJq2A8UF0tcr2ijsY4PgrkRLcwWt-uIaX257Eer4GIeoZeJT1zTwjLWuhRsr0DIXblxoQ_7d-lAsyhMCztBDY77WiyCRwuKqdBuUlFKrEiAP0tfBhJq8YM05xAlkNzCzDdJKb08wQ_RRRbWAJ31TvfguNxYfSXew9ZLDg_O0d1C0A9ttQY="
+  },
+  {
+    "date": "2026-09-23",
+    "category": "Politics",
+    "headline": "Ukraine fires over 1,000 drones at Russia, including hundreds launched at Moscow",
+    "link": "https://www.reuters.com/world/europe/ukraine-fires-over-1000-drones-russia-including-hundreds-launched-moscow-2026/09/22/"
+  },
+  {
+    "date": "2026-09-23",
+    "category": "Chemical Engineering",
+    "headline": "OMV Petrom raises Petrobrazi green hydrogen capacity to 55 MW with second 35 MW electrolyzer",
+    "link": "https://www.google.com/search?q=OMV+Petrom+raises+Petrobrazi+green+hydrogen+capacity+to+55+MW+with+second+35+MW+electrolyzer+OMV+Petrom"
+  },
+  {
+    "date": "2026-09-23",
+    "category": "Tech",
+    "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
+    "link": "https://www.google.com/search?q=OpenAI+begins+rollout+of+new+powerful+AI+model+GPT-6+Astra+OpenAI"
   }
 ]
