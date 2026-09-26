@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-27",
-    "category": "Politics",
-    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-07-27",
-    "category": "Chemical Engineering",
-    "headline": "Fusion Breakthrough: Materials Key to Success",
-    "link": "https://www.miragenews.com/fusion-breakthrough-materials-key-to-success-101234/"
-  },
-  {
-    "date": "2026-07-27",
-    "category": "Tech",
-    "headline": "Nvidia, Amkor strike $1.5 billion chip packaging deal",
-    "link": "https://www.business-standard.com/content/technology/nvidia-amkor-strike-1-5-billion-chip-packaging-deal-126071700018_1.html"
-  },
-  {
     "date": "2026-07-28",
     "category": "Politics",
     "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
     "link": "https://openai.com/blog/gpt-6-astra-rollout"
+  },
+  {
+    "date": "2026-09-26",
+    "category": "Politics",
+    "headline": "Trump reportedly rejects Iran's seven-day peace deal to reopen strait of Hormuz",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP5qdVdO0vs1lN1FfaUUstRu1j2Z_PnF3rRZIL4a4JdqWCjjZsF_OjF8xEfKUMwFQyIG3Ijbpsr2TlHiguokLtBATvXGGt_ctxaLvenxy9bvpYnt6UPh7-Cqa1guu0FaPTKh9EqKqeCKVI5BLTG3fgSu1EBHHgZoFH0hMYxsrAwRPB_QybFCezrxxEAw2ZuWina5O7tJQ="
+  },
+  {
+    "date": "2026-09-26",
+    "category": "Chemical Engineering",
+    "headline": "Surfactant-Shielded Zeolites Double Cracking Power for Bulky Oil Molecules",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi8aVwdl6c8R2MTa5rCDOlMBmnIPPxvZvBncBupGWKfSwT12S81hHyKZnJOEHP2uJWqaU1ojDxN5FShwgb69vP75_f51kvwoFKpz1AOnmoShZkrVoGNxH7VjALja94SG-0xsaDKDlWnUH5exr4d12gUpWOlCt_2GQmB49MRHe4RbyZfPOefC6uWrRuPEpd0t8ueietlT3dstSx11Ea"
+  },
+  {
+    "date": "2026-09-26",
+    "category": "Tech",
+    "headline": "Quantum computing's “dark horse” just proved it can go universal",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsEyJngZ49yQGse3tSxlKT7cCtvO7aXyfen8GbfFDbFskA50nA-p3gJMJh76OuI-MPLcYUv0qjhgmqW4rxjUXaccZC6WONtWBpJtQ7MBByapFG5BRsvZ-diwzr4Dv0m5qrBIQoPf15BTVRz8hHS2JZ9LhjN6GQn1c="
   }
 ]
