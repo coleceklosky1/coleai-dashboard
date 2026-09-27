@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-28",
-    "category": "Politics",
-    "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
-    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
-  },
-  {
-    "date": "2026-07-28",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
-    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
-  },
-  {
-    "date": "2026-07-28",
-    "category": "Tech",
-    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
-    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
-  },
-  {
     "date": "2026-07-29",
     "category": "Politics",
     "headline": "US and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Quantum computing's “dark horse” just proved it can go universal",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsEyJngZ49yQGse3tSxlKT7cCtvO7aXyfen8GbfFDbFskA50nA-p3gJMJh76OuI-MPLcYUv0qjhgmqW4rxjUXaccZC6WONtWBpJtQ7MBByapFG5BRsvZ-diwzr4Dv0m5qrBIQoPf15BTVRz8hHS2JZ9LhjN6GQn1c="
+  },
+  {
+    "date": "2026-09-27",
+    "category": "Politics",
+    "headline": "Trump administration uses rare authority to claw back nearly $1B in spending approved by Congress",
+    "link": "https://www.pbs.org/newshour/politics/trump-administration-uses-rare-authority-to-claw-back-nearly-1b-in-spending-approved-by-congress"
+  },
+  {
+    "date": "2026-09-27",
+    "category": "Chemical Engineering",
+    "headline": "Humberside engineers 'distressed' as Ineos suspends UK acetyl production over high gas prices",
+    "link": "https://www.thechemicalengineer.com/news/humberside-engineers-distressed-as-ineos-suspends-uk-acetyl-production-over-high-gas-prices/"
+  },
+  {
+    "date": "2026-09-27",
+    "category": "Tech",
+    "headline": "Google Tests AI Chips for 'Fractionalized' Space Data Centers",
+    "link": "https://www.mediapost.com/publications/article/417001/google-tests-ai-chips-for-fractionalized-space-dat.html"
   }
 ]
