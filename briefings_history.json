@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-30",
-    "category": "Politics",
-    "headline": "US and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-07-30",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
-    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
-  },
-  {
-    "date": "2026-07-30",
-    "category": "Tech",
-    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
-    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
-  },
-  {
     "date": "2026-07-31",
     "category": "Politics",
     "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "AI agents move deeper into chip design",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv4usY_-x1jLZEp57imnQFCtCO9x3Z-SwiXftyc8L2hHcwK17InOwFJzA7WSC7D8SA0h3xndzmFsH38ZmuX63-kB61RNfni4BZYkobHAsld4udHktoop1ktMgAMWE-sdm94MVjPEKtcq8jVcuQrE_Q0hp2fL28RV8"
+  },
+  {
+    "date": "2026-09-29",
+    "category": "Politics",
+    "headline": "Embarrassing Breach at F.B.I. Fuels Fears of Harm to Its Employees",
+    "link": "https://www.google.com/search?q=Embarrassing+Breach+at+F.B.I.+Fuels+Fears+of+Harm+to+Its+Employees+GoLocalProv"
+  },
+  {
+    "date": "2026-09-29",
+    "category": "Chemical Engineering",
+    "headline": "3D-printed, solid-state bioreactor converts methane waste to useful chemicals",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyqyOic_M250XEggabrRZBetMHpa3JVhML1eArnS6DSK3IFPShSKXqCzVVxKPquppM8AbQuaX9NcOFNT5gun6UdXPt3gP_0cOHrG0RejdtV_I00NG9KGT9lNYS8uf541fcuuCQkfT1jh0="
+  },
+  {
+    "date": "2026-09-29",
+    "category": "Tech",
+    "headline": "AI coding agents are raising the stakes for SAST",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfPWxw90BBlZ9ZFyO8j83f-GLPgwOVVKqrllt8jLPLb4MfZ95R8Bnd__5yjOBAVuueWgOEQPhRPRhYEAXuWqke2BI3UFP9A0_nMkGaK3XR60QMiy3z5FGRLA=="
   }
 ]
