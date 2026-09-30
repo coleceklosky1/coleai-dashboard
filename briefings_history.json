@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-07-31",
-    "category": "Politics",
-    "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
-    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
-  },
-  {
-    "date": "2026-07-31",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
-    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
-  },
-  {
-    "date": "2026-07-31",
-    "category": "Tech",
-    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
-    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
-  },
-  {
     "date": "2026-08-01",
     "category": "Politics",
     "headline": "US and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "AI coding agents are raising the stakes for SAST",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfPWxw90BBlZ9ZFyO8j83f-GLPgwOVVKqrllt8jLPLb4MfZ95R8Bnd__5yjOBAVuueWgOEQPhRPRhYEAXuWqke2BI3UFP9A0_nMkGaK3XR60QMiy3z5FGRLA=="
+  },
+  {
+    "date": "2026-09-30",
+    "category": "Politics",
+    "headline": "Trump administration uses rare authority to claw back nearly $1B in spending approved by Congress",
+    "link": "https://www.pbs.org/newshour/politics/trump-administration-uses-rare-authority-to-claw-back-nearly-1b-in-spending-approved-by-congress"
+  },
+  {
+    "date": "2026-09-30",
+    "category": "Chemical Engineering",
+    "headline": "Surfactant-Shielded Zeolites Double Cracking Power for Bulky Oil Molecules",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi8aVwdl6c8R2MTa5rCDOlMBmnIPPxvZvBncBupGWKfSwT12S81hHyKZnJOEHP2uJWqaU1ojDxN5FShwgb69vP75_f51kvwoFKpz1AOnmoShZkrVoGNxH7VjALja94SG-0xsaDKDlWnUH5exr4d12gUpWOlCt_2GQmB49MRHe4RbyZfPOefC6uWrRuPEpd0t8ueietlT3dstSx11Ea"
+  },
+  {
+    "date": "2026-09-30",
+    "category": "Tech",
+    "headline": "Google Tests AI Chips for 'Fractionalized' Space Data Centers",
+    "link": "https://www.mediapost.com/publications/article/417001/google-tests-ai-chips-for-fractionalized-space-dat.html"
   }
 ]
