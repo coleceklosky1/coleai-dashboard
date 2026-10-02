@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-02",
-    "category": "Politics",
-    "headline": "U.S. and Iran to Continue Talks After Tensions Escalated Over Strait of Hormuz",
-    "link": "https://www.cbsnews.com/news/iran-us-tensions-strait-of-hormuz-talks-live-updates/"
-  },
-  {
-    "date": "2026-08-02",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
-    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
-  },
-  {
-    "date": "2026-08-02",
-    "category": "Tech",
-    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
-    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
-  },
-  {
     "date": "2026-08-03",
     "category": "Politics",
     "headline": "President Trump announced on Saturday night that he had paused further U.S. attacks against Iran, saying the “perimeters of a deal has been agreed to” to end the months-long conflict between Washington and Tehran.",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "AI agents move deeper into chip design",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv4usY_-x1jLZEp57imnQFCtCO9x3Z-SwiXftyc8L2hHcwK17InOwFJzA7WSC7D8SA0h3xndzmFsH38ZmuX63-kB61RNfni4BZYkobHAsld4udHktoop1ktMgAMWE-sdm94MVjPEKtcq8jVcuQrE_Q0hp2fL28RV8"
+  },
+  {
+    "date": "2026-10-02",
+    "category": "Politics",
+    "headline": "Ukraine Fires Over 1,000 Drones at Russia, Including Hundreds Launched at Moscow",
+    "link": "https://www.reuters.com/world/europe/ukraine-fires-over-1000-drones-russia-including-hundreds-launched-moscow-2026/09/22/"
+  },
+  {
+    "date": "2026-10-02",
+    "category": "Chemical Engineering",
+    "headline": "New nanoparticles make hidden chemical differences light up",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUVTHGO8DqiQD70a3qvGTJywl8hpN7Tz8KCqdGpHNA1aY4PzmMvnHFvf7QfXLBq4pkZJ2QoGa12sjDCc47V4nqD3mdh1CIKvIPQJUx4cdPLfsrc1xQaCYiRzoRb-5fROQXhRuXqrkcetrQqpEldsEiftTdLXN3Fw=="
+  },
+  {
+    "date": "2026-10-02",
+    "category": "Tech",
+    "headline": "IonQ Demonstrates Computer-Aided Engineering Workload Acceleration by up to 14.6% with Quantum Technology",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4ZxQlhm_tXeDn_rAQIn4fj7o0bIdvR65dXkWQHBf9M-QD48NmacRJS_2V8YkWNJ8oifg98VcRQoS7qzwU81NiKF5G-5MpWa5E_elFS-QgHKEBQ2mu3Ph_8Ai3xnR1_WUGVwFB7MxCXewwazr5j99jnJmSeBzDTj0Rv5OksI9BJu7m8T5AZscinhS83tqGO66UJY6mc2MBTg0dkWMzgto1V7kqj3WC66oghAlj70lj9OcH2GfvKDso2LFJ9gryMj4uZN_FV_khrgdQT28anY44mq-AXsIh9JoUORjpsA21EfH2"
   }
 ]
