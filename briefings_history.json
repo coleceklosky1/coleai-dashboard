@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-03",
-    "category": "Politics",
-    "headline": "President Trump announced on Saturday night that he had paused further U.S. attacks against Iran, saying the “perimeters of a deal has been agreed to” to end the months-long conflict between Washington and Tehran.",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeZukYNsaKBk9R25HNABycGch1Q5Mf_zOeiErMFvyDsQuOA2BytzBCEvrlE_aAWrne87rdsMsqMlEIQRZZUMhPhCEE9MRzF4wRQkIrr2B93Dy0eOGyIpM_hOVfn74QUxecWFCi6fHkqZvAyJYRfgWTJBY="
-  },
-  {
-    "date": "2026-08-03",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrH1vD6UTur_rj53CLHNXbVZ_zTpQqdrurtq6ZoQYLkXCYm-YE7qaUYnpqHqa3ZGXjqjO4WcaNRmfHTjxEba7QUno9lL5KOdv0bwmIQsOBB-cLBjV8cxHX24IDo8f8SM_B8u72Qb6TTkn-eFMURvulksb0eBGJY6O3P60-PFOG0b7VhCZou8affZA0YWx2h9GnQUvT"
-  },
-  {
-    "date": "2026-08-03",
-    "category": "Tech",
-    "headline": "Nvidia and Amkor strike $1.5B US semiconductor packaging deal",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDVcI0O69Qp1YoTAv7cbjAzyFW7TeD1rYzqmj-pPrzHla5l8vAvXS5Db23ses4XZw5DxtA73VNvOxFOgbmDPdqwS0qAFHLhystYRoG-hiXhNdm0dyj8NQzkphgBNhEEmcPr93d3dQc0d1CuOSlIdF9OoNp4TSvVN3f3qeexhIA_t26ZwXkHCPhLXLfDytYFVjleb8usmE="
-  },
-  {
     "date": "2026-08-04",
     "category": "Politics",
     "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "IonQ Demonstrates Computer-Aided Engineering Workload Acceleration by up to 14.6% with Quantum Technology",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4ZxQlhm_tXeDn_rAQIn4fj7o0bIdvR65dXkWQHBf9M-QD48NmacRJS_2V8YkWNJ8oifg98VcRQoS7qzwU81NiKF5G-5MpWa5E_elFS-QgHKEBQ2mu3Ph_8Ai3xnR1_WUGVwFB7MxCXewwazr5j99jnJmSeBzDTj0Rv5OksI9BJu7m8T5AZscinhS83tqGO66UJY6mc2MBTg0dkWMzgto1V7kqj3WC66oghAlj70lj9OcH2GfvKDso2LFJ9gryMj4uZN_FV_khrgdQT28anY44mq-AXsIh9JoUORjpsA21EfH2"
+  },
+  {
+    "date": "2026-10-03",
+    "category": "Politics",
+    "headline": "Tether is Iran's 'Lifeline,' Senate Report Says",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQioHen7ttdmqFMJXZ8ErMvsxlMwo4jLrAseV2_8wJ5IGTEVnsq939MQnaCXGJdfOo3HPQ10XyHM6MjG9IQBa1nMs68iHqrsSr0AgndfY4Er_iHVFEeOR7c1D01tylzRMVdoFREw=="
+  },
+  {
+    "date": "2026-10-03",
+    "category": "Chemical Engineering",
+    "headline": "Enzymes become sturdy beads that could support more sustainable chemical production",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG53oQuIyWZ9yGQqJKkimzv_SpoNpG9s8V6EjmuGjCNILvvJ4bLXR6fNazms9ykU_UUcNkzdUSwnTYAKF1NqclhPAs_-v0RLHpONDoqhPMdQ9LbzolInur4_QoZlEwlCD7MbFWtgr2TEhjot8rg"
+  },
+  {
+    "date": "2026-10-03",
+    "category": "Tech",
+    "headline": "The state of agentic AI in chip design tools in 2026 — Cadence, Synopsys, and Siemens all pitch autonomous engineers",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYHcA9yADDdTwXTNa27kkUYGqhU1m9FNFS4iImYGJ83tN5I4d7o-MGP7qENlS8FHxY6rDbx6eYGDMmsp0-ZoO-dgjSKjGn-iliX_ovrN_kczjoOJAYTGjNFwL_6-TizXwxRjBZ_pq4gKkmBoZSIwzQlOzUryB0WSpI-MB4vacrs-LCQiczqbNPw4U4qhkCJTBabqdbM_q_4V1n6cHhk78qEFvAC9cw1EzOU_IlSYoYt7tmRDM1CWj2W11oClmPCc4TMPgI0mWyggMuvfBnAvlAQA0Iq9BRYPy6Q8IiQSInGgw00L6IWA=="
   }
 ]
