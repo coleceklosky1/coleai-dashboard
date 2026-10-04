@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-04",
-    "category": "Politics",
-    "headline": "Trump administration urges Supreme Court to allow order targeting mail-in voting before midterms",
-    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
-  },
-  {
-    "date": "2026-08-04",
-    "category": "Chemical Engineering",
-    "headline": "New Catalyst Turns Stubborn Plant Waste Into Valuable Chemicals",
-    "link": "https://scitechdaily.com/new-catalyst-turns-stubborn-plant-waste-into-valuable-chemicals/"
-  },
-  {
-    "date": "2026-08-04",
-    "category": "Tech",
-    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
-    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
-  },
-  {
     "date": "2026-08-05",
     "category": "Politics",
     "headline": "Trump Administration Urges Supreme Court to Allow Order Targeting Mail-In Voting Before Midterms",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "The state of agentic AI in chip design tools in 2026 — Cadence, Synopsys, and Siemens all pitch autonomous engineers",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYHcA9yADDdTwXTNa27kkUYGqhU1m9FNFS4iImYGJ83tN5I4d7o-MGP7qENlS8FHxY6rDbx6eYGDMmsp0-ZoO-dgjSKjGn-iliX_ovrN_kczjoOJAYTGjNFwL_6-TizXwxRjBZ_pq4gKkmBoZSIwzQlOzUryB0WSpI-MB4vacrs-LCQiczqbNPw4U4qhkCJTBabqdbM_q_4V1n6cHhk78qEFvAC9cw1EzOU_IlSYoYt7tmRDM1CWj2W11oClmPCc4TMPgI0mWyggMuvfBnAvlAQA0Iq9BRYPy6Q8IiQSInGgw00L6IWA=="
+  },
+  {
+    "date": "2026-10-04",
+    "category": "Politics",
+    "headline": "Live Updates: Senior Trump administration officials met to discuss Iran war at Camp David",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE15YDyl7ut1sf3ws0h8OVfqxrRg3WW7S8r_Riz5PucPUdOfOE3pJAOSQK1Agw24DeW24_GOJ2sidrVlj5eJjYS0G6vkGjdh8e7h2f2fjzB1uOzgbw402ozIOe2bHBLfO0DePb-QLrfcaVO9N2iM2yBV3UxEg2fdAYv56EfzlObttvn6emCS2Arc7U4uVRucLRRrBQuNcQ"
+  },
+  {
+    "date": "2026-10-04",
+    "category": "Chemical Engineering",
+    "headline": "Scientists just found a new way to make hydrogen from water",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRliS469Ky99EYTQlpULzz2SbBui4YfAUtCM2EfS-zOePje9bYRgH-FTUqfiwFG61vAtdrpTrygkJnl9SF28Y1BYxpi-ER0NDTsDmY0kDxkmQpGp5MY46DPZEdqsPBgBcMmovobqVpyyd5YsUeU2wxlRUlzQzYeEE="
+  },
+  {
+    "date": "2026-10-04",
+    "category": "Tech",
+    "headline": "Apple's M5 Ultra Brings 36 Cores, 1.2 TB/s Bandwidth [2026]",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5DHhUp6jNWEYndzKQRZVQkRapwBJ6fPGVydbmmzj9cVZMBv1nXKEfo9zigejN3uy3Mmr6414LM47u2P7kJNinjnS29saA75VVlCJUtFCtzoFTNGLRrMOGVnb1hBtejrLJnYG3mgL6LBR3LopvobwlRDEytzbxkYlHKTJ9"
   }
 ]
