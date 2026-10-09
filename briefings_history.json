@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-09",
-    "category": "Politics",
-    "headline": "Trump loyalist Todd Blanche confirmed by Senate as US attorney general",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7tBz0Uvyxl1_2Y0lWtCsbmpUj4HwoM2QFP0dGayhXiIr5x2bzES02mOSj_tZ5JJ7yUwrmZhmuEsPspTP-dNCVs09NVeuVgnciQDAo0O3_eSSqd3peAgm1anLeYXQr-g94nKbjZj6NJBLj"
-  },
-  {
-    "date": "2026-08-09",
-    "category": "Chemical Engineering",
-    "headline": "Cell-inspired nanoreactor turns sunlight into hydrogen peroxide",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbEyzzEIOLZGv8l66nrR-SzX3CKYAc7j2S65ZYIz_xPJB0-Gmg8Bc3DkFM-7ZrcCjFut5Vazssv4yl6w9tTiVCSLDHDy5vlUiPGEDbMbSRQRCndSzdK7hhCW-uBdiGB3Emlnp32dsHt8SisWtt12sl_yxj1hb25f7m"
-  },
-  {
-    "date": "2026-08-09",
-    "category": "Tech",
-    "headline": "AI Efficiency Boost Through Multiverse And Qualcomm Collaboration",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2DpnZKiwULrlxT8v6kYg7HEKavO-JymdRO4zIgsMAtfzf3KDRc8bWmx6AWjKaHkW-cwlAUyYI2Pzrw0B7JY0vJlA0G4NhKTjxHBGuCa1fxj1oJWuFjMkOdzJQSOnFx8HdOXZzzNmFQKbXf_Tmi_zvw5cNva64b1GJAYePqKY464NeSxP8sKVQtBpRreAK9VgMBeYe9fttHyNaGToKr5fv1_PYUXG8_c1lNm4V3jTXKx3Lju69UIju9y_USkkuw=="
-  },
-  {
     "date": "2026-08-10",
     "category": "Politics",
     "headline": "Trump Administration Urges Supreme Court to Allow Order Targeting Mail-In Voting Before Midterms",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Google Tests AI Chips for 'Fractionalized' Space Data Centers",
     "link": "https://www.mediapost.com/publications/article/417001/google-tests-ai-chips-for-fractionalized-space-dat.html"
+  },
+  {
+    "date": "2026-10-09",
+    "category": "Politics",
+    "headline": "Trump says US will not attack Iran before midterm elections",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtjBJY2A4gkZ1OgcGhvMAVuX5F4JYmbdtK84DDteUUYfyTpJGhUNQT4dE5P4FeyLjGK6hx18RgXmmDxk4eRcFPp4Xecr0X4ATg17v--4i8SAOinAjHAcdJzYOJH9C3qROsHLP2QYTjeU-utcz6XJ2q3UamTO9IjqA-ruZu"
+  },
+  {
+    "date": "2026-10-09",
+    "category": "Chemical Engineering",
+    "headline": "Scientists find hidden materials that could improve batteries and solar fuels",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkuT2evVCWasyCy-BiYzLkRGAhSDquiL523gafE2JXv9pewIn_46tUz4sZshpR1xbt7oBHUJgqK76ejUxI_9VPIIzY6D4CmxrU4njfALoU3G5QF6zSCY2B5W-2qrBcUVIQsPHDqXsfd3ARzEOVSy6BBkBqbLpa2NgG"
+  },
+  {
+    "date": "2026-10-09",
+    "category": "Tech",
+    "headline": "GlobalFoundries Reaches Supply Agreement with TSMC for AI Chip Component",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbaOppeLw7u6uoY1sLd8a1G6CVRIjUhNdVjd6L7AGXq2gi0v4tr8A6HFt7fR4HiISIB40NeTLOHX1zfGu3jhteBiJxfirkQkFTKVndxzu6tIN1kampv9_Vaf2kn7CILNjo65nvnB4Dy3JI8MyzKvPraMke9IPZlNG4Gj7hOACQEWMg74Y5McbCPcQXFKYAbIm4tMR779pN7RxohHncVmj0bTB9qlPCEHGmKQfmJ1goTa_j1zFLIvc="
   }
 ]
