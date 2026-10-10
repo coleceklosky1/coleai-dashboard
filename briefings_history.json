@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-10",
-    "category": "Politics",
-    "headline": "Trump Administration Urges Supreme Court to Allow Order Targeting Mail-In Voting Before Midterms",
-    "link": "https://www.reviewjournal.com/news/politics-and-government/trump-administration-urges-supreme-court-to-allow-order-targeting-mail-in-voting-before-midterms-2920267/"
-  },
-  {
-    "date": "2026-08-10",
-    "category": "Chemical Engineering",
-    "headline": "New membrane accelerates purification of industrial solvents",
-    "link": "https://www.bath.ac.uk/announcements/new-membrane-accelerates-purification-of-industrial-solvents/"
-  },
-  {
-    "date": "2026-08-10",
-    "category": "Tech",
-    "headline": "New Method Significantly Boosts AI Speed, Energy Efficiency on Existing Hardware",
-    "link": "https://engineering.ucdavis.edu/news/new-method-significantly-boosts-ai-speed-energy-efficiency-existing-hardware"
-  },
-  {
     "date": "2026-08-11",
     "category": "Politics",
     "headline": "Trump Administration Urges Supreme Court to Allow Order Targeting Mail-In Voting Before Midterms",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "GlobalFoundries Reaches Supply Agreement with TSMC for AI Chip Component",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbaOppeLw7u6uoY1sLd8a1G6CVRIjUhNdVjd6L7AGXq2gi0v4tr8A6HFt7fR4HiISIB40NeTLOHX1zfGu3jhteBiJxfirkQkFTKVndxzu6tIN1kampv9_Vaf2kn7CILNjo65nvnB4Dy3JI8MyzKvPraMke9IPZlNG4Gj7hOACQEWMg74Y5McbCPcQXFKYAbIm4tMR779pN7RxohHncVmj0bTB9qlPCEHGmKQfmJ1goTa_j1zFLIvc="
+  },
+  {
+    "date": "2026-10-10",
+    "category": "Politics",
+    "headline": "Ukraine Fires Over 1,000 Drones at Russia, Including Hundreds Launched at Moscow",
+    "link": "https://www.reuters.com/world/europe/ukraine-fires-over-1000-drones-russia-including-hundreds-launched-moscow-2026/09/22/"
+  },
+  {
+    "date": "2026-10-10",
+    "category": "Chemical Engineering",
+    "headline": "Scientists find hidden materials that could improve batteries and solar fuels",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkuT2evVCWasyCy-BiYzLkRGAhSDquiL523gafE2JXv9pewIn_46tUz4sZshpR1xbt7oBHUJgqK76ejUxI_9VPIIzY6D4CmxrU4njfALoU3G5QF6zSCY2B5W-2qrBcUVIQsPHDqXsfd3ARzEOVSy6BBkBqbLpa2NgG"
+  },
+  {
+    "date": "2026-10-10",
+    "category": "Tech",
+    "headline": "Apple's M5 Ultra Brings 36 Cores, 1.2 TB/s Bandwidth [2026]",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5DHhUp6jNWEYndzKQRZVQkRapwBJ6fPGVydbmmzj9cVZMBv1nXKEfo9zigejN3uy3Mmr6414LM47u2P7kJNinjnS29saA75VVlCJUtFCtzoFTNGLRrMOGVnb1hBtejrLJnYG3mgL6LBR3LopvobwlRDEytzbxkYlHKTJ9"
   }
 ]
