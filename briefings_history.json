@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-13",
-    "category": "Politics",
-    "headline": "Trump administration bars federal funding of gender-affirming care for low-income minors",
-    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
-  },
-  {
-    "date": "2026-08-13",
-    "category": "Chemical Engineering",
-    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
-    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
-  },
-  {
-    "date": "2026-08-13",
-    "category": "Tech",
-    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
-    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
-  },
-  {
     "date": "2026-08-14",
     "category": "Politics",
     "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Apple's M5 Ultra Brings 36 Cores, 1.2 TB/s Bandwidth [2026]",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5DHhUp6jNWEYndzKQRZVQkRapwBJ6fPGVydbmmzj9cVZMBv1nXKEfo9zigejN3uy3Mmr6414LM47u2P7kJNinjnS29saA75VVlCJUtFCtzoFTNGLRrMOGVnb1hBtejrLJnYG3mgL6LBR3LopvobwlRDEytzbxkYlHKTJ9"
+  },
+  {
+    "date": "2026-10-13",
+    "category": "Politics",
+    "headline": "Ukraine Fires Over 1,000 Drones at Russia, Including Hundreds Launched at Moscow",
+    "link": "https://www.reuters.com/world/europe/ukraine-fires-over-1000-drones-russia-including-hundreds-launched-moscow-2026/09/22/"
+  },
+  {
+    "date": "2026-10-13",
+    "category": "Chemical Engineering",
+    "headline": "Scientists find hidden materials that could improve batteries and solar fuels",
+    "link": "https://www.google.com/search?q=Scientists+find+hidden+materials+that+could+improve+batteries+and+solar+fuels+Chemical+%26+Engineering+News"
+  },
+  {
+    "date": "2026-10-13",
+    "category": "Tech",
+    "headline": "Apple's M5 Ultra Brings 36 Cores, 1.2 TB/s Bandwidth [2026]",
+    "link": "https://www.anandtech.com/show/20500/apple-m5-ultra-36-cores-12-tb-s-bandwidth"
   }
 ]
