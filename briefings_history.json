@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-14",
-    "category": "Politics",
-    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
-    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
-  },
-  {
-    "date": "2026-08-14",
-    "category": "Chemical Engineering",
-    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
-    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
-  },
-  {
-    "date": "2026-08-14",
-    "category": "Tech",
-    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
-    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
-  },
-  {
     "date": "2026-08-15",
     "category": "Politics",
     "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
@@ -1114,5 +1096,23 @@
     "category": "Tech",
     "headline": "Apple's M5 Ultra Brings 36 Cores, 1.2 TB/s Bandwidth [2026]",
     "link": "https://www.anandtech.com/show/20500/apple-m5-ultra-36-cores-12-tb-s-bandwidth"
+  },
+  {
+    "date": "2026-10-14",
+    "category": "Politics",
+    "headline": "Trump's diesel deal with Putin draws bipartisan criticism from a frustrated Congress",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUF0hNo42iNZRzPke5T6kuLSe1G0hL5qZ_edQOcFE9GSBIbwWUW63DLDSUbyOfkCGFVECc2IsuEJLC1TSAn4-ocrxtotRNeqrsLvYX3NfRpIpvn-jKbOP6KsEdrkj37Tq12JcH_qomkODNCfvCg5FwP7jlTwK3IL-Dq_DX6aHkBjCc2HiYAw37RpVDBtaT0a2A59ZKf1zgkIVMP1_ID6hLr6VPMzYjjrueOli4n3Td-kddXfg="
+  },
+  {
+    "date": "2026-10-14",
+    "category": "Chemical Engineering",
+    "headline": "Verbio starts industrial production of renewable chemicals",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF4k5vKY0b_u6Xpc4pE5g9VnmPph-DOPx8WWMF2BD56kgAccvpr4cTiOwXoVtk7YMefBlGVlSzhTD2g-6VA20zrBT-YNtgBk2bhHJ_OmqHcLhknGDqF-xABSIdpTblnMblVFn4_FLGOLBOWj87cyEHhQ-lroJmyLQCbHSJhJa14kDTjb5izDeXqTXdUN0ZqXgfbsF2x7Q7Z6Oh"
+  },
+  {
+    "date": "2026-10-14",
+    "category": "Tech",
+    "headline": "NVIDIA and Cisco Introduce New Pluggable Optics Form Factor to Scale AI Factories",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOV0OLJ12_qdUblY_3HtirY_tN6cjYb6KqSWY2aWZ5bYbwt3fFq-nlToRv70csjC-FBUmDvMNQK5mZb0Kn3GFgB-3nTOjRtYAalWOkJwvAKpiZMsGwkm3DJGNG3LIhjmAyLd81C1YLA57DVnH-zb9OmrIbBSJMldFjITbVS27UQFLNTsPCdkHdZybqr_ei9wa-plS15m-Mu0V-XbfQ1EwYhg_ApUgX7lvqVgT5883K"
   }
 ]
