@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-18",
-    "category": "Politics",
-    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
-    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
-  },
-  {
-    "date": "2026-08-18",
-    "category": "Chemical Engineering",
-    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
-    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
-  },
-  {
-    "date": "2026-08-18",
-    "category": "Tech",
-    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
-    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
-  },
-  {
     "date": "2026-08-19",
     "category": "Politics",
     "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "Siemens and NVIDIA speed up AI chip lithography by 12x",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExumE8__oea7zG34UmXnxgzKcvYAUhjQBNMRxey618kmhGBNRGj64ANZgisXDVMAQUsnrMvoeMIjtNRvYwa0CvTXoBxJdvgqUkN8lfK7Io2ayYwj1W6EfcEXNwOq60qKI2AkvtpVhAVwqZaKhbh5vX58fAZCxrAe01PhIIcgVCWaujmGdscnMSavig4RNEi2sl"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "Politics",
+    "headline": "Trump administration uses rare authority to claw back nearly $1B in spending approved by Congress",
+    "link": "https://www.pbs.org/newshour/politics/trump-administration-uses-rare-authority-to-claw-back-nearly-1b-in-spending-approved-by-congress"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "Chemical Engineering",
+    "headline": "Scientists find hidden materials that could improve batteries and solar fuels",
+    "link": "https://www.google.com/search?q=Scientists+find+hidden+materials+that+could+improve+batteries+and+solar+fuels+Chemical+%26+Engineering+News"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "Tech",
+    "headline": "Google Tests AI Chips for 'Fractionalized' Space Data Centers",
+    "link": "https://www.mediapost.com/publications/article/417001/google-tests-ai-chips-for-fractionalized-space-dat.html"
   }
 ]
