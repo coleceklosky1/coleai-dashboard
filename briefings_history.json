@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-19",
-    "category": "Politics",
-    "headline": "Trump Administration Bars Federal Funding of Gender-Affirming Care for Low-Income Minors",
-    "link": "https://thedailyrecord.com/2026/08/12/trump-administration-bars-federal-funding-of-gender-affirming-care-for-low-income-minors/"
-  },
-  {
-    "date": "2026-08-19",
-    "category": "Chemical Engineering",
-    "headline": "Biotech partners with Heriot-Watt to turn whey into fuel",
-    "link": "https://www.thechemicalengineer.com/news/biotech-partners-with-heriot-watt-to-turn-whey-into-fuel/"
-  },
-  {
-    "date": "2026-08-19",
-    "category": "Tech",
-    "headline": "UC Berkeley to Join Applied Materials' EPIC Center to Speed Chip Innovation",
-    "link": "https://eletimes.com/uc-berkeley-to-join-applied-materials-epic-center-to-speed-chip-innovation/"
-  },
-  {
     "date": "2026-08-20",
     "category": "Politics",
     "headline": "Missouri judge hands Trump, GOP major redistricting win ahead of midterm elections",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "Google Tests AI Chips for 'Fractionalized' Space Data Centers",
     "link": "https://www.mediapost.com/publications/article/417001/google-tests-ai-chips-for-fractionalized-space-dat.html"
+  },
+  {
+    "date": "2026-10-19",
+    "category": "Politics",
+    "headline": "Trump waives new Russia sanctions",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsv-rHf6zgoaEzcrrcnO3qtmNrjtVmpQ13PaUDqza9TSbotHC4hu0zJAx4aRJlwhBCCWVO2-VRLH_xWdMm_8b_vDeVqyQl68pkteoVw0KBBGu_Ug1lso2NzlEnoSugPlzdqKWrosGcluU8Z_xs3SG2oqM-cDWBBluq9UjEBNWVowtD0kQh56PcqfkIH3sN8_ArEA-7EAkEJZvP-ihq439K1sedcbBSV8PBRfurAyP9ra13ZD-RTbQw4Vg="
+  },
+  {
+    "date": "2026-10-19",
+    "category": "Chemical Engineering",
+    "headline": "NewHydrogen to Release a Special Report on October 19, 2026",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGouYJJaUoWxp9THz2AI8qSPOoINPYx_bR67tmdsi3pG7ypnsYJh0_a9hlgdzSCLZTnj1Zg5b_VjY5c60bzQN4uGz5k7Mmq-6tnkOnWo8tkM92Qp7U9xjF7q9cRe-xLqyWyoF1-GtEazYMGD3-FQCTijefzdD9ZBtwYccB15vcDknCN-SLSrH57-2bagpDa9EzSJbW9LRmg8LtDUSpdYaeeHpD7"
+  },
+  {
+    "date": "2026-10-19",
+    "category": "Tech",
+    "headline": "Google demonstrates quantum computing breakthrough as observers weigh Q-day implications",
+    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMVzB7G0r9XppIdmxD9bRIE_hgsL2ub1KcQarLaROivOsmMwTzPhGrpzIeGHtzaJ3nzkxOWHBnHEs3_vu5SZhR1birJOiNG1duMbLA_R4BGnnPt8C5s1wuwwZAkCSj02cIJqoN9CShbWrqOnFpF1-oWPJBX_XnZl8z1jGjer5TnBVuuvH1m3Kqf1ExVXifZ7IeO-ae"
   }
 ]
