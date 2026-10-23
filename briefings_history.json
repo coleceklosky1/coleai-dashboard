@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-23",
-    "category": "Politics",
-    "headline": "U.S. set to impose 50% tariffs on Canada after failed talks; Canada to match them \"dollar for dollar\"",
-    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
-  },
-  {
-    "date": "2026-08-23",
-    "category": "Chemical Engineering",
-    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
-    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
-  },
-  {
-    "date": "2026-08-23",
-    "category": "Tech",
-    "headline": "Micron adds $10B memory lab to its Idaho expansion plans",
-    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
-  },
-  {
     "date": "2026-08-24",
     "category": "Politics",
     "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "SUNMI Developer Conference 2026 Advances Physical AI for Commerce - Morningstar",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlFfhSy2GsASw8hNwEOFvqyQZ_skA-B_4Azno-tNmYG-04C3HmpI5H6uo1zpOjy-L_I0Q1p2wPYtT9Wmmu9tAcdtDkpjM7a-jlmA4y-qV9EsURm8Cp_8wZlD4HMg6WqHpHGZt9AwGYWsy24QZXoz6pn1sTro1pgcMuTDWOx1YuyuxUbc2riht58oKkykMEN5XlW3jJmZ24tTFeMb3HDYuc3DegR2WGucZoIIn0L7LI9zUxVQxk2AxQjQ=="
+  },
+  {
+    "date": "2026-10-23",
+    "category": "Politics",
+    "headline": "Trump administration uses rare authority to claw back nearly $1B in spending approved by Congress",
+    "link": "https://www.pbs.org/newshour/politics/trump-administration-uses-rare-authority-to-claw-back-nearly-1b-in-spending-approved-by-congress"
+  },
+  {
+    "date": "2026-10-23",
+    "category": "Chemical Engineering",
+    "headline": "Verbio starts industrial production of renewable chemicals",
+    "link": "https://www.google.com/search?q=Verbio+starts+industrial+production+of+renewable+chemicals+Biofuels+Digest"
+  },
+  {
+    "date": "2026-10-23",
+    "category": "Tech",
+    "headline": "Siemens and NVIDIA speed up AI chip lithography by 12x",
+    "link": "https://www.google.com/search?q=Siemens+and+NVIDIA+speed+up+AI+chip+lithography+by+12x+NVIDIA"
   }
 ]
