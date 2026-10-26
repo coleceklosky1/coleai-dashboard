@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-26",
-    "category": "Politics",
-    "headline": "Supreme Court conservatives rule Trump can decide who gets mail-in ballots",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsWx2McEdvTQGZBQ-FpnBhNzrszmeGQ2glf-E1b-7_cGXE_5MRKubYEkRBTC19na-9zEtzJCs-tkw_BUZ-8ek_gsRltghDAnPCxSnkpCeA8iCwJ6xCocd55KMyxXYzcJ5eKEqztbK7o3VWD54fKH6lTp3s6pThmUpJepXObBp66DA="
-  },
-  {
-    "date": "2026-08-26",
-    "category": "Chemical Engineering",
-    "headline": "Westinghouse eVinci™ Microreactor Achieves Zero-Power Criticality",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxsZeV6z4Czysw612-nNAjGP0GPm-HPfgWS0_6FKqsEFClhBvD5L9ZWALuGiTu3-0vzM_swaO2XlCx736gEX7QRjObMOVDtq8SKPF31-CAxxiCbUF6z2bS_MwdATX2b1RlYVb9Ymn5cLXhgK_jqfv-Mc3evIUs6tHr2pGCUzkpWfBF7la5R4GkuXaXVu3yuWHeg7rGOze3mxQbBGcz-MRycMlGDik="
-  },
-  {
-    "date": "2026-08-26",
-    "category": "Tech",
-    "headline": "AI data center spending drives growth in semiconductor market",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsKC8JeYjI5k1-FOT2OM-iTQe1HSNTUvSVZ9UTYvoZA7K_nKtcqYafqU4K5waJ0hUxbNQgaMgzd7FP-c4_JU9ZOSk2cpk-wQjTdUqjIedg8s45MdaOZY35y9ZD9iXM_UHbI145wn0BSoRyDK3SC83kD6vPctld5h9MuHX_9iHFqvTkB1RqBUnSDJsNhNu_6yN-cnpuiwk6ykvtO4F5sfRQCw=="
-  },
-  {
     "date": "2026-08-27",
     "category": "Politics",
     "headline": "US weighs a new round of tariffs on semiconductors, Politico reports",
@@ -1093,6 +1075,24 @@
   },
   {
     "date": "2026-10-25",
+    "category": "Tech",
+    "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
+    "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
+  },
+  {
+    "date": "2026-10-26",
+    "category": "Politics",
+    "headline": "Trump administration files lawsuit to block possible Democratic win in Alaska",
+    "link": "https://www.aljazeera.com/news/2026/10/23/trump-administration-sues-to-block-possible-democratic-win-in-alaska"
+  },
+  {
+    "date": "2026-10-26",
+    "category": "Chemical Engineering",
+    "headline": "Sodium-ion storage maker Peak Energy raises $108 million in GM-led round",
+    "link": "https://www.pv-magazine.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/"
+  },
+  {
+    "date": "2026-10-26",
     "category": "Tech",
     "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
     "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
