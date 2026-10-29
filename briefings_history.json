@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-08-29",
-    "category": "Politics",
-    "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
-    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
-  },
-  {
-    "date": "2026-08-29",
-    "category": "Chemical Engineering",
-    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
-    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
-  },
-  {
-    "date": "2026-08-29",
-    "category": "Tech",
-    "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
-    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
-  },
-  {
     "date": "2026-08-30",
     "category": "Politics",
     "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
@@ -1093,6 +1075,24 @@
   },
   {
     "date": "2026-10-28",
+    "category": "Tech",
+    "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
+    "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
+  },
+  {
+    "date": "2026-10-29",
+    "category": "Politics",
+    "headline": "Trump Administration Files Lawsuit to Block Possible Democratic Win in Alaska",
+    "link": "https://www.aljazeera.com/news/2026/10/23/trump-administration-sues-to-block-possible-democratic-win-in-alaska"
+  },
+  {
+    "date": "2026-10-29",
+    "category": "Chemical Engineering",
+    "headline": "Sodium-ion storage maker Peak Energy raises $108 million in GM-led round",
+    "link": "https://www.pv-magazine.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/"
+  },
+  {
+    "date": "2026-10-29",
     "category": "Tech",
     "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
     "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
