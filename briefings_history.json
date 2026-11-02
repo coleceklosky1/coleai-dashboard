@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-09-02",
-    "category": "Politics",
-    "headline": "U.S. Set to Impose 50% Tariffs on Canada After Failed Talks; Canada to Match Them \"Dollar for Dollar\"",
-    "link": "https://www.cbsnews.com/news/us-canada-tariffs-trade-war-talks-collapse-august-23-2026/"
-  },
-  {
-    "date": "2026-09-02",
-    "category": "Chemical Engineering",
-    "headline": "Saipem Advances Chemical Recycling Plant in the Netherlands",
-    "link": "https://www.chemanalyst.com/NewsAndDeals/Saipem-Advances-Chemical-Recycling-Plant-in-the-Netherlands-12345"
-  },
-  {
-    "date": "2026-09-02",
-    "category": "Tech",
-    "headline": "Micron Adds $10B Memory Lab to Its Idaho Expansion Plans",
-    "link": "https://www.manufacturingdive.com/news/micron-10b-memory-lab-idaho-expansion-ai-semiconductor-2026/724000/"
-  },
-  {
     "date": "2026-09-03",
     "category": "Politics",
     "headline": "Coalition asks Trump to join opposition of $85B rail merger plan",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "A Tiny Laser Beam Could Make Computer Memory 1,000 Times Faster",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhSm5KFdlYkAR6mq0KhvFsz-BPrHyDdRDYS32G-YedPT791AGYUcaPySkeI6NWr_arB1yus8rCDRNRvUKxXbdIm-3Q07-nW7GHwGes-Qh1gHB-WRl9YT_qxDvG3pTDXt_g3btx_2hEOWh1hvT4Y05AE8mA19k9"
+  },
+  {
+    "date": "2026-11-02",
+    "category": "Politics",
+    "headline": "Trump Administration Files Lawsuit to Block Possible Democratic Win in Alaska",
+    "link": "https://www.aljazeera.com/news/2026/10/23/trump-administration-sues-to-block-possible-democratic-win-in-alaska"
+  },
+  {
+    "date": "2026-11-02",
+    "category": "Chemical Engineering",
+    "headline": "Sodium-ion storage maker Peak Energy raises $108 million in GM-led round",
+    "link": "https://www.pv-magazine.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/"
+  },
+  {
+    "date": "2026-11-02",
+    "category": "Tech",
+    "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
+    "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
   }
 ]
