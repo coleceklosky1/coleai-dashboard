@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-09-04",
-    "category": "Politics",
-    "headline": "Missouri supreme court blocks congressional maps backed by Trump for midterms – US politics live",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZVVpdpAEQR7Z4fa0T7rXzir9f1IduAaplPNEe4tiaPGwMTWypOlYhIoikR7WkchtKb8rt-GNnyJ-3kr6dCfkotqL5k1fWyHCk9i9nJdv1bQ9NgI9Jd26XlbAK6D5rRmIS7rBTQMkEJS-A8-2MOVmco8M8zPmUQ7x4fAZPwjdlpY0CD8FaZzfDhiYG7NXOCpsgH3eOafH7TzLLE1qC_dwJUEwKf-FMxKuTx5hj4BJntmuX_48TcHibewzbsT-ZpsJ2CrsdCANXbP7Sa0ZUZyI-e_T4cfLLU4-j6cooIpgKQqGCOQH1U9fsYhE="
-  },
-  {
-    "date": "2026-09-04",
-    "category": "Chemical Engineering",
-    "headline": "OMV Petrom raises Petrobrazi green hydrogen capacity to 55 MW with second 35 MW electrolyzer",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9L0x0GQtVHHVOXe-ITXIwVKkDV-wMbYNHxgVd_scqH-bYugmD67C-zywhhDCKNZ_zxZZbopIvar59XkLl-OwdAKU2Q6awv1N04RAWDEq45TqajBbKPlAoz_XstVrkof-c7cwAgYWS4xH6aX7O_F8_9RM="
-  },
-  {
-    "date": "2026-09-04",
-    "category": "Tech",
-    "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
-    "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT_D1K8fXEco_ssFJwkR__QDZ-Y5NMniQXh0Jt2rjFAn7v_Y-FhbnhQtVveb9UgfZ-kZIgLugCQCKPAhUV2ggaWR6UzT2XJ8droQzCfdU0J5GO"
-  },
-  {
     "date": "2026-09-05",
     "category": "Politics",
     "headline": "US weighs a new round of tariffs on semiconductors, Politico reports",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "SambaNova SN50 Chips to Power Supermicro's New Inference Racks, Delivering High-Performance Inference to Data Centers Worldwide.",
     "link": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdjNtYmjPIMxDCbW74tYrfzurBzeJfIn0CrOEa7moYPynoHsWD7pXlmFWOcvpSyX_TkrINy08wzvSasfBYDJMmHL_DcI8J2MdhgYQDM6R_YpbrFwC9TVyejDYI1I09G37NBdfhWZUuutgOyu2UMoXcStylusIY4HFfiKh1X_wDr6w="
+  },
+  {
+    "date": "2026-11-04",
+    "category": "Politics",
+    "headline": "Trump Administration Files Lawsuit to Block Possible Democratic Win in Alaska",
+    "link": "https://www.aljazeera.com/news/2026/10/23/trump-administration-sues-to-block-possible-democratic-win-in-alaska"
+  },
+  {
+    "date": "2026-11-04",
+    "category": "Chemical Engineering",
+    "headline": "Sodium-ion storage maker Peak Energy raises $108 million in GM-led round",
+    "link": "https://www.pv-magazine.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/"
+  },
+  {
+    "date": "2026-11-04",
+    "category": "Tech",
+    "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
+    "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
   }
 ]
