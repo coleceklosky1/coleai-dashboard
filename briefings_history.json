@@ -1,23 +1,5 @@
 [
   {
-    "date": "2026-09-05",
-    "category": "Politics",
-    "headline": "US weighs a new round of tariffs on semiconductors, Politico reports",
-    "link": "https://www.politico.com/news/2026/09/04/us-tariffs-semiconductors-china-513000"
-  },
-  {
-    "date": "2026-09-05",
-    "category": "Chemical Engineering",
-    "headline": "Battelle Researchers Demonstrate Biotech Breakthrough for Rare Earth Element Separation",
-    "link": "https://www.battelle.org/news/battelle-researchers-demonstrate-biotech-breakthrough-for-rare-earth-element-separation"
-  },
-  {
-    "date": "2026-09-05",
-    "category": "Tech",
-    "headline": "OpenAI begins rollout of new powerful AI model GPT-6 Astra",
-    "link": "https://openai.com/blog/gpt-6-astra-rollout"
-  },
-  {
     "date": "2026-09-06",
     "category": "Politics",
     "headline": "Witkoff and Kushner discussed 'next steps' with Putin to end Ukraine war, says US",
@@ -1096,5 +1078,23 @@
     "category": "Tech",
     "headline": "Nvidia breaches new quantum computing milestone, using 90% fewer qubits — and it could now improve drug discovery, financial modeling and more",
     "link": "https://www.techradar.com/pro/nvidia-breaches-new-quantum-computing-milestone-using-90-fewer-qubits-and-it-could-now-improve-drug-discovery-financial-modeling-and-more"
+  },
+  {
+    "date": "2026-11-05",
+    "category": "Politics",
+    "headline": "Trump Administration Files Lawsuit to Block Possible Democratic Win in Alaska",
+    "link": "https://www.aljazeera.com/news/2026/10/23/trump-administration-sues-to-block-possible-democratic-win-in-alaska"
+  },
+  {
+    "date": "2026-11-05",
+    "category": "Chemical Engineering",
+    "headline": "Sodium-ion storage maker Peak Energy raises $108 million in GM-led round",
+    "link": "https://www.pv-magazine.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/"
+  },
+  {
+    "date": "2026-11-05",
+    "category": "Tech",
+    "headline": "Siemens and NVIDIA speed up AI chip lithography by 12x",
+    "link": "https://www.google.com/search?q=Siemens+and+NVIDIA+speed+up+AI+chip+lithography+by+12x+NVIDIA"
   }
 ]
